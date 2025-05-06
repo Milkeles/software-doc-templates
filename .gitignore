@@ -1,0 +1,56 @@
+# The book and everything around it stays out of this repository.
+book/
+*.tex
+*.bib
+*.cls
+*.sty
+*.pdf
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Figures and research notes that belong to the book, not the templates.
+figures/
+notes/
+research/
+
+# Agent instructions, plans, and settings. Not part of the published resource.
+AGENTS.md
+CLAUDE.md
+TASKS.md
+GEMINI.md
+.claude/
+.cursor/
+.aider*
+.github/copilot-instructions.md
+
+# Editor and OS noise.
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Local tooling.
+node_modules/
+.venv/
+venv/
+__pycache__/
+.direnv/
+.envrc
+*.log
