@@ -136,7 +136,7 @@
 
 *This section is what keeps the rest of the document short. Anywhere a reader is likely to ask "why like that", link the ADR instead of answering inline.*
 
-- [ADR-0007: Use Postgres for the ledger](decisions/0007-....md)
+- [ADR-0007: Use Postgres for the ledger](decisions/0007-use-postgres-for-the-ledger.md)
 
 ---
 

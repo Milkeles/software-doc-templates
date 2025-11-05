@@ -6,7 +6,7 @@
 
 | | |
 |---|---|
-| **Status** | Proposed \| Accepted \| Rejected \| Deprecated \| Superseded by [ADR-0012](0012-....md) |
+| **Status** | Proposed \| Accepted \| Rejected \| Deprecated \| Superseded by [ADR-0012](0012-{slug}.md) |
 | **Date** | YYYY-MM-DD (the date the status last changed) |
 | **Deciders** | Names or a role, whoever actually decided |
 
