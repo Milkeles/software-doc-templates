@@ -49,7 +49,9 @@
 
 *Which states held work longest, and what proportion of total cycle time was waiting rather than working.*
 
-*Flow efficiency, active time divided by total elapsed time, is often between 5 and 20 percent for knowledge work. Teams meeting that figure for the first time usually try to speed up the active portion, which is the smaller half. The queues are where the time is.*
+*Flow efficiency is active time divided by total elapsed time. Teams measuring it for the first time routinely find the active portion is a small minority of the total, and then try to speed that portion up. It is the smaller half. The queues are where the time is.*
+
+*Published figures for "typical" flow efficiency vary from 5 to 45 percent depending on who is selling what, so measure yours rather than quoting a benchmark. Rother and Shook's worked example in* Learning to See *makes the point without a benchmark: 188 seconds of processing time inside a 23.6 day lead time.*
 
 | State | Median time in state | Share of cycle time | Active or waiting |
 |---|---|---|---|
