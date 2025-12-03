@@ -48,6 +48,104 @@ Two things do belong elsewhere. The system design record, which explains why the
 
 ---
 
+## What the board actually looks like
+
+Since the board is where most of this documentation lives, here is what a board carrying it looks like. Every feature below exists to hold one part of the Definition of Workflow.
+
+```
+   OPTIONS   |        BUILD   3        |   REVIEW  2  |     DONE
+             |   doing    |   ready    |              |
+  -----------+------------+------------+--------------+------------
+   [  ]      |   [ A ]    |   [ C ]    |   [ D ] (!)  |   [ E ]
+   [  ]      |   [ B ]    |            |              |   [ F ]
+   [  ]      |            |            |              |
+  -----------+------------+------------+--------------+------------
+   not       | STARTED    | exit: all  | exit: one    | FINISHED
+   started;  | here       | tests pass,| approval,    | merged and
+   age not   |            | PR open    | all comments | deployed
+   counted   |            |            | resolved     |
+```
+
+**The numbers after column names are the WIP limits.** Three in build, two in review. Options and Done are unlimited, because neither holds work in progress.
+
+**The doing and ready split inside Build is the important bit, and it is the one most boards omit.** Without it, a finished item and an item someone is actively working on look identical. With it, the "ready" sub-column is a visible queue: cards sitting there are done and waiting for someone downstream to pull them. That queue is where your cycle time is going, and you cannot see it on a board with single columns.
+
+**Pull happens right to left.** Nobody assigns anything. A person with free capacity looks at the rightmost column with something in it and takes from there. This is what makes the limit bite: to start something new in Build you must first move something out, and to move something out someone must have space in Review.
+
+**The `(!)` is a blocked marker.** Card D is stopped on something outside the team. It still counts against the Review limit, which is deliberate: a blocked item is occupying a slot and the board should say so.
+
+**The text under each column is the explicit policy**, element 5 of the Definition of Workflow. It is written on the board because it is read at the moment someone decides whether a card may move. Two words matter more than the rest: STARTED and FINISHED. Those anchor element 2, and without them cycle time cannot be computed at all.
+
+### Swimlanes carry classes of service
+
+```
+  EXPEDITE   1 |  [ X ]     |            |              |
+  -------------+------------+------------+--------------+---------
+  STANDARD     |  [ A ]     |  [ C ]     |  [ D ] (!)   |  [ E ]
+               |  [ B ]     |            |              |  [ F ]
+  -------------+------------+------------+--------------+---------
+  INTANGIBLE   |            |            |              |  [ G ]
+```
+
+One expedite lane, limited to one item, with a written rule for what qualifies. That single row does more organisational work than any policy document: it converts "this is urgent" from a negotiation with whoever asked loudest into a rule with a cap on it. When the lane is full, the next urgent request has to displace the current one, and someone has to say so out loud.
+
+### What goes on the card face
+
+The board is read at a glance, so the card face is scarce space. Put on it only what changes a decision:
+
+| On the face | Why |
+|---|---|
+| Title, in the language of the requester | So the person who asked can find it |
+| Work item type, as a colour or tag | Because you measure types separately |
+| Start date, or the age in days | The one number that tells you to act today |
+| Blocked marker, and what on | Blocked items must be visible without opening them |
+| Who is on it | Only if it is more than one person, otherwise it is noise |
+
+Leave off estimates. Kanban forecasts from throughput and cycle time history, so a points field on the card is a habit carried over from a different method that adds an estimation meeting you no longer need.
+
+### Definition of Done, and where it goes in Kanban
+
+Teams arriving from Scrum look for the single Definition of Done and do not find one. That is not an omission.
+
+Kanban splits it in two, and both halves are in the board diagram above.
+
+**Per-transition exit criteria** are the working half. "All tests pass, PR open" is the exit criterion for the doing sub-column. Each one is small, checked constantly, and lives under the column it governs. A single global checklist read at the end of a two week Sprint is checked once, late, when the cost of failing it is highest.
+
+**One definition of finished** is the other half, and it anchors the measurement. It is a single sentence saying what the last column means, and it is the thing your cycle time is measured to. "Merged and deployed to production" and "merged" are different sentences that produce different numbers from the same work.
+
+If you want the Scrum-style single Definition of Done as well, keep it, but keep it as the definition of finished. Do not maintain both a global checklist and per-column criteria: they will disagree within a month, and everyone will follow the one printed on the board.
+
+---
+
+## Setting this up in Jira or Trello
+
+Most of the boards in the world are in one of these two, and neither does everything the method assumes. Here is what each can actually hold, so you know which parts have to live elsewhere.
+
+| Definition of Workflow element | Jira | Trello |
+|---|---|---|
+| 1. What a work item is | Issue types | Board scope, by convention only |
+| 2. Started and finished points | Which columns count; must be written down separately | Convention only |
+| 3. States | Columns, several statuses can map to one | Lists |
+| 4. How WIP is controlled | Column constraints, per column | Power-Up only, not native |
+| 5. Explicit policies | Not on the board face | Not on the board face |
+| 6. Service Level Expectation | Nowhere native | Nowhere native |
+
+**Jira.** WIP limits are under Board, Configure, Columns. Set the constraint type to "Issue count" or "Issue count, excluding subtasks", then set a minimum and maximum per column. The column header turns red when the maximum is exceeded and yellow when the minimum is not met.
+
+The thing to know before relying on it: **Jira does not enforce the limit.** It is a visual indicator, and no configuration will stop someone dragging a card into a full column. That is not necessarily wrong, since a limit you can break in public is closer to the intent than one you cannot break at all, but it means the limit is a social agreement with a colour attached. Treat the red header as the prompt for a conversation, not as a control.
+
+Two more limitations worth knowing up front. Swimlanes do not carry their own WIP limits, so an expedite lane capped at one has to be enforced by people rather than by the tool. And there is no place on the board face for column policy text, so the usual workaround is a pinned card at the top of each column holding the policy, which is uglier than it should be and still better than a wiki page.
+
+On metrics, Jira gives you a control chart and a cumulative flow diagram natively. Read the control chart's configuration carefully: its cycle time is whatever set of statuses you selected, so two teams in the same company will report numbers that cannot be compared. Fix the selection to match your written started and finished points and record what you chose. Work item age, the one leading indicator, is the gap: Jira has an average age report, but a per-item aging chart of the kind that tells you which card to worry about today needs a Marketplace app.
+
+**Trello.** There are no native WIP limits. You need a Power-Up, of which List Limits is the common free one, and it highlights a list when the count exceeds the number you set. Automation can approximate policies, but it enforces nothing about pulling.
+
+Trello has no native flow metrics at all. If you are on Trello and serious about measurement, plan on exporting or on a Power-Up, and decide that before you have six months of data you cannot analyse.
+
+**The honest summary.** Both tools hold elements 3 and 4 and nothing else. Elements 1, 2, 5 and 6 need somewhere to live, and the only placement that survives contact with a working day is on the board face itself, as a pinned card, a column description where the tool has one, or a printed sheet next to a physical board. This is the single most common reason a team has a Definition of Workflow and does not follow it.
+
+---
+
 ## The documents, one by one
 
 ### Definition of Workflow
@@ -130,15 +228,53 @@ This is the highest-leverage document in the group for teams whose problems are 
 
 ---
 
-## Why WIP limits work, since someone will ask
+## Why these practices work, and how good the evidence is
 
-Two mechanisms, one arithmetic and one psychological.
+Kanban's mechanics look arbitrary until you see what each is doing to the people using it. The reasoning below is why the documents in this group are worth keeping. It is also graded, because the four arguments are not equally well supported and pretending otherwise would be the same mistake the templates warn against.
 
-The arithmetic is Little's Law: for a stable system, average cycle time equals average work in progress divided by average throughput. Reduce WIP without reducing throughput and cycle time falls, proportionally. This is not an empirical claim about software, it is a queueing result, and it is why limiting WIP is the one Kanban practice that is not negotiable.
+### WIP limits: one proof and one behavioural argument
 
-The psychological mechanism is that starting work feels free and finishing work does not. Nothing in an ordinary workflow makes the cost of a new start visible, so people start things, and each started item adds context-switching cost to everything else. A WIP limit makes starting cost something: to start, you must first finish, or explicitly break the limit in front of everyone. The Kanban Method's phrasing of the underlying trade-off is exact: effective systems "focus more on flow of work and less on worker utilization", because "when resources are fully utilized there is no slack in the system and the result is very poor flow."
+**The arithmetic is settled.** Little's Law: for a stable system, average cycle time equals average work in progress divided by average throughput. Reduce WIP without reducing throughput and cycle time falls, proportionally. This is a queueing result, not an empirical claim about software, which is why limiting WIP is the one Kanban practice that is not negotiable.
 
-Expect the limit to feel wrong for two weeks. That feeling is the problem becoming visible, which is what you wanted.
+**The behavioural argument is that starting feels free and finishing does not.** Nothing in an ordinary workflow makes a new start cost anything, so people start things. A WIP limit is the only mechanism that prices it: to start, you must first finish, or break the limit where everyone can see. The Kanban Method's phrasing of the underlying trade-off is exact: effective systems "focus more on flow of work and less on worker utilization", because "when resources are fully utilized there is no slack in the system and the result is very poor flow."
+
+**What high WIP actually costs is not what most people claim.** The intuitive story is that switching between items makes you slower. The best field evidence says something more uncomfortable. Mark, Gudith and Klocke measured interrupted against uninterrupted work and found interrupted tasks were completed *faster*, with no drop in quality, and that people paid for it in stress, frustration, time pressure and effort.
+
+Read that carefully before using it. It does not say interruption is free. It says people absorb the cost personally instead of the work absorbing it, which is exactly why the cost is invisible on a delivery report and shows up in retention. If you argue for WIP limits on the grounds that they make delivery faster, someone will measure and contradict you. Argue instead that they stop the team paying for throughput out of its own capacity, which is what the evidence supports.
+
+**One popular argument you should not use.** The Zeigarnik effect, that unfinished tasks stay in your head and nag at you, is the standard justification for limiting WIP, and it does not hold up. A 2025 meta-analysis of the Zeigarnik and Ovsiankina effects found no memory advantage for unfinished tasks and concluded that the Zeigarnik effect "lacks universal validity." What did survive is the related Ovsiankina effect, a general tendency to resume interrupted tasks. Drop the memory claim. The stress finding above is better sourced and makes the same point.
+
+Expect a new limit to feel wrong for a fortnight. That feeling is the queue becoming visible, which is what you wanted.
+
+### Pull instead of push, and why it changes motivation
+
+Push means work is assigned to you. Pull means you take the next item when you have capacity. Mechanically the difference is small. In terms of what it does to people it is the largest single difference between a Kanban board and a task list.
+
+The grounding is self-determination theory, which holds that intrinsic motivation depends on three needs: autonomy, competence and relatedness. Its application to work is well studied, and the workplace literature consistently finds that people whose autonomy is supported show higher engagement and lower burnout.
+
+**Be honest about the size of the step being taken here.** SDT's workplace evidence concerns meaningful input into how work is done. Extending it to "choosing which card to pull next" is a plausible extrapolation, not a demonstrated finding, and nobody has tested it on kanban teams specifically. State it that way rather than dressing an argument about board mechanics in psychology it has not earned.
+
+What is not an extrapolation is the second-order effect, which is visible on any board that runs this way. Under push, the interesting work is allocated, and allocation is a relationship with your manager. Under pull, it is available, and taking it is a decision you make. The same work arrives either way. Only one version makes the person a participant in what they do next.
+
+### Why limits produce collaboration without anyone asking for it
+
+This is the effect people notice first and expect least.
+
+When the limit is reached, a person who finishes something cannot start anything new. Their only useful move is to help finish something already in flight. So they pick up a review, pair on the blocked item, or take the piece of someone else's work that is queueing. Swarming happens because the alternative is doing nothing, not because anyone ran a workshop on collaboration.
+
+The same constraint spreads knowledge as a side effect. If you cannot start a new thing, you end up inside work you did not begin, which is the cheapest cross-training any team gets.
+
+Treat this as a practitioner argument rather than a research finding. The mechanism is easy to state and I found no study testing it. It is included because it is the most common reason teams report that a limit they resisted turned out to be worth keeping, and because it explains something the arithmetic does not.
+
+### Visualisation, and one strong caution about it
+
+A board makes work visible, and visible work is discussable. The board is a shared object several people can point at, which is why standing in front of one produces different conversations than reading the same information in a list.
+
+The caution is sharper than the benefit. **Visible work is measurable work, and measurable work invites targets.** Robert Austin's analysis of measurement dysfunction is the right frame: measurement systems work only if you can measure everything a person should be doing, which is essentially never, and under partial measurement people rationally optimise the measured dimension at the expense of the unmeasured ones. The behaviour is not cheating. It is the predictable response to being partially measured.
+
+That is why the flow review measures the system and not the person, and why nothing in these four metrics can be attributed to an individual. Cycle time per developer is the exact failure Austin describes, and the first thing it will produce is smaller tickets rather than faster delivery.
+
+The rule that follows: put the work on the board, keep the people off the report.
 
 ---
 
@@ -159,4 +295,16 @@ Expect the limit to feel wrong for two weeks. That feeling is the problem becomi
 - Vacanti, *Actionable Agile Metrics for Predictability*, 2015, on flow metrics and their misuse
 - Little, [A Proof for the Queuing Formula L = λW](https://doi.org/10.1287/opre.9.3.383), *Operations Research* 9(3), 1961
 
-Kanban University is the commercial home of the Kanban Method and its guide is promotional as well as descriptive; the Kanban Guide is released under Creative Commons and is the more neutral of the two. Both are stated positions rather than research findings. Little's Law is the only mathematically established claim on this page.
+On the reasoning behind the practices:
+
+- Mark, Gudith and Klocke, [The Cost of Interrupted Work: More Speed and Stress](https://doi.org/10.1145/1357054.1357072), CHI 2008. Interrupted work finished faster, at a cost in stress and effort
+- Bornemann, Foroughi and Hüffmeier, [Interruption, recall and resumption: a meta-analysis of the Zeigarnik and Ovsiankina effects](https://doi.org/10.1057/s41599-025-05000-w), *Humanities and Social Sciences Communications* 12, 2025. Why the Zeigarnik argument for limiting WIP does not hold
+- Ryan and Deci, "Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being," *American Psychologist* 55(1), 2000, and Deci, Olafsen and Ryan, ["Self-Determination Theory in Work Organizations: The State of a Science"](https://doi.org/10.1146/annurev-orgpsych-032516-113108), *Annual Review of Organizational Psychology and Organizational Behavior* 4, 2017
+- Austin, *Measuring and Managing Performance in Organizations*, Dorset House, 1996. Measurement dysfunction under partial measurement
+- Atlassian, [Configure columns](https://support.atlassian.com/jira-software-cloud/docs/configure-columns/) and [View and understand the control chart](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-control-chart/). Jira column constraints and metric definitions
+
+**On sourcing.** Kanban University is the commercial home of the Kanban Method and its guide is promotional as well as descriptive; the Kanban Guide is released under Creative Commons and is the more neutral of the two. Both are stated positions rather than research findings. Little's Law is the only mathematically established claim on this page.
+
+The psychology is graded deliberately. Mark's interruption finding and Austin's dysfunction argument are solid and directly on point. The self-determination link to pulling a card is an extrapolation from workplace autonomy research and is labelled as one. The claim that WIP limits produce collaboration is a practitioner argument with no study behind it. And the Zeigarnik effect, which is the most commonly cited justification for limiting WIP, is on this page only so you know not to use it.
+
+Tool behaviour changes. The Jira and Trello details were checked against current documentation, but Atlassian renames and moves features regularly, so verify before quoting any of it in an argument.
