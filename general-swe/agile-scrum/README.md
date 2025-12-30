@@ -116,11 +116,114 @@ The reason it works is now reasonably well evidenced. Google's Project Aristotle
 
 **When.** A new team, a changed team, or a team relitigating the same friction every Sprint.
 
-**Why.** Project Aristotle's finding was that how a team works together predicts effectiveness better than who is on it. A working agreement is the cheapest way to make "how" explicit. Its value is not the document; it is that writing it forces disagreements into the open at a moment when nothing is at stake, rather than during an incident.
+**Why.** Google's Project Aristotle found that how a team works together predicts effectiveness better than who is on it, and named psychological safety as the strongest factor. That is Google's own internal research, so when the claim has to hold up, cite the construct it rests on: Edmondson's study of 51 work teams, which found psychological safety predicts learning behaviour, and learning behaviour is what carries the effect through to performance.
+
+A working agreement is the cheapest way to make "how" explicit. Its value is not the document; it is that writing it forces disagreements into the open at a moment when nothing is at stake, rather than during an incident.
 
 The failure mode is platitudes. "We respect each other" changes no behaviour and is not checkable. "We do not merge on Fridays after 15:00" does. The template pushes for the second kind.
 
 **Where.** The wiki, revisited in a retrospective every few months. It is a living social contract, not a versioned artifact.
+
+---
+
+## What the board has to carry
+
+Most of these documents end up on or beside a board, so it is worth seeing where each one sits and what a Scrum board does differently from a [Kanban board](../kanban/README.md).
+
+```
+  SPRINT GOAL: users can reset their own password without contacting support
+  Sprint 24, ends 12 March              Definition of Done -> repo/DONE.md
+
+   TO DO         |  IN PROGRESS  |  IN REVIEW   |      DONE
+  ---------------+---------------+--------------+-----------------
+   [ PBI-41 ]    |  [ PBI-38 ]   |  [ PBI-37 ]  |   [ PBI-35 ]
+   [ PBI-42 ]    |  [ PBI-39 ]   |              |   [ PBI-36 ]
+   [ PBI-43 ]    |               |              |
+                 |               |              |  ^ meets the DoD
+                 |               |              |    or it is not here
+```
+
+**Four differences from a Kanban board, and each one is doing something.**
+
+The Sprint Goal sits above the columns and is the only thing on the board that does not change during the Sprint. Cards below it can be added, dropped or renegotiated. That asymmetry is the mechanism described earlier: the Goal is the commitment, the card list is not.
+
+The board is emptied and refilled every Sprint. This is the largest practical difference. A Kanban board is a continuous system you measure over months. A Scrum board is scoped to one Sprint, which means cycle time across Sprints has to come from your tool's history rather than from the board.
+
+Done means the Definition of Done, and nothing else. The rightmost column is a gate, not a destination. An item that does not meet the Definition of Done does not sit in Done with an asterisk; it returns to the Product Backlog.
+
+WIP limits are not part of Scrum. Nothing stops you adding them and many teams should, but be clear that you are borrowing from Kanban rather than following the Guide.
+
+### Setting this up in Jira
+
+Choose a **Scrum board**, not a Kanban board. The difference is that a Scrum board gives you a backlog with sprints in it, and Jira's sprint reports depend on that structure existing.
+
+What Jira gives you natively: the sprint burndown, the velocity chart across recent sprints, and the sprint report. What it has no home for is everything in this group that is not a card. The Definition of Done, the Product Goal, the working agreement and the retrospective have no native field, so each needs a fixed place and a link from somewhere people look.
+
+The placement that survives contact with a working week:
+
+| Document | Where it goes |
+|---|---|
+| Sprint Goal | The sprint name or the sprint goal field, so it appears above the board |
+| Definition of Done | The repository, linked from the board and enforced by CI where possible |
+| Product Goal | Pinned at the top of the backlog |
+| Sprint Backlog | The board itself. It is the board |
+| Retrospective actions | The backlog, as real items with owners. Not the wiki page |
+
+That last row is the one that decides whether retrospectives do anything. An action in a wiki page is a note. An action in the backlog competes for attention with everything else, which is the only test it needs to pass.
+
+### On the card face
+
+Title in the user's language, item type, and the acceptance criteria if they are short enough to read at a glance. Blocked status if blocked.
+
+Leave the estimate off the card face. It is needed in planning and forecasting, and putting it in front of the team every day turns a forecasting input into a performance display, which is a different thing and a worse one.
+
+---
+
+## Why these artefacts work, and how good the evidence is
+
+The reasoning is why the documents earn their place. It is graded here because the four arguments are not equally supported, and a group README that presents them as equally solid is doing the thing these templates warn against.
+
+### The Sprint Goal, and why a specific one beats a good intention
+
+Goal-setting is one of the better-evidenced findings in organisational psychology. Locke and Latham's summary of thirty-five years of it is that **specific and difficult goals produce higher performance than urging people to do their best**, and they name five conditions: clarity, challenge, commitment, feedback and matching the difficulty to the work.
+
+Read across to Scrum and the Sprint Goal is doing exactly this job, with the Sprint length supplying the feedback interval. Read the conditions in the other direction and they diagnose the common failures. A Sprint Goal that restates the selected items fails clarity in the sense that matters, because it does not name an outcome anyone could aim at. A Goal handed down rather than agreed in Planning fails commitment. And a Goal with no way to tell mid-Sprint whether you are near it fails feedback, which is what a burndown of item counts is a poor substitute for.
+
+**One point of vocabulary that carries meaning.** The 2017 Guide framed selected work as a **forecast**. The 2020 Guide reintroduced commitment but attached it to artefacts rather than to scope: the Product Goal for the Product Backlog, the Sprint Goal for the Sprint Backlog, the Definition of Done for the Increment, and these "exist to reinforce empiricism and the Scrum values." The team commits to the Goal and forecasts the items. Teams that commit to the item list have inverted it, and every discovery then reads as a broken promise.
+
+### The retrospective, which has the strongest evidence in the group
+
+This surprises people who assume retrospectives are the soft part.
+
+Tannenbaum and Cerasoli's meta-analysis of debriefs and after-action reviews across 46 samples and 2,136 participants found debriefs improved performance by roughly 25 percent over controls, d = .67. Their conclusion is that "organizations can improve individual and team performance by approximately 20% to 25% by using properly conducted debriefs."
+
+**The moderators are the useful part, because "properly conducted" is doing real work in that sentence.** They identified alignment between participants, focus and intent, plus facilitation and structure. Structure being a moderator is a direct argument for having a retrospective format rather than an open conversation, which is the case for [the template](sprint-retrospective.md) and the reason it is not just a blank page.
+
+The caveat: this literature is military, medical and aviation, not software teams. The construct transfers cleanly, the effect size should be treated as indicative rather than as your expected return.
+
+**And there is a precondition without which none of it happens.** Edmondson's study of 51 work teams found that psychological safety predicts learning behaviour, and that learning behaviour is what mediates between safety and team performance. Team efficacy, the belief that the team is capable, did not predict learning behaviour once safety was controlled for.
+
+The practical reading is sharp. A retrospective in a team where people do not feel safe raising problems does not produce a smaller amount of learning. It produces a document. If your retrospectives generate only process tweaks and never name anything uncomfortable, the format is not the problem and no new template will fix it.
+
+### Why estimates are wrong in a specific direction
+
+The relevant finding is the planning fallacy, and it is more precise than "people are bad at estimating."
+
+Buehler, Griffin and Ross asked students to predict when they would finish their honours theses. The average prediction was 33.9 days. The average actual was 55.5 days. Their averaged **worst-case** estimate, 48.6 days, was still optimistic. Only around 30 percent finished within their own prediction.
+
+Two things follow that matter for how you run Planning.
+
+**The bias is directional, not random.** It does not cancel out across items, so summing optimistic estimates produces an optimistic total, not an accurate one. This is why a Sprint plan built from confident individual estimates overcommits reliably rather than occasionally.
+
+**People underestimate their own completion times but not other people's.** That asymmetry is the finding with the most practical value in this whole section. It argues for estimating as a team rather than accepting the estimate of whoever will do the work, and it argues for using what actually happened over the last several Sprints instead of reasoning forward from a plan. The study found people focus on plan-based scenarios and discount their own relevant history, which is exactly what a velocity chart puts back in front of them.
+
+### The Definition of Done as a decision made early
+
+This one is design reasoning, not a research finding, and it is labelled as such.
+
+The Definition of Done is agreed when nothing is at stake and applied when something is. That ordering is the whole value. Deciding what "finished" means on the last afternoon of a Sprint, with a stakeholder waiting, produces a different answer than deciding it three weeks earlier, and everyone knows which answer.
+
+The survey evidence backs the practical failure rather than the mechanism: as noted above, over 70 percent of projects reported items hard or slow to verify and over 60 percent had items impossible to verify at all. A pre-commitment you cannot check is not a pre-commitment.
 
 ---
 
@@ -179,4 +282,13 @@ A Scrum team that maintains three artifacts and holds five events is doing Scrum
 - Pichler, [The Definition of Ready in Scrum](https://www.romanpichler.com/blog/the-definition-of-ready/)
 - Google re:Work, [Understand team effectiveness](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness), on Project Aristotle
 
-Mountain Goat Software, romanpichler.com and jtbd.info are consultancy or practitioner sites, flagged as such. The Scrum Guide is normative. The four papers are peer-reviewed.
+On the reasoning behind the artefacts:
+
+- Locke and Latham, ["Building a practically useful theory of goal setting and task motivation: A 35-year odyssey"](https://doi.org/10.1037/0003-066X.57.9.705), *American Psychologist* 57(9), 2002. Specific and difficult goals beat "do your best"
+- Tannenbaum and Cerasoli, ["Do Team and Individual Debriefs Enhance Performance? A Meta-Analysis"](https://doi.org/10.1177/0018720812448394), *Human Factors* 55(1), 2013. 46 samples, N = 2,136, d = .67, with structure and facilitation as moderators
+- Edmondson, ["Psychological Safety and Learning Behavior in Work Teams"](https://doi.org/10.2307/2666999), *Administrative Science Quarterly* 44(2), 1999. The precondition for a retrospective producing anything
+- Buehler, Griffin and Ross, ["Exploring the 'planning fallacy': Why people underestimate their task completion times"](https://doi.org/10.1037/0022-3514.67.3.366), *Journal of Personality and Social Psychology* 67(3), 1994
+
+**On sourcing.** Mountain Goat Software, romanpichler.com and jtbd.info are consultancy or practitioner sites, flagged as such. The Scrum Guide is normative rather than evidential: it states what Scrum is, not what works. Project Aristotle is Google's own internal research, and its headline finding rests on Edmondson's construct, so cite Edmondson when the claim needs to hold up.
+
+The four psychology papers are peer-reviewed and strong in their own fields. None of them studied software teams, and none of them studied Scrum. The transfer is argued here rather than demonstrated anywhere, and the retrospective effect size in particular should be read as indicative. Where an argument in this README is design reasoning rather than evidence, it says so.
