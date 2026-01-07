@@ -107,6 +107,76 @@ The V is used as the structural backbone of ISO 26262 and Automotive SPICE, maps
 
 ---
 
+## What the trace chain actually looks like
+
+Kanban has a board. Scrum has a board. Plan-driven work has a trace chain, and it is just as much the working surface of the method. Everything in this group is either a node on it, a baseline across it, or a record of a change to it.
+
+```
+  BASELINE   SRS rev 3, approved 2026-02-14 by J. Okafor, design authority
+  ==========================================================================
+
+   URS-014  "the user can lock the device from the handset"
+      |
+      +--> SYS-031 -----> ARC-007 -----> MOD-042 -----> src/lock/handler.c
+      |       |              |              |
+      |       v              v              v
+      |   SYS-TC-118     INT-TC-052     UT-lock-04
+      |
+      +--> ACC-TC-009        (acceptance runs against URS-014, not SYS-031)
+
+   URS-015  ...
+```
+
+Read it two ways. Left to right is the V-model's left arm: each level of specification decomposes into the next. Vertical is the V's right arm: each level is verified by the test level opposite it. The traceability matrix is not a separate artefact you assemble later. It is this picture, exported.
+
+**A requirement with nothing below it is unbuilt. Code with nothing above it is unrequested.** Those are the only two questions the chain exists to answer, and both directions matter, per Gotel and Finkelstein.
+
+**What a baseline does.** Drawing a line across the chain and naming it freezes the reference. After that line, edits are not edits. They are change requests, and they arrive with an impact assessment attached, because the chain shows what the change touches.
+
+**Suspect links are the mechanic that makes this work.** When a baselined item is edited, requirements tools flag everything linked downstream of it as suspect until a human reviews each one. IBM DOORS and Jama Connect both call it exactly that.
+
+```
+   SYS-031 edited under CR-221
+      |
+      +--> ARC-007       SUSPECT   design not yet reassessed
+      +--> SYS-TC-118    SUSPECT   test may no longer verify the requirement
+      +--> ACC-TC-009    SUSPECT
+```
+
+This is the plan-driven equivalent of a WIP limit: a small tool constraint that makes a principle physically hard to ignore. Without it, traceability degrades silently, because a link that was correct when it was drawn stays green forever.
+
+### What each requirement record has to carry
+
+The template asks for these because ISO/IEC/IEEE 29148 asks for them, not to fill a form.
+
+| Field | Why it is there |
+|---|---|
+| **Identifier** | Stable, never reused. Everything else links to it |
+| **The requirement, singular** | No conjunctions. Two requirements joined by "and" cannot be traced, tested or changed separately |
+| **Verification approach** | Inspection, analysis, demonstration or test. The field 29148 added and IEEE 830 lacked, and the one that makes the chain generatable |
+| **Source and rationale** | Who asked and why. The pre-specification half, and the half everyone drops |
+| **Status and baseline** | Which approved revision this belongs to |
+| **Links, up and down** | The chain itself |
+
+Leave the estimate and the assignee off. Those belong in the schedule, and putting them here makes the requirement record change for reasons that have nothing to do with the requirement.
+
+### Setting this up in a tool
+
+| What the method needs | Requirements tool (DOORS, Jama, Polarion) | Jira plus Confluence |
+|---|---|---|
+| Typed trace links | Native, with link types | Issue links, untyped by default |
+| Baseline | Native, immutable snapshot | No equivalent. Fixed versions are the nearest thing and are editable |
+| Suspect links on change | Native and automatic | Nothing native |
+| Trace matrix | Generated view | Plugin, or exported and assembled by hand |
+| Approval of record | Electronic signature with reauthentication, meaning of signing recorded | A comment. Not a signature |
+| Non-rewritable history | Native | Admins can edit issue history |
+
+The right-hand column is why the split in the next section is not a preference. If the four questions there come back yes, an issue tracker cannot answer them, and no amount of workflow configuration will change that.
+
+For unregulated plan-driven work the right-hand column is fine, with one addition: write the started and finished definitions and the trace conventions somewhere, because the tool will not enforce them and nobody will infer them.
+
+---
+
 ## Where these documents live, and why the answer is different here
 
 Every other group in this repository chooses between a wiki and the repository on grounds of convenience. Here the constraint is evidential, and it is legal rather than stylistic.
@@ -268,6 +338,40 @@ Gates fail in one specific way, and the template is built to resist it: they bec
 
 ---
 
+## Why these documents work, and how good the evidence is
+
+The case for plan-driven documentation is usually made as compliance, which is true and boring. The more interesting case is that gates and baselines are countermeasures against two failure modes that are well documented in people, and the research quality varies a lot between the claims below.
+
+### Gates exist because projects do not stop themselves. Evidence: good, and some of it is about software
+
+Barry Staw's 1976 experiment gave 240 business students an investment decision, then bad news, then the chance to invest again. People committed the **most** additional money to a failing course of action when they had personally chosen it. Being responsible for the earlier decision made them worse at judging whether to continue, not better.
+
+Mark Keil took this to software directly. His 1995 MIS Quarterly study of runaway IT projects found escalation driven by project, psychological, social and organisational factors together, not by any single bias. Keil and Robey then looked at what actually stops it: interviews with 42 IS auditors covering twelve de-escalation factors, and in the majority of cases the turnaround was triggered by **senior managers, internal auditors or external consultants**. Somebody from outside the project.
+
+That is the design argument for the phase gate, stated precisely. The value is not the meeting or the slides. It is that the authority to continue sits with someone who did not choose the course, at a scheduled moment they cannot skip. A gate chaired by the project manager reproduces exactly the condition Staw showed is worst.
+
+It also explains the one failure mode worth guarding: a gate that has approved everything it has ever seen has been captured, and provides no protection at all. The [phase gate review](phase-gate-review.md) template asks what may not start until this is approved, and asks for the conditions of a no, for this reason.
+
+### Baselines work because agreement decays and nobody notices. Evidence: design reasoning, not research
+
+We could not find a study demonstrating that a written, approved baseline reduces disputes about scope. The argument is mechanical rather than empirical: acceptance testing, change control and traceability all require a fixed reference, and without one, "is it done" has no answer that two parties will give the same way. Treat that as a reason the documents cohere, not as proof they pay off.
+
+The related claim, that writing requirements down early prevents expensive late rework, is the one with a contested evidence base. See below.
+
+### Traceability answers "why does this exist", and the backward direction is the neglected half
+
+Covered above under the matrix. The point worth repeating here is psychological rather than procedural: the person who knows why a requirement exists leaves, and the rationale leaves with them. Gotel and Finkelstein's pre-specification traceability is the fix, and it is the half teams reliably skip because it produces no immediate benefit to the people recording it.
+
+### One argument you should not use: the exponential cost-of-change curve
+
+This is the most quoted justification for doing requirements and design up front. A defect found in requirements costs one unit, in design ten, in production a hundred, so front-load the work.
+
+Menzies, Nichols, Shull and Layman tested it. They examined 171 software projects from 2006 to 2014, looking for the delayed issue effect, and found no evidence for it: effort to resolve an issue in a later phase was not consistently or substantially greater than resolving it soon after introduction. The original curve comes from Boehm's 1981 data on projects with release cycles measured in years, and does not survive transplantation into continuous integration.
+
+If you need to justify plan-driven documentation, use the reasons that hold: a regulator will ask for evidence, a contract defines acceptance against a baseline, and a system that can kill people needs verification traceable to every requirement. Those are sufficient. The cost curve is not, and quoting it in front of anyone who has read the 2017 paper will cost you the rest of the argument.
+
+---
+
 ## What to write first
 
 1. **The specification.** Nothing else in this group means anything without a baseline.
@@ -293,6 +397,11 @@ Gates fail in one specific way, and the template is built to resist it: they bec
 - FDA, [General Principles of Software Validation](https://www.fda.gov/media/73141/download), January 2002, and the [Quality Management System Regulation](https://www.fda.gov/medical-devices/postmarket-requirements-devices/quality-management-system-regulation-qmsr), effective 2 February 2026
 - ISO 9001:2015 clause 7.5, and 21 CFR Part 11, on document control and electronic signatures
 - DOD-STD-2167A and its successor MIL-STD-498, whose published change summary lists removing the waterfall bias
+- Staw, "Knee-deep in the Big Muddy: A study of escalating commitment to a chosen course of action", *Organizational Behavior and Human Performance* 16(1), 1976, pp. 27 to 44. DOI [10.1016/0030-5073(76)90005-2](https://doi.org/10.1016/0030-5073(76)90005-2). 240 participants, laboratory
+- Keil, "Pulling the Plug: Software Project Management and the Problem of Project Escalation", *MIS Quarterly* 19(4), 1995, pp. 421 to 447. DOI [10.2307/249627](https://doi.org/10.2307/249627)
+- Keil and Robey, "Turning Around Troubled Software Projects: An Exploratory Study of the Deescalation of Commitment to Failing Courses of Action", *Journal of Management Information Systems* 15(4), 1999, pp. 63 to 87. Source of the finding that de-escalation is usually triggered from outside the project
+- Menzies, Nichols, Shull and Layman, [Are Delayed Issues Harder to Resolve?](https://arxiv.org/abs/1609.04886), *Empirical Software Engineering* 22(4), 2017, pp. 1903 to 1935. 171 projects, no evidence for the delayed issue effect
+- [Suspect links in Rational DOORS](https://www.ibm.com/docs/en/engineering-lifecycle-management-suite/doors/9.7.2?topic=data-suspect-links-changed-objects) and [Jama Connect and FDA 21 CFR Part 11](https://www.jamasoftware.com/datasheet/jama-connect-and-fda-21-cfr-part-11/). Vendor documentation, used only for what the tools do
 
 **On sourcing.** The standards above are paywalled; clause numbers and titles here come from official previews and tables of contents, and quoted normative text is limited to what we could verify against a full copy. DO-178C and ISO 26262 clause references are corroborated across independent industry sources but not against the standards themselves, so treat them as pointers and check before citing in a submission.
 
