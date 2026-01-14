@@ -165,6 +165,41 @@ The load-bearing assumption underneath is: "Really important ideas will come bac
 
 ---
 
+## The hill, and why it is not a progress bar
+
+Kanban has a board and Scrum has a board. Shape Up's working surface is the hill, and it is the clearest example in this repository of a method's principle showing up directly in the shape of its documentation.
+
+Singer's claim is that work has two phases, not one continuous slope of completion:
+
+> "Every piece of work has two phases. First there's the uphill phase of figuring out what our approach is and what we're going to do. Then, once we can see all the work involved, there's the downhill phase of execution."
+
+Uphill is "full of uncertainty, unknowns, and problem solving". Downhill is "marked by certainty, confidence, seeing everything, and knowing what to do". The labels on the chart are plain: "Figuring out what to do" and "Getting it done".
+
+```
+   FIGURING OUT WHAT TO DO              GETTING IT DONE
+   |------------------------------------|------------------------------|
+   start                              crest                          done
+
+           (C)                  (B)              (A)
+       audit log            sync service      lock handset
+    approach not settled   just over the     no unknowns left,
+                              crest          three days of work
+```
+
+The scopes are the same ones named in the [scope map](scope-map.md). Singer says so: "the scopes give us the language for the project... and the hill describes the status of each scope." One noun, two documents. The map says what the parts are, the hill says what is known about each.
+
+**What it reports is unknowns remaining, not work completed.** That is the entire difference from a burndown or a percentage. A task list cannot tell you which side of the crest something is on, because it does not know about tasks nobody has thought of yet, which is Singer's objection to counting them:
+
+> "From an outsider's perspective, there's no way to know whether the number of outstanding tasks will go down or up."
+
+A scope that is 80 percent through its checklist and still uphill is in worse shape than one at 20 percent and downhill, and only the hill says so.
+
+**Movement is the signal, not position.** A scope sitting in the same place for several days is the finding, and it is a specific one: nobody has solved the problem yet, and they may not have said so. That is why the tooling paragraph below insists on stored history. A single dated position tells you nothing, which is also why this repository ships no hill chart template. A Markdown file holding today's positions would be a worse version of a chart, not a document.
+
+**What it costs.** Position on the hill is a judgement, self-reported by the person doing the work, with no way to check it. That is deliberate: the thing being reported is how confident someone is, and confidence has no external measure. It also means the chart degrades immediately in any team where admitting you are still uphill is treated as being behind. Edmondson's work on psychological safety, cited in [`agile-scrum/`](../agile-scrum/README.md), applies here with more force than it does to a retrospective, because this is a daily disclosure to management rather than a periodic one among peers.
+
+---
+
 ## Six weeks, and the tooling assumption
 
 **Why six.** Two weeks is rejected as "too short to get anything meaningful done" and "extremely costly due to the planning overhead." Longer is rejected because the deadline stops being felt: "If the deadline is too distant and abstract at the start, teams will naturally wander and use time inefficiently until the deadline starts to get closer and feel real."
