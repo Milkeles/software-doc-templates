@@ -123,7 +123,28 @@ The test is simple. If the document's job is done the moment it is finished, kee
 
 There is one finding that argues directly for having a real template rather than a blank page. Sobek and Jimmerson analysed 18 cases and reported that participants who followed each step consistently achieved excellent results, and that "skipping even one step dramatically reduced the likelihood of success." That is 18 cases, not a controlled trial, and it comes from a university engineering department rather than a consultancy. Treat it as the best available evidence, which it is, rather than as proof.
 
-**The layout is doctrinal, and it means something.** Items flow top to bottom down the left side, then top to bottom down the right. Left is what is true. Right is what to do about it. A reader can tell at a glance whether you spent your effort on understanding or on advocating.
+**The layout is doctrinal, and it means something.** Items flow top to bottom down the left side, then top to bottom down the right. Left is what is true. Right is what to do about it.
+
+```
+ +--------------------------------+--------------------------------+
+ | 1  Issue                       | 5  Target condition            |
+ |                                |                                |
+ | 2  Background                  | 6  Implementation plan         |
+ |                                |      who, what, when           |
+ | 3  Current condition           |                                |
+ |      drawn, with numbers       | 7  Follow-up plan              |
+ |      the biggest box           |      how you will know         |
+ |                                |                                |
+ | 4  Cause analysis              | 8  Results                     |
+ |      the five whys             |      BLANK when circulated     |
+ +--------------------------------+--------------------------------+
+      what is true                     what to do about it
+              one sheet, A3 or 11 x 17 inches, no second page
+```
+
+A reader can tell at a glance whether you spent your effort on understanding or on advocating. If box 3 is thin and box 6 is dense, you brought a solution and reverse-engineered a problem onto the front of it, and the sheet says so before anybody has read a word.
+
+The single sheet is the mechanism, not the packaging. There is no room for everything, so the author has to decide what matters, and that decision is the thinking the format exists to force. A three-page A3 has removed the constraint and kept the boxes.
 
 **The results box is blank when you write it.** An A3 that arrives complete has skipped the process it exists to impose.
 
@@ -162,6 +183,12 @@ The number that makes this argument is from Microsoft's experimentation platform
 with the split: "about 1/3 be good, 1/3 flat, and 1/3 negative." Kohavi's own caveat belongs with it, because it strengthens the claim rather than weakening it: there is selection bias, since teams experiment when they are unsure. He also notes Bing's success rate is lower.
 
 Two thirds of confident ideas do nothing or harm. That is the case for writing the prediction down before you find out.
+
+**And there is a second reason, which is the stronger one.** You will not be able to reconstruct what you predicted. Fischhoff's 1975 experiments established that knowing an outcome shifts people's memory of what they expected beforehand, towards the outcome, without their noticing. This is hindsight bias, and it is one of the best-replicated findings in the field: a 2021 preregistered replication with 890 participants reproduced it at d = 0.60, and a further study found people apply it even to the replicability of hindsight bias itself.
+
+The practical consequence for a team is precise. After a change ships and the numbers land, everyone remembers having roughly expected that. The experiment that taught you something and the experiment that confirmed what you already knew become indistinguishable, so you keep running the second kind. A prediction recorded before the result is the only defence, because the bias operates on memory rather than on honesty and cannot be resisted by trying harder.
+
+This is also why the [experiment record](experiment-record.md) has a **Written** date field separate from **Decided**, and why section 5 asks what you will do if the result is refuted before you know whether it was. Both fields exist to make the sequence auditable by a reader later.
 
 **Where.** Version control or a wiki. Its value is entirely retrospective.
 
@@ -220,7 +247,7 @@ Step four is mapping the value stream. What they see instead is "companies rushi
 
 Stated plainly, because the four documents here are not equal and treating them as equal is how people get burned.
 
-**Strongest.** Online controlled experimentation. Kohavi's one-third finding is quantified, industrial, replicated across companies and published. If you take one thing from this group, take the experiment record.
+**Strongest.** Online controlled experimentation. Kohavi's one-third finding is quantified, industrial, replicated across companies and published. The rule that the prediction is written first rests on separate and equally solid ground, fifty years of hindsight bias research with a recent preregistered replication. If you take one thing from this group, take the experiment record.
 
 **Solid but narrow.** The A3. Decades of documented Toyota practice, primary-source arguments for its specific design constraints, and real academic study, though that study is dominated by healthcare case work and practitioner surveys. There is no controlled comparison of A3 against another structured format.
 
@@ -250,5 +277,8 @@ Stated plainly, because the four documents here are not equal and treating them 
 - Fagerholm, Sanchez Guinea, Mäenpää and Münch, ["The RIGHT model for Continuous Experimentation"](https://doi.org/10.1016/j.jss.2016.03.034), *Journal of Systems and Software* 123, 2017
 - Pernståhl, Feldt and Gorschek, ["The lean gap"](https://doi.org/10.1016/j.jss.2013.06.035), *Journal of Systems and Software* 86(11), 2013
 - Moen and Norman, ["Evolution of the PDCA Cycle"](https://deming.org/), and Moen, "Foundation and History of the PDSA Cycle." Deming's objections, with dates and letters
+- Fischhoff, "Hindsight is not equal to foresight", *Journal of Experimental Psychology: Human Perception and Performance* 1(3), 1975, and Fischhoff and Beyth, "I knew it would happen", *Organizational Behavior and Human Performance* 13(1), 1975
+- Chen, Kwan, Ma et al. (Feldman lab), ["Retrospective and prospective hindsight bias: Replications and extensions of Fischhoff (1975) and Slovic and Fischhoff (1977)"](https://doi.org/10.1016/j.jesp.2021.104154), *Journal of Experimental Social Psychology* 96, 2021. Preregistered, N = 890 for the Fischhoff replication, d = 0.60
+- Guilbault, Bryant, Brockway and Posavac, "A Meta-Analysis of Research on Hindsight Bias", *Basic and Applied Social Psychology* 26(2 to 3), 2004
 
 **On sourcing.** The Toyota material is primary and old, and its software translation is the weak joint throughout. Where a claim comes from the manufacturing source it is quoted; where it comes from the software adaptation it is attributed to the adapter. Two things frequently stated as lean facts are not sourced anywhere we could find: a typical flow efficiency percentage for knowledge work, and any definition of validated learning or innovation accounting in Ries's own words beyond his 2009 MVP post. Both are omitted rather than hedged.
