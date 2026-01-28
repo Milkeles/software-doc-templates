@@ -57,6 +57,64 @@ A document missing these will rot regardless of how well it was written. Pick th
 
 ---
 
+## How these documents feed each other
+
+Fifteen documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
+
+**A decision, from proposal to current state.**
+
+```
+   technical design doc  \
+                          >---> ADR ------------> architecture overview
+   RFC                   /       |                        |
+                                 |                        |
+                        why we chose it,          what the system is
+                        one per decision,         now, edited freely,
+                        never edited after        no history kept
+                        it is accepted
+```
+
+The design doc and the RFC are working documents that stop mattering the day the decision is made. The ADR is the residue: the constraint, the alternatives, the reason. The overview describes the result. Those last two split along tense, and that split is the whole reason both exist. An ADR is a dated statement about the past and is superseded rather than rewritten. An overview is a statement about the present and is wrong the moment it is stale.
+
+**An ADR with no matching overview update leaves the overview lying.** An overview with no ADRs behind it can describe the system but cannot explain it, which is the state most teams are actually in.
+
+**A running service, from ship to incident and back.**
+
+```
+   architecture overview ---> service README ---> runbook
+                                                     |
+                                       alert fires   |
+                                                     v
+                                                 incident
+                                                     |
+                                                     v
+                                                postmortem
+                                        /            |             \
+                                       v             v              v
+                                  runbook           ADR         test strategy
+                                new or fixed   if the fix     if the gap was
+                                    step       overturns a      coverage
+                                               decision
+```
+
+The arrows out of the postmortem are the part teams skip, and skipping them is what makes postmortems feel like paperwork. A postmortem whose actions live only inside the postmortem has changed nothing. The finding belongs in whichever document would have prevented the incident, and the postmortem links to it.
+
+**Anything anyone else depends on.**
+
+```
+   deprecation plan ---> changelog ---> release notes
+        |                                    |
+   for consumers you            for people who did not
+   can name and must            read the changelog and
+   warn directly                should not have to
+```
+
+The changelog is a fact record for people integrating with you. Release notes are written for someone who does not know your internals. Same event, two audiences, two documents, and merging them produces one that serves neither.
+
+**The two that sit outside the flow.** The glossary and the code review guidelines are not produced by any event. They exist because a disagreement kept recurring, and they are written the second or third time it recurs, not in advance.
+
+---
+
 ## Four modes, and why mixing them ruins a document
 
 Daniele Procida's [Diátaxis](https://diataxis.fr/) framework splits documentation along two axes: practical against theoretical, and study against work. That gives four modes.
