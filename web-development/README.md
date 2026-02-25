@@ -38,7 +38,7 @@ The split runs cleaner here than anywhere else, because two of these documents a
 |---|---|---|
 | API design guide | Docs-as-code | Reviewed alongside the API it governs. A guide the API can drift from is not a guide |
 | Frontend architecture | Docs-as-code | Describes the code, rots fastest when separated from it |
-| Visual style guide | Wherever designers and agencies can reach it, usually a public or shared page | Its readers are often outside your engineering repo |
+| Brand and visual guidelines | Wherever designers, agencies and partners can reach it, usually a public or shared page | Most of its readers never open a code editor |
 | Design system guide | Published with the component library | Its readers are the people importing the components |
 | Browser support policy | Docs-as-code, next to the browserslist config | The policy and the machine-readable version must not disagree |
 | Rollout plan | Wherever the change is tracked, one per rollout | Short-lived. It is done when the flag is removed |
