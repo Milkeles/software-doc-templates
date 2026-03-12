@@ -6,11 +6,22 @@ Start here. The templates in this area apply to a payments backend, a mobile app
 
 ---
 
-## Groups
+## Groups that apply whatever your methodology
 
 | Group | Use it when |
 |---|---|
-| [`foundations/`](foundations/) | Always. These documents do not depend on how you plan work. Architecture decisions, design docs, runbooks, postmortems, review standards, onboarding. |
+| [`foundations/`](foundations/) | Always. Architecture decisions, design docs, runbooks, postmortems, review standards, onboarding. |
+| [`requirements/`](requirements/) | Before you build. Why the project exists, what to build, and what "fast enough" means. |
+| [`user-documentation/`](user-documentation/) | Someone outside the team uses what you built. Tutorials, how-to guides, reference, installation, troubleshooting. |
+
+These three answer different questions and overlap almost nowhere. Requirements comes before the work, foundations runs alongside it, and user documentation ships with it.
+
+---
+
+## Groups that depend on how you plan work
+
+| Group | Use it when |
+|---|---|
 | [`agile-scrum/`](agile-scrum/) | You work in sprints with a Product Owner and a Scrum Master. |
 | [`kanban/`](kanban/) | You pull work continuously against WIP limits instead of committing to iterations. |
 | [`waterfall/`](waterfall/) | Requirements are fixed by contract or regulation, or a certifying body needs an audit trail. |
@@ -18,6 +29,8 @@ Start here. The templates in this area apply to a payments backend, a mobile app
 | [`shape-up/`](shape-up/) | You fix time and vary scope in fixed cycles, and shape work before betting on it. |
 
 Nothing stops you using more than one. A Scrum team still writes architecture decision records from `foundations/`, and still runs an A3 from `lean/` when a recurring problem needs root-cause work.
+
+Pick at most one from this second table. Pick freely from the first.
 
 ---
 
