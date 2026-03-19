@@ -13,8 +13,11 @@ Start here. The templates in this area apply to a payments backend, a mobile app
 | [`foundations/`](foundations/) | Always. Architecture decisions, design docs, runbooks, postmortems, review standards, onboarding. |
 | [`requirements/`](requirements/) | Before you build. Why the project exists, what to build, and what "fast enough" means. |
 | [`user-documentation/`](user-documentation/) | Someone outside the team uses what you built. Tutorials, how-to guides, reference, installation, troubleshooting. |
+| [`security-and-compliance/`](security-and-compliance/) | You hold anyone's personal data. Several of these are legal obligations, not conventions. |
 
-These three answer different questions and overlap almost nowhere. Requirements comes before the work, foundations runs alongside it, and user documentation ships with it.
+The first three answer different questions and overlap almost nowhere. Requirements comes before the work, foundations runs alongside it, and user documentation ships with it.
+
+Security and compliance is the exception to the rule at the bottom of this page. Elsewhere you skip what does not earn its place; there, check first whether the thing you want to skip is required by an article of the GDPR.
 
 ---
 
