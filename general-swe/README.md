@@ -14,8 +14,11 @@ Start here. The templates in this area apply to a payments backend, a mobile app
 | [`requirements/`](requirements/) | Before you build. Why the project exists, what to build, and what "fast enough" means. |
 | [`user-documentation/`](user-documentation/) | Someone outside the team uses what you built. Tutorials, how-to guides, reference, installation, troubleshooting. |
 | [`security-and-compliance/`](security-and-compliance/) | You hold anyone's personal data. Several of these are legal obligations, not conventions. |
+| [`project-management/`](project-management/) | Someone outside the team commits money or people to a bounded piece of work with an end date. |
 
-The first three answer different questions and overlap almost nowhere. Requirements comes before the work, foundations runs alongside it, and user documentation ships with it.
+The first three overlap almost nowhere. Requirements comes before the work, foundations runs alongside it, and user documentation ships with it.
+
+The last two are conditional on your situation rather than your methodology. Project management applies when work is bounded, sponsored and has an end; most standing product teams can skip everything in it except the risk register.
 
 Security and compliance is the exception to the rule at the bottom of this page. Elsewhere you skip what does not earn its place; there, check first whether the thing you want to skip is required by an article of the GDPR.
 
