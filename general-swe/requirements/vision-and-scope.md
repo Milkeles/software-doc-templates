@@ -145,7 +145,7 @@ Who is affected, what they want, and what they will resist.
 
 **The "attitudes" column earns the table.** A stakeholder who has been burned before behaves differently from one who has not, and that is a project fact, not gossip. Write it factually and without judgement: this document is often read by the people described in it.
 
-For a fuller treatment, see [`stakeholder-map.md`](../project-management/stakeholder-map.md). This section is a summary; do not duplicate the whole analysis here.
+For a fuller treatment, see [`stakeholder-register.md`](../project-management/stakeholder-register.md). This section is a summary; do not duplicate the whole analysis here.
 
 ### 3.2 Project priorities
 
