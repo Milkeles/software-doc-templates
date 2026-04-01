@@ -2,7 +2,7 @@
 
 Documents every software team needs, whatever it builds and however it plans work.
 
-These fifteen templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
+These eighteen templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
 
 Start here before adopting anything from a methodology group.
 
@@ -48,6 +48,9 @@ A document missing these will rot regardless of how well it was written. Pick th
 | [Incident postmortem](incident-postmortem.md) | Users were affected, data was lost, or a human had to intervene | Nothing was learned and nothing was affected | Wiki or incident tool |
 | [Test strategy](test-strategy.md) | The team disagrees about what to test where | One person writes all the tests | Repo |
 | [Code review guidelines](code-review-guidelines.md) | Reviews are inconsistent or slow, or the team is growing | Two people who already agree | Repo |
+| [Branching strategy](branching-strategy.md) | More than one person merges, or you support more than one released version | One person, one branch | Repo, beside the CI config |
+| [Coding standards](coding-standards.md) | A tool cannot enforce the rule and the argument keeps recurring | The formatter already settled it | Repo, beside the lint config |
+| [Contributing guide](contributing-guide.md) | People outside the team send changes | Nobody outside the team can push | Repo, as `CONTRIBUTING.md` |
 | [Onboarding guide](onboarding-guide.md) | You will hire again | You will not | Split: setup in repo, org context in wiki |
 | [Changelog](changelog.md) | Anyone consumes your releases, including other teams | Nothing outside the repo depends on you | Repo root |
 | [Release notes](release-notes.md) | Non-technical users need to know what changed | Your only users read the changelog | Product site or in-app |
@@ -59,7 +62,7 @@ A document missing these will rot regardless of how well it was written. Pick th
 
 ## How these documents feed each other
 
-Fifteen documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
+Eighteen documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
 
 **A decision, from proposal to current state.**
 
@@ -111,7 +114,25 @@ The arrows out of the postmortem are the part teams skip, and skipping them is w
 
 The changelog is a fact record for people integrating with you. Release notes are written for someone who does not know your internals. Same event, two audiences, two documents, and merging them produces one that serves neither.
 
-**The two that sit outside the flow.** The glossary and the code review guidelines are not produced by any event. They exist because a disagreement kept recurring, and they are written the second or third time it recurs, not in advance.
+**How a change gets in.** Four documents describe one path, and each answers a different question about it.
+
+```
+   contributing guide ---> branching strategy ---> coding standards
+        |                        |                       |
+   where do I start,      what do I branch        what will the
+   who do I ask,          from, how long          checks reject
+   what is the rule       may it live
+                                 \                      /
+                                  v                    v
+                            code review guidelines
+                                        |
+                            what a human decides,
+                            and the bar for approval
+```
+
+The split is by enforcement. The coding standards hold what a tool checks; the review guidelines hold what only a person can. Merging them produces a document where nobody can tell which rules block a merge. The branching strategy holds the mechanics, and the contributing guide is the front door that links to all three without repeating any of them.
+
+**The two that sit outside every flow.** The glossary and the code review guidelines are not produced by any event. They exist because a disagreement kept recurring, and they are written the second or third time it recurs, not in advance.
 
 ---
 
@@ -235,7 +256,43 @@ The second thing guidelines buy is speed, and speed is a team property. Google's
 
 On review size, the most cited numbers come from a Cisco study of 2,500 reviews published by SmartBear: 200 to 400 lines per sitting, no more than 60 minutes, defect discovery of 70 to 90 percent in that range. Treat those with the caveat attached. The study is vendor-funded, not peer-reviewed, and twenty years old. It is nonetheless directionally consistent with Google's independent guidance that 100 lines is reasonable and 1,000 is usually too large.
 
-**Where.** In the repo, as `CONTRIBUTING.md` or under `docs/`. The guidelines reference the style guide and lint configuration and must move with them.
+**Where.** In the repo under `docs/`, linked from `CONTRIBUTING.md` rather than pasted into it. The guidelines reference the coding standards and the lint configuration, and must move with them.
+
+### Branching strategy
+
+**When.** More than one person merges to the same repository, or you support more than one released version at a time. Below that, the strategy is "commit to main" and does not need a document.
+
+**Why.** The named strategies are reasoned positions from vendors and practitioners, not results, and treating them as more than that is how teams end up running git-flow while deploying twice a day. Vincent Driessen said as much about his own model in 2020: people "started treating it like a standard of sorts, but unfortunately also as a dogma or panacea", and his advice was to use something simpler under continuous delivery and keep git-flow only for explicitly versioned software.
+
+The strongest available evidence is not about which model you pick. Shihab, Bird and Zimmermann mined post-release failure data from Windows Vista and Windows 7 for ESEM 2012 and found that misalignment between branching structure and *organisational* structure was associated with higher failure rates, by up to 59 and 70 percent respectively. DORA's correlation between short branch lifetimes and delivery performance is real but self-reported and non-causal; Jez Humble, a co-author, states the limit himself.
+
+So the document's job is to fix a number for branch lifetime, name a hotfix path, and make sure no branch is shared by two teams. Those are the parts that pay.
+
+**Where.** In the repo, next to the branch protection settings and CI configuration it describes.
+
+### Coding standards
+
+**When.** A rule cannot be enforced by a formatter or a linter, and the argument about it keeps recurring. If a tool can settle it, configure the tool and write nothing.
+
+**Why.** Almost every rule in a style guide is a coordination convention rather than a finding, and Google says so about its own: the conventions are "sometimes arbitrary". That is not a weakness, since coordination is genuinely worth paying for, but a guide that claims evidence it does not have loses the argument with the first person who checks.
+
+Very little survives checking. The recommendation of 2 to 4 space indentation traces to a single 1983 Pascal study, and the one modern eye-tracking replication found no effect. Comments help by between negative 30 and positive 34 percent depending on the snippet. Developers' stated preferences and their measured reading effort point in opposite directions in both recent studies. Two rules do hold up: **descriptive full words beat abbreviations**, measured on professionals doing defect-finding, and **restyling old code is not worth it**, which the eye-tracking work states directly.
+
+There is also a real disagreement to resolve rather than paper over. PEP 8 says consistency within a module beats consistency with the guide. Google says the opposite, and gives a mechanism: at 100 million lines, uniformity is what makes automated refactoring possible. Which one is right for you depends on whether you run automated changes across repositories.
+
+**Where.** In the repo, in the same commit as the lint configuration. Separated, they drift within a quarter.
+
+### Contributing guide
+
+**When.** People who do not work on the project every day send changes. That includes other teams inside your company, not only outside contributors.
+
+**Why.** It is a router. All five of kubernetes, rust, node, django and Homebrew keep the file between 1 and 4 KB and use it to point at the real documentation, because a complete guide in this position does not get read.
+
+Be careful about what it achieves. No study measures whether adding the file converts more first-time contributors. What is measured is narrower: Steinmacher and colleagues found 58 distinct newcomer barriers, most of them not documentation, and their guided portal "played an important role in guiding newcomers and in lowering barriers related to the orientation and contribution process, whereas it was not effective in lowering technical barriers". Write it to answer "what happens next and who do I ask", and expect nothing from it on the difficulty of the code itself.
+
+The filename matters more than it should. GitHub only shows the Contributing link on the issue and pull request pages when the file is named `CONTRIBUTING`, in the root, `.github/`, or `docs/`.
+
+**Where.** The repository root by default, because that is where people look without being told.
 
 ### Onboarding guide
 
@@ -331,3 +388,8 @@ The claims above come from these. Where they disagree, the disagreement is state
 - Ju, Sajnani, Kelly and Herzig, [A Case Study of Onboarding in Software Teams](https://arxiv.org/abs/2103.05055), ICSE 2021
 - [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org/)
 - [Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org/); [OWASP Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html); SEI, [Threat Modeling: 12 Available Methods](https://www.sei.cmu.edu/blog/threat-modeling-12-available-methods/)
+- Driessen, [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) and its March 2020 note; Hammant, [Trunk Based Development](https://trunkbaseddevelopment.com/); Chacon, [GitHub Flow](https://scottchacon.com/2011/08/31/github-flow.html) (2011), against GitHub's current [flow documentation](https://docs.github.com/en/get-started/using-github/github-flow)
+- Shihab, Bird and Zimmermann, "The Effect of Branching Strategies on Software Quality", ESEM 2012, 301-310; DORA, [2017](https://dora.dev/research/) and 2019 State of DevOps reports, read with their methodology appendices
+- Steinmacher, Conte, Gerosa and Redmiles, "Social Barriers Faced by Newcomers Placing Their First Contribution in Open Source Software Projects", CSCW 2015; Steinmacher, Conte, Treude and Gerosa, "Overcoming Open Source Project Entry Barriers with a Portal for Newcomers", ICSE 2016; [GitHub Open Source Survey 2017](https://opensourcesurvey.org/2017/)
+- [PEP 8](https://peps.python.org/pep-0008/); [Google Style Guides](https://google.github.io/styleguide/); [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html); [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html); [Developer Certificate of Origin 1.1](https://developercertificate.org/)
+- Binkley, Davis, Lawrie, Maletic, Morrell and Sharif, "The impact of identifier style on effort and comprehension", *Empirical Software Engineering* 18(2) (2013), 219-276; Miara, Musselman, Navarro and Shneiderman, "Program indentation and comprehensibility", *CACM* 26(11) (1983), 861-867; Bauer, Siegmund, Peitek, Hofmeister and Apel, "Indentation: Simply a Matter of Style or Support for Program Comprehension?", ICPC 2019
