@@ -8,7 +8,7 @@
 | **Owner** | |
 | **Last reviewed** | YYYY-MM-DD |
 
-*This document settles recurring arguments: what to test, where to test it, and what "enough" means. It is durable and system-wide. A test **plan**, which is project-scoped and carries a schedule, is a different document; see `../waterfall/test-plan.md`.*
+*This document settles recurring arguments: what to test, where to test it, and what "enough" means. It is durable and system-wide. A test **plan**, which is project-scoped and carries a schedule, is a different document; see [`../waterfall/master-test-plan.md`](../waterfall/master-test-plan.md). What a cycle actually found goes in a [test summary report](test-summary-report.md).*
 
 ---
 

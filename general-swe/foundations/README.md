@@ -2,7 +2,7 @@
 
 Documents every software team needs, whatever it builds and however it plans work.
 
-These eighteen templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
+These twenty-one templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
 
 Start here before adopting anything from a methodology group.
 
@@ -47,6 +47,9 @@ A document missing these will rot regardless of how well it was written. Pick th
 | [Runbook](runbook.md) | An alert can fire and a human must act | The response is deterministic (automate it instead) | Repo, rendered where on-call can reach it |
 | [Incident postmortem](incident-postmortem.md) | Users were affected, data was lost, or a human had to intervene | Nothing was learned and nothing was affected | Wiki or incident tool |
 | [Test strategy](test-strategy.md) | The team disagrees about what to test where | One person writes all the tests | Repo |
+| [Test cases](test-case-specification.md) | A person executes the check, or someone outside the team must see what was checked | The test is automated. The code is the specification | Repo, or a test management tool |
+| [Bug report](bug-report.md) | Always, as a form the tracker enforces | Never | Issue tracker, template in `.github/` |
+| [Test summary report](test-summary-report.md) | Someone must decide whether to ship, and it is not the person who ran the tests | The pipeline is the decision | Wiki or the release ticket |
 | [Code review guidelines](code-review-guidelines.md) | Reviews are inconsistent or slow, or the team is growing | Two people who already agree | Repo |
 | [Branching strategy](branching-strategy.md) | More than one person merges, or you support more than one released version | One person, one branch | Repo, beside the CI config |
 | [Coding standards](coding-standards.md) | A tool cannot enforce the rule and the argument keeps recurring | The formatter already settled it | Repo, beside the lint config |
@@ -62,7 +65,7 @@ A document missing these will rot regardless of how well it was written. Pick th
 
 ## How these documents feed each other
 
-Eighteen documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
+Twenty-one documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
 
 **A decision, from proposal to current state.**
 
@@ -131,6 +134,26 @@ The changelog is a fact record for people integrating with you. Release notes ar
 ```
 
 The split is by enforcement. The coding standards hold what a tool checks; the review guidelines hold what only a person can. Merging them produces a document where nobody can tell which rules block a merge. The branching strategy holds the mechanics, and the contributing guide is the front door that links to all three without repeating any of them.
+
+**What testing produces.** Four documents, and the split is by tense.
+
+```
+   test strategy ------> test cases -------> test summary report
+        |                     |                      |
+   standing rules,      what we decided        what we found,
+   written once,        to check, before       written after,
+   argued rarely        the run                read once
+                              |
+                        a case fails
+                              |
+                              v
+                        bug report ---> incident postmortem
+                                        if it reached production
+```
+
+The strategy is durable and answers "what do we test". The cases are the checks themselves. The summary report is a record of one cycle and is never edited afterwards. A team that keeps only the strategy has rules nobody executed; a team that keeps only reports has a history with no reason behind it.
+
+**The bug report is the odd one.** It is the only document here that people outside the team write, often in a hurry, often once. That is why its design is a tracker form rather than a page, and why the measured way to improve reports is to change the form rather than to ask people to try harder.
 
 **The two that sit outside every flow.** The glossary and the code review guidelines are not produced by any event. They exist because a disagreement kept recurring, and they are written the second or third time it recurs, not in advance.
 
@@ -245,6 +268,46 @@ This is a context dispute, not a contest between universal truths. The template 
 Note also that a test strategy and a test plan are different documents. In [ISTQB](https://istqb-glossary.page/test-strategy/) terms, a strategy is organisation- or programme-wide and durable; a plan is project-scoped and carries a schedule and resources. The schedule is the cleanest way to tell them apart. The plan lives in `waterfall/`, where fixed scope makes it useful.
 
 **Where.** In the repo it governs. A test strategy constrains CI configuration and must change with the pipeline.
+
+### Test cases
+
+**When.** A person executes the check by hand, or someone outside the team must later see what was checked. Automated tests do not get a second description in prose; the code is the specification and a copy of it will drift.
+
+**Why.** Not to find more defects, because the evidence says they do not. Itkonen and Mantyla ran a controlled replication with 51 participants on the jEdit editor, having previously run it with 79, and confirmed three findings: "there is no difference in the defect detection effectiveness between ET and TCT", exploratory testing "is more efficient by requiring less design effort", and predesigned test cases "produce more false-positive defect reports". Time spent designing cases in advance buys no additional defects.
+
+The reason to write them anyway is in the same paper: "we recognize that TCT has other benefits over ET in managing and controlling testing in large organizations." Cases exist so that testing can be delegated, audited, repeated on a schedule, and handed over when a person leaves. Those are real needs, and none of them is defect detection.
+
+Which makes the honest instruction unusual: write as few as you can justify, and charter exploratory sessions for everything else. The template's first section is a decision table for exactly that.
+
+The failure mode the same study names is abstraction level. Cases pinned to button positions break on every redesign and stop being run; cases written as "try an invalid input" are executed differently by two people, so a pass means nothing.
+
+**Where.** In the repo beside the tests if they are executable or heading for automation. In a test management tool if results must be recorded per build and shown to someone outside the team. Split across both, the two lists disagree within a release.
+
+### Bug report
+
+**When.** Always, and as a form the tracker enforces rather than a page people are asked to read.
+
+**Why.** This is the best-measured document in the group. Bettenburg and colleagues surveyed 466 people across Apache, Eclipse and Mozilla for FSE 2008, then mined 150,000 reports. Developers ranked steps to reproduce highest at 83 percent, stack traces at 57 percent, test cases at 51 percent. Reporters ranked test cases hardest to supply at 75 percent, steps to reproduce at 51 percent.
+
+The finding that should change your behaviour is the correlation between what developers consider important and what reporters actually provide: **-0.035**, which the authors call a huge gap. But the correlation between what developers consider important and what reporters *believe* is important is **0.839**. Their conclusion: "ignorance of reporters is *not* a reason for the aforementioned information mismatch [...] to a large extent, lacking tool support causes this mismatch."
+
+So the intervention is the form, not the etiquette guide. Make the field required, attach the trace automatically, and stop writing prose asking people to try harder.
+
+Two received ideas do not survive the same study. Duplicates were named a problem by only 10 percent of developers, against 79 percent for errors in the steps to reproduce; the authors write that "duplicates are not really problems. They often add useful information." And report quality is statistically independent of time to fix, at correlations between 0.002 and 0.068, so time-to-close cannot be used as a quality measure.
+
+**Where.** The issue tracker, with the template file in `.github/ISSUE_TEMPLATE/` so the form versions with the code.
+
+### Test summary report
+
+**When.** A person who did not run the tests has to decide whether to ship. If the pipeline makes that decision, you do not need this document.
+
+**Why.** To convert activity into a decision. The report's real content is not counts but claims: which areas you now have confidence in, on what basis, and which have none. The rows that read "not covered" are the ones the reader needs, because an area with no row is read as an area that passed.
+
+Two numbers must be handled carefully. Coverage is not a quality target: Inozemtseva and Holmes generated 31,000 test suites over five systems of up to 724,000 lines, evaluated them by mutation testing, and concluded that coverage "should not be used as a quality target because it is not a good indicator of test suite effectiveness". And session metrics are gameable, which Jonathan Bach said first when he introduced them: a biased manager or a "silver-tongued tester" can distort both the sheets and the debrief.
+
+Where exploratory testing is the main activity, session-based test management gives this report a unit. A session is "an uninterrupted block of reviewable, chartered test effort", roughly ninety minutes, about three per tester per day. Bach's measured breakdown on real work is the number worth carrying into any plan: 61 percent of time went to non-session work, 28 percent to testing, and the rest to setup, bug investigation and opportunity testing.
+
+**Where.** The wiki or the release ticket. It is written once, read around a decision, and then consulted as a record. Its readers frequently do not clone the repository.
 
 ### Code review guidelines
 
@@ -393,3 +456,8 @@ The claims above come from these. Where they disagree, the disagreement is state
 - Steinmacher, Conte, Gerosa and Redmiles, "Social Barriers Faced by Newcomers Placing Their First Contribution in Open Source Software Projects", CSCW 2015; Steinmacher, Conte, Treude and Gerosa, "Overcoming Open Source Project Entry Barriers with a Portal for Newcomers", ICSE 2016; [GitHub Open Source Survey 2017](https://opensourcesurvey.org/2017/)
 - [PEP 8](https://peps.python.org/pep-0008/); [Google Style Guides](https://google.github.io/styleguide/); [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html); [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html); [Developer Certificate of Origin 1.1](https://developercertificate.org/)
 - Binkley, Davis, Lawrie, Maletic, Morrell and Sharif, "The impact of identifier style on effort and comprehension", *Empirical Software Engineering* 18(2) (2013), 219-276; Miara, Musselman, Navarro and Shneiderman, "Program indentation and comprehensibility", *CACM* 26(11) (1983), 861-867; Bauer, Siegmund, Peitek, Hofmeister and Apel, "Indentation: Simply a Matter of Style or Support for Program Comprehension?", ICPC 2019
+- Bettenburg, Just, Schröter, Weiss, Premraj and Zimmermann, "What Makes a Good Bug Report?", FSE-16 (2008), 308-318
+- Itkonen and Mäntylä, "Are Test Cases Needed? Replicated Comparison between Exploratory and Test-Case-Based Software Testing", *Empirical Software Engineering* 19(2) (2014), 303-342; Itkonen, Mäntylä and Lassenius, "Defect Detection Efficiency: Test Case Based vs. Exploratory Testing", ESEM 2007
+- Inozemtseva and Holmes, "Coverage Is Not Strongly Correlated With Test Suite Effectiveness", ICSE 2014, 435-445
+- Bach, J., "Session-Based Test Management", *STQE* 2(6) (November 2000), 32-37
+- [ISO/IEC/IEEE 29119-3:2021](https://www.iso.org/standard/79429.html), read as far as the free preview allows; IEEE Std 829-2008, front matter; Bach, J. (James), [How Not to Standardize Testing](https://www.satisfice.com/blog/archives/1464) (2014) and Bolton, [ISO 29119 FAQ](https://developsense.com/blog/2014/09/iso-29119-questions-and-answers) (2014), for the objections to it
