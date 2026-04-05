@@ -2,7 +2,7 @@
 
 Documents every software team needs, whatever it builds and however it plans work.
 
-These twenty-one templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
+These twenty-five templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
 
 Start here before adopting anything from a methodology group.
 
@@ -60,12 +60,16 @@ A document missing these will rot regardless of how well it was written. Pick th
 | [Threat model](threat-model.md) | You handle credentials, money, personal data, or untrusted input | A prototype with no real data | Repo, beside the design |
 | [Glossary](glossary.md) | The same word means different things to different teams | Everyone shares vocabulary already | Repo |
 | [Deprecation plan](deprecation-plan.md) | Someone depends on something you intend to remove | Nobody outside the team calls it | Repo, announced widely |
+| [Deployment plan](deployment-plan.md) | A release is irreversible, coordinated, or needs a window | The pipeline deploys on green | The release ticket |
+| [Configuration management plan](configuration-management-plan.md) | You cannot say what is running in production and who approved it | Tooling already answers that | Repo, or wiki for a programme |
+| [Interface control document](interface-control-document.md) | An interface crosses a boundary you cannot change unilaterally | Both sides are yours | Repo both parties read, beside the schema |
+| [Data model](data-model.md) | People disagree about what an entity means, or two services write the same table | One service, one obvious schema | Repo, beside the migrations |
 
 ---
 
 ## How these documents feed each other
 
-Twenty-one documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
+Twenty-five documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
 
 **A decision, from proposal to current state.**
 
@@ -154,6 +158,30 @@ The split is by enforcement. The coding standards hold what a tool checks; the r
 The strategy is durable and answers "what do we test". The cases are the checks themselves. The summary report is a record of one cycle and is never edited afterwards. A team that keeps only the strategy has rules nobody executed; a team that keeps only reports has a history with no reason behind it.
 
 **The bug report is the odd one.** It is the only document here that people outside the team write, often in a hurry, often once. That is why its design is a tracker form rather than a page, and why the measured way to improve reports is to change the form rather than to ask people to try harder.
+
+**How a change reaches production.** The change is in; this is what carries it out.
+
+```
+   configuration management plan
+      what counts as a release,
+      what is under control,
+      who may approve
+              |
+              v
+      deployment plan ------> changelog ------> release notes
+      one release, once           |
+              |                   v
+              |             interface control document
+              |             if the release changes an
+              |             agreement someone relies on
+              v
+        incident postmortem
+        when it does not go well
+```
+
+The configuration management plan is standing and answers "what is a release here". The deployment plan is single-use and answers "how does this one go out". Teams that write only the second re-derive the first every time, inconsistently.
+
+**The two documents that describe structure rather than events.** The data model and the interface control document say what the system's data means and what crosses its boundaries. Both are consulted rather than read, both go stale silently, and both are worth writing only where more than one team has an opinion.
 
 **The two that sit outside every flow.** The glossary and the code review guidelines are not produced by any event. They exist because a disagreement kept recurring, and they are written the second or third time it recurs, not in advance.
 
@@ -419,6 +447,58 @@ One page per feature, revisited at each design change, beats a forty-page artefa
 
 **Where.** In the repo as the durable record, and announced through whatever channel your consumers already read. Mark the deprecation in the changelog under `Deprecated` at announcement and under `Removed` at removal, so a consumer scanning versions sees both.
 
+### Deployment plan
+
+**When.** Rarely, and that is the point. Write one when a release contains something irreversible, needs coordination with another party, requires a window, or must be approved outside engineering. If you ship on green several times a day, the pipeline is the plan.
+
+**Why.** To make three decisions while everyone is calm: what has to be true before starting, what counts as failure, and who may call a rollback without asking permission. Under pressure those decisions get made badly or not at all.
+
+The section that earns the document is the list of things that cannot be rolled back. Code rolls back. Data, sent emails and third-party state do not. A team that has not written that list believes it has a rollback plan when it has half of one.
+
+Where canarying is used, be specific. Google's SRE workbook names three requirements, and the one teams miss is "integration of the canary evaluations into the release process": a canary judged by a person glancing at a dashboard is not integrated into anything. Two of its warnings are worth carrying: compare against a concurrent control rather than yesterday, because "time is one of the biggest sources of change in observed metrics", and keep the metric list short, because "too many metrics can bring diminishing returns".
+
+**Where.** With the release ticket. It is dated and single-use. The repeatable procedure it references is a runbook and belongs in the repo.
+
+### Configuration management plan
+
+**When.** You cannot answer, from tooling alone, what is running in production and who approved it. Also whenever a contract or regulator requires the answer in writing.
+
+**Why.** IEEE Std 828-2012 is the most complete published statement of what belongs in this plan, and its most useful sentence is the first line of the normative annex: "The CMP shall include the following either by reference to another document that is a CI or within itself." Everything may be a link, provided the linked thing is itself version-controlled. That is a licence to write one page instead of forty, and it is the difference between a plan that stays true and one that describes a pipeline as it was two years ago.
+
+Treat the standard as a checklist of questions rather than a document structure. Most teams need three of its sections: what is under control, who approves changes, and how anyone finds out what is running.
+
+The gap worth naming is runtime configuration. Traditional configuration management was built for source and deliverables, while the thing that most often changes production behaviour unnoticed is a config value or a feature flag toggled in a console. If those are not in the plan, it is not describing your system.
+
+Note that IEEE lists 828-2012 as Inactive-Reserved. Use it for its content, not as a current mandate.
+
+**Where.** In the repo when it governs one team, because it must change in the same commit as the branch protection and pipeline it describes. In the wiki when it spans several teams and suppliers. Never both.
+
+### Interface control document
+
+**When.** An interface crosses a boundary you cannot change unilaterally: another team with its own roadmap, another company, a contract, or consumers you cannot enumerate. Between two services owned by one team, the schema is enough.
+
+**Why.** IEEE 828 states the reason better than any modern source: "Interfaces represent 'agreements' between different development efforts [...] each interface represents at least three CIs: the interface specification itself, and components on either side of the interface." The specification is a versioned artefact owned jointly, not documentation belonging to the provider. Teams that treat it as the provider's own reference are the teams whose consumers find out about breaking changes in production.
+
+Write the machine-readable schema first. This document holds only what a schema cannot express: who owns each side, what each error means and whether retrying is safe, ordering and delivery guarantees, rate limits, how much notice a breaking change gets, and what happens to the data. Those are what actually break integrations.
+
+On verification, know the boundary. Consumer-driven contract testing is the better mechanism where you can enumerate your consumers, and its authors scope it exactly that way: it "is applicable in the context of either a single enterprise or a closed community of well-known services". If your consumers are anyone with an API key, you cannot collect their contracts, and a published document with a real notice period is the mechanism you have.
+
+**Where.** A repository both parties can read, versioned with the schema, published where consumers actually look. Behind your own SSO, for an external consumer, is the same as unwritten.
+
+### Data model
+
+**When.** People disagree about what an entity means, or two services write the same table, or a newcomer cannot tell which of four tables is authoritative.
+
+**Why.** The migrations already hold the columns. What they cannot hold is meaning, and meaning is what the arguments are about.
+
+Chen's 1976 paper is still the clearest guide to keeping the levels apart. He separates "information concerning entities and relationships which exist in our minds" from the information structure that represents them, and from access-path-dependent storage. Most data modelling disputes are two people arguing at different levels, one asking what a customer is and the other asking about an index.
+
+Two of Chen's smaller points settle recurring arguments. Attributes can belong to a relationship rather than to either entity, and his example is the one teams still get wrong. And whether something is an entity or a relationship "is a decision which has to be made by the enterprise administrator [...] so that the distinction is suitable for his environment", not a fact to be discovered. Recording which way you decided ends the argument permanently.
+
+The section teams omit is what is currently mid-change. Evolutionary database design handles a breaking change with a transition phase where "the database supports both the old access pattern and the new ones simultaneously". During that window the model has two shapes, and a document showing one of them is wrong.
+
+**Where.** In the repo beside the migrations, because it is only true relative to a schema version. Render a copy where analysts and support staff can read it without cloning.
+
 ---
 
 ## What to write first
@@ -461,3 +541,7 @@ The claims above come from these. Where they disagree, the disagreement is state
 - Inozemtseva and Holmes, "Coverage Is Not Strongly Correlated With Test Suite Effectiveness", ICSE 2014, 435-445
 - Bach, J., "Session-Based Test Management", *STQE* 2(6) (November 2000), 32-37
 - [ISO/IEC/IEEE 29119-3:2021](https://www.iso.org/standard/79429.html), read as far as the free preview allows; IEEE Std 829-2008, front matter; Bach, J. (James), [How Not to Standardize Testing](https://www.satisfice.com/blog/archives/1464) (2014) and Bolton, [ISO 29119 FAQ](https://developsense.com/blog/2014/09/iso-29119-questions-and-answers) (2014), for the objections to it
+- IEEE Std 828-2012, *Standard for Configuration Management in Systems and Software Engineering*, read in full, including the normative Annex D. Listed by IEEE as Inactive-Reserved
+- [Google SRE Workbook, "Canarying Releases"](https://sre.google/workbook/canarying-releases/); [Google SRE Book, "Release Engineering"](https://sre.google/sre-book/release-engineering/)
+- Robinson, [Consumer-Driven Contracts: A Service Evolution Pattern](https://martinfowler.com/articles/consumerDrivenContracts.html) (2006)
+- Chen, "The Entity-Relationship Model, Toward a Unified View of Data", *ACM Transactions on Database Systems* 1(1) (March 1976), 9-36; Ambler and Sadalage, [Evolutionary Database Design](https://martinfowler.com/articles/evodb.html)
