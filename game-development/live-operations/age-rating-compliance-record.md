@@ -79,7 +79,7 @@
 
 **A rating disagreement between bodies is not automatically a mistake.** Check whether it traces to a retroactivity policy difference before treating it as an error to fix.
 
-**Verify the label against the live build, not the submission.** The measured 29% compliance rate among games already confirmed to have the mechanic exists precisely because studios treated submission as the finish line.
+**Verify the label against the live build, not the submission.** The 29% compliance rate Xiao (2023, *Royal Society Open Science*) measured among games already confirmed to have the mechanic exists precisely because studios treated submission as the finish line.
 
 **Where this lives:** the same controlled location as the [privacy ledger](privacy-ledger.md), typically owned by legal or compliance and referenced from engineering documentation rather than duplicated into it.
 

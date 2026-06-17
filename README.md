@@ -56,7 +56,7 @@ Start with `general-swe/foundations/`. Those documents apply regardless of area 
 | `game-development/` | Games and interactive media. Design documents, art and audio direction, level design, playtesting, milestone delivery, certification. |
 | `data-engineering/` | Pipelines, warehouses, and models. Data contracts, metric definitions, dataset and model documentation, quality specifications. |
 | `platform-engineering/` | Infrastructure and operations. Service level objectives, on-call practice, disaster recovery, capacity planning, change management. |
-| `ai-assisted-development/` | Working with coding agents and language models. Agent instruction files, task plans, prompt specifications, evaluation plans. |
+| `ai-assisted-development/` | Working with coding agents and language models. Agent instruction files, task plans, task specifications, evaluation plans. |
 
 Within each area, `foundations/` holds documents that do not depend on a methodology. The other folders are named for the methodology they serve.
 
