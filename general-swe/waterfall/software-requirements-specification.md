@@ -200,3 +200,13 @@
 **Approval is the expensive moment.** Once baselined, every correction costs a change request, an impact assessment and an approval. Spend the review time before that line, not after it.
 
 **Where this lives:** a requirements management tool or eQMS if the work is regulated, because approval of record, revision status and a non-obscuring audit trail are required and plain version control does not provide them. Docs-as-code otherwise, where pull request review is the approval record and the diff is the change history.
+
+---
+
+## Related documents
+
+- [`../requirements/vision-and-scope.md`](../requirements/vision-and-scope.md). The document that comes before this one: vision and scope answers why the project exists, this document answers what the software must do
+- [`../requirements/non-functional-requirements.md`](../requirements/non-functional-requirements.md). Fuller treatment of section 11's quality and performance requirements, worth splitting out when the qualities are the hard part
+- [`requirements-traceability-matrix.md`](requirements-traceability-matrix.md). Generated from this document's verification column, never invented afterwards
+- [`master-test-plan.md`](master-test-plan.md). The verification strategy this specification's requirements feed into
+- [`change-request.md`](change-request.md). What every correction costs once this specification is baselined

@@ -121,3 +121,13 @@
 **Do not link the entire wiki.** A newcomer given fifty documents reads none of them. Attach reading to the task that needs it.
 
 **Measure it.** Time to first merged change, and time to first production deploy. Both are easy to get from your existing tools, and both tell you more about onboarding than anyone's recollection of how it went.
+
+---
+
+## Related documents
+
+- [`architecture-overview.md`](architecture-overview.md). Where "what we build and why" sends the reader for the shape of the system
+- [`architecture-decision-record.md`](architecture-decision-record.md). The reading list this guide recommends before anything else, the last ten decisions in order
+- [`runbook.md`](runbook.md). What a new joiner shadows before joining the on-call rota
+- [`service-readme.md`](service-readme.md). Where the first change actually begins, environment setup
+- [`code-review-guidelines.md`](code-review-guidelines.md). What the first change is measured against before it merges

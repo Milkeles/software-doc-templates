@@ -125,3 +125,12 @@
 **Test it by handing it to someone else.** If a colleague cannot execute it without asking you a question, it is not finished. The steps you left out are the ones you no longer notice you know.
 
 **Where this lives:** source in the repository, so it versions with the system and goes through review. Rendered somewhere reachable when the system it describes is down, and linked directly from the alert.
+
+---
+
+## Related documents
+
+- [`incident-postmortem.md`](incident-postmortem.md). What the alert that fired here might turn into, if it meets the trigger
+- [`service-readme.md`](service-readme.md). Where this runbook is linked from, under "operate it"
+- [`deployment-plan.md`](deployment-plan.md). The single release this runbook's procedure should be written once for and referenced by
+- [`branching-strategy.md`](branching-strategy.md). States that a rollback procedure belongs in this document, not there

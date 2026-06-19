@@ -131,3 +131,12 @@
 **Sections you may cut:** decision drivers, options in detail, confirmation. Sections you may not: context, decision, consequences. Those three are Nygard's minimum and every later format keeps them.
 
 **Where this lives:** `docs/decisions/` in the repository that the decision constrains. Decisions spanning several repositories go in a central log, linked from each.
+
+---
+
+## Related documents
+
+- [`technical-design-document.md`](technical-design-document.md). Where the deliberation happens before the durable decision is extracted here
+- [`rfc.md`](rfc.md). The other kind of proposal an accepted ADR can follow
+- [`architecture-overview.md`](architecture-overview.md). What the system looks like now, as opposed to why it got that way
+- [`incident-postmortem.md`](incident-postmortem.md). Sometimes the fix from an incident overturns a decision recorded here

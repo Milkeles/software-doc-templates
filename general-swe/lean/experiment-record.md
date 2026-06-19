@@ -118,3 +118,11 @@
 **Keep the weak experiments distinguishable from the strong ones.** A randomised split with a preset duration and a before-and-after eyeball are both recorded here, and they support very different conclusions. Section 4 exists so a later reader can tell which they are looking at.
 
 **Where this lives:** version control or a wiki, and it must survive. This document's entire value is retrospective. Unlike the [A3](a3.md) and the [value stream map](value-stream-map.md), where the making is the point and the artefact is disposable, here the artefact is the point: it is a prediction preserved past the moment it could be quietly revised.
+
+---
+
+## Related documents
+
+- [`a3.md`](a3.md). Section 5 of the A3 predicts a number the same way this document does; both fail the same way if the prediction is written after the result is known
+- [`value-stream-map.md`](value-stream-map.md). The future-state changes in section 6 are predictions about a queue or handoff; write them up here once tested rather than trusting memory of what was expected
+- [`improvement-kata.md`](improvement-kata.md). Section 5's cycle blocks are this same discipline embedded in a daily routine; use this document on its own when the prediction does not belong to an ongoing kata

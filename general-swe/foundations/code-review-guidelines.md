@@ -126,3 +126,11 @@
 **Measure latency, not throughput.** Time from review request to first response tells you whether the process is working. Counting comments per review does not, and rewarding it produces worse reviews.
 
 **Where this lives:** in the repository, as `CONTRIBUTING.md` or under `docs/`. It references the style guide, the lint configuration and the CI gates, and must change with them.
+
+---
+
+## Related documents
+
+- [`coding-standards.md`](coding-standards.md). What a tool checks, so a reviewer does not have to
+- [`branching-strategy.md`](branching-strategy.md). What has to be true about the branch before a review can start
+- [`contributing-guide.md`](contributing-guide.md). The front door that points a new contributor here

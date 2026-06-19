@@ -107,3 +107,12 @@
 **Monthly is usually right.** Weekly produces noise a team will act on; quarterly is too slow for evolutionary change to feel connected to anything.
 
 **Where this lives:** the wiki, with charts linked from the tool rather than pasted. Changes go to wherever your improvement work is tracked, with an owner.
+
+---
+
+## Related documents
+
+- [`blocker-log.md`](blocker-log.md). Source of the counts and causes summarised in this review's blockers table
+- [`work-item-types.md`](work-item-types.md). Defines the types this review reports separately, so mixed metrics do not hide a problem in the smaller type
+- [`definition-of-workflow.md`](definition-of-workflow.md). Where any change to the start point, states, or SLE agreed at this review gets recorded
+- [`kanban-system-design.md`](kanban-system-design.md). Where the system gets redesigned when a persistent flow problem keeps surviving this review

@@ -82,3 +82,11 @@
 **Review the trend, not the incidents.** Individual blockers get handled by the escalation policy. The value of the log appears at the flow review, where the counts show which boundary to fix.
 
 **Where this lives:** flagged on the board while an item is blocked, so it is visible where decisions are made. The log itself wherever your board tool records it, tallied into the flow review.
+
+---
+
+## Related documents
+
+- [`definition-of-workflow.md`](definition-of-workflow.md). Element 5 sets the policy for marking an item blocked and when it escalates; this log is where that policy gets recorded
+- [`flow-review.md`](flow-review.md). Where the log's counts get summarised by cause, so a single blocker becomes evidence of a boundary worth fixing
+- [`kanban-system-design.md`](kanban-system-design.md). A cause that keeps recurring here is a candidate finding for the next redesign session

@@ -91,3 +91,12 @@
 **Do not ship an empty release note.** A release with nothing user-visible does not need announcing. Publishing one anyway teaches readers that these notes can be skipped.
 
 **Where this lives:** the product site, documentation portal, in-app, or a release email. Not the repository. The audience is not there, the content needs images, and the people who should review it, support and product, do not open pull requests.
+
+---
+
+## Related documents
+
+- [`changelog.md`](changelog.md). What changed, for the audience that reads the repository; this document answers a different question for people who do not
+- [`deprecation-plan.md`](deprecation-plan.md). Where the deprecation named under "action needed" was decided, with its own date and replacement
+- [`deployment-plan.md`](deployment-plan.md). The same release, written for the people executing it rather than customers reading about it
+- [`test-summary-report.md`](test-summary-report.md). What the person deciding to ship was told; this document is for people the decision already reached

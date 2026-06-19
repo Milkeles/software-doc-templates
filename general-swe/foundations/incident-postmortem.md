@@ -137,3 +137,12 @@
 **Review it with people who were not there.** They ask the questions the responders have stopped being able to see.
 
 **Where this lives:** a wiki or incident management tool, not the repository. This is a dated record with a lifecycle, a review meeting, comment threads and a company-wide readership. Git versions text; it does not support discussion or discovery. Keep them all in one searchable place so the next responder can find the last time this happened.
+
+---
+
+## Related documents
+
+- [`runbook.md`](runbook.md). Where an action item becomes a new or fixed step
+- [`architecture-decision-record.md`](architecture-decision-record.md). Where an action item goes if the fix overturns a decision
+- [`test-strategy.md`](test-strategy.md). Where an action item goes if the gap was coverage
+- [`bug-report.md`](bug-report.md). What this document becomes when the failure stayed contained instead of reaching users

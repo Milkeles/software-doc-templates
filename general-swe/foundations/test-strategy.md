@@ -145,3 +145,12 @@
 **Two rules worth stealing.** Google's "size" taxonomy (small tests take no network or filesystem, medium stay on one machine, large may not) is enforceable by tooling in a way that "unit versus integration" is not. And the Beyoncé Rule: if you liked it, you should have put a test on it. Anything not covered by a test may be broken by anyone, and neither side gets to be surprised.
 
 **Where this lives:** in the repository it governs, beside the CI configuration it describes. When the pipeline changes, this document is wrong, and only co-location makes that visible in review.
+
+---
+
+## Related documents
+
+- [`../waterfall/master-test-plan.md`](../waterfall/master-test-plan.md). The project-scoped plan with a schedule; this document is the standing policy it should reference instead of restating
+- [`test-summary-report.md`](test-summary-report.md). What one cycle run against these rules actually found
+- [`test-case-specification.md`](test-case-specification.md). What gets written down as a check, decided by which level this document says a concern belongs at
+- [`../../ai-assisted-development/evaluation/evaluation-plan.md`](../../ai-assisted-development/evaluation/evaluation-plan.md). The counterpart for behaviour that depends on a model's judgment rather than deterministic logic

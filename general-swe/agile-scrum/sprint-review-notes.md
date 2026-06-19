@@ -77,3 +77,12 @@
 **Write it during the session, not after.** Reconstructed reactions become paraphrases of what the team already believed.
 
 **Where this lives:** the wiki, linked from the Sprint in the tracker. The audience is wider than the team and includes people who will not open a repository.
+
+---
+
+## Related documents
+
+- [`sprint-backlog.md`](sprint-backlog.md). Its Sprint Goal is copied at the top of these notes
+- [`definition-of-done.md`](definition-of-done.md). Sets which items are releasable enough to be shown at the review
+- [`product-goal.md`](product-goal.md). Progress toward it is part of the context these notes give stakeholders
+- [`sprint-retrospective.md`](sprint-retrospective.md). What was learned here feeds that event's gather-data stage

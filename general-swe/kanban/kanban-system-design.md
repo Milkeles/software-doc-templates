@@ -129,3 +129,11 @@
 **Redo it when the service changes**, not on a schedule. New demand, a new team boundary, or a persistent flow problem the reviews cannot fix.
 
 **Where this lives:** a wiki. It explains the board rather than operating it, and it is consulted when changing the system, not while pulling work. Archive old versions; the comparison is the useful part.
+
+---
+
+## Related documents
+
+- [`definition-of-workflow.md`](definition-of-workflow.md). The board document that step 6 produces, describing what this session designed
+- [`work-item-types.md`](work-item-types.md). Where the classes of service named in step 5 get their full policy and limits written down
+- [`flow-review.md`](flow-review.md). Supplies the current capability data this session starts from, and is where a persistent problem this design cannot fix gets raised

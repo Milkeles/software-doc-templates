@@ -105,3 +105,13 @@
 **Managers.** If a line manager attends, expect the honest content to disappear, however well-intentioned they are. If they must be there, it is on them to speak least and to visibly act on what they hear.
 
 **Where this lives:** the wiki, keeping the series together so patterns are visible. Actions go to the tracker, always. If your team reliably moves actions to the tracker, you can skip the write-up entirely and keep only the action list; the discussion is the product, not the page.
+
+---
+
+## Related documents
+
+- [`sprint-backlog.md`](sprint-backlog.md). Supplies the Sprint Goal and the changes log this retrospective treats as data
+- [`sprint-review-notes.md`](sprint-review-notes.md). Supplies what stakeholders said, another source for the gather-data stage
+- [`definition-of-done.md`](definition-of-done.md). Names the retrospective as the place to strengthen or weaken it, as a deliberate recorded decision
+- [`team-working-agreement.md`](team-working-agreement.md). Changes to the agreement are proposed and agreed at a retrospective, not unilaterally
+- [`../foundations/incident-postmortem.md`](../foundations/incident-postmortem.md). Where a production incident gets its own record; the retrospective treats it as one data point, not a replacement

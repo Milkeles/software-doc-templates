@@ -181,3 +181,12 @@
 **Watch the calendar, not just the results.** Deemed acceptance clauses and fixed acceptance periods mean that time passing is itself a decision. Track the days remaining as visibly as the pass rate.
 
 **Where this lives:** the plan can live in the test management tool with the scenarios. The signed acceptance record belongs in the contract repository or the eQMS, because it is evidence rather than working material, and it must be findable by someone who has never heard of your test tool.
+
+---
+
+## Related documents
+
+- [`software-requirements-specification.md`](software-requirements-specification.md). The baseline and contract schedule acceptance scenarios are traced against
+- [`master-test-plan.md`](master-test-plan.md). Names acceptance as a test level and sets the entry criteria this plan checks before UAT starts
+- [`requirements-traceability-matrix.md`](requirements-traceability-matrix.md). Where coverage of critical requirements by acceptance scenarios is generated, not asserted
+- [`change-request.md`](change-request.md). Where a defect goes when the system is correct but the business no longer wants the requirement

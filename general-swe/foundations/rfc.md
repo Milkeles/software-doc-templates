@@ -123,3 +123,10 @@
 **RFC or design doc?** Many organisations use the words interchangeably, and that is fine as long as yours picks one meaning and states it. The distinction worth keeping: use this template when the decision needs a record that specific people agreed, by a date. Use the [design document](technical-design-document.md) when you want expert eyes on an approach your own team will decide.
 
 **Where this lives:** in the repository as a pull request when every required approver reviews code, which gives you line comments, version history, and an auditable approval trail with no extra tooling. Use a wiki when product, legal, design or leadership must sign off, because a pull request excludes them. The tooling does not supply the approvers or the deadline; you do.
+
+---
+
+## Related documents
+
+- [`technical-design-document.md`](technical-design-document.md). The document to reach for instead when you want expert eyes rather than a decision with a deadline
+- [`architecture-decision-record.md`](architecture-decision-record.md). Where an accepted RFC's outcome is recorded for good, once the discussion itself stops mattering

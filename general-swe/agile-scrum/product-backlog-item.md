@@ -95,3 +95,13 @@
 **Refinement is an activity, not an event.** The Guide describes it as ongoing and prescribes no meeting, no attendees and no timebox. The often-quoted "no more than 10 percent of capacity" rule was in the 2017 Guide and was removed in 2020; anyone still citing it is citing a superseded document.
 
 **Where this lives:** the tracker. Items are ordered, worked and closed there, and a copy anywhere else will disagree with it within a week.
+
+---
+
+## Related documents
+
+- [`definition-of-done.md`](definition-of-done.md). The every-item bar this item's acceptance criteria are not a substitute for
+- [`product-goal.md`](product-goal.md). What the item's Product Goal field names, and what makes it worth ordering at all
+- [`sprint-backlog.md`](sprint-backlog.md). Where a selected item lands, sized and ready to be worked
+- [`../foundations/technical-design-document.md`](../foundations/technical-design-document.md). Where a Technical item too large or uncertain to size belongs before it goes back into the backlog
+- [`../foundations/architecture-decision-record.md`](../foundations/architecture-decision-record.md). Where a significant technical choice inside an item should be recorded, not buried in Context

@@ -92,3 +92,11 @@
 **Two shapes to recognise.** A *layer cake* splits the work horizontally, front end and back end. The book allows it where the layers are genuinely thin and independent, so treat it as a judgement call rather than a rule. An *iceberg* is a scope with a small visible piece over far more hidden work, and that one is a warning: it will not finish when it looks like it should.
 
 **Where this lives:** your tracker, as list names. Move it there as soon as the scopes hold for two days. A Markdown copy will diverge from the tracker within a week, and then you have two answers to the same question.
+
+---
+
+## Related documents
+
+- [`pitch.md`](pitch.md). What the project row links to; the map names the parts, the pitch shaped the whole
+- [`kick-off-message.md`](kick-off-message.md). What put this project's team on the cycle the scope map is drawn during
+- [`cool-down-guide.md`](cool-down-guide.md). A scope stuck uphill or chowder that keeps growing is what the shaping review there looks back on

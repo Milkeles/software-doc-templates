@@ -107,3 +107,12 @@
 **Freeze it once it is bet on.** From that point the pitch is the input the team was given, and rewriting it destroys the record of what was actually agreed. Changes during the cycle are the team's scope decisions and belong in [the scope map](scope-map.md).
 
 **Where this lives:** a wiki or document tool. It holds sketches, non-engineers read it, it is frozen after the bet, and none of it versions with code.
+
+---
+
+## Related documents
+
+- [`kick-off-message.md`](kick-off-message.md). The frozen pitch gets re-used here to tell the team what they are building
+- [`scope-map.md`](scope-map.md). Where scope decisions made during the cycle get recorded, instead of rewriting the frozen pitch
+- [`cool-down-guide.md`](cool-down-guide.md). Its optional shaping review checks what the pitch's rabbit holes and no-gos missed
+- [`../foundations/technical-design-document.md`](../foundations/technical-design-document.md). For a big, technically dense bet, a fuller design once the team starts, past the pitch's deliberately rough sketch

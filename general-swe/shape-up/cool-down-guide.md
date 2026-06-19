@@ -82,3 +82,11 @@
 **If cool-down keeps getting eaten, the problem is upstream.** Habitual overrun points at shaping or at capacity, and protecting cool-down harder does not fix either. Look at what is producing the overflow.
 
 **Where this lives:** a wiki. It is an agreement about how the team works, it is read by people outside the team when they want to interrupt it, and it does not version with code.
+
+---
+
+## Related documents
+
+- [`pitch.md`](pitch.md). What the shaping review's "what the pitch missed" column checks against for each project that ran
+- [`kick-off-message.md`](kick-off-message.md). Posts the cool-down dates this guide fixes, so the next cycle does not start early
+- [`scope-map.md`](scope-map.md). Where scope hammering happens during the cycle; the shaping review's "what got hammered" question looks back on it

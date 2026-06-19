@@ -132,3 +132,12 @@ The countermeasure is the disposition vocabulary in section 5. Forcing every ope
 **Scale the gate to the risk.** Same gates, same evidence, same attendees for every project is what makes people route work around the process. Vary the required deliverables by criticality and say what the scheme is, so a light gate looks like a decision rather than an exception.
 
 **Where this lives:** the signed record in the eQMS or the project record, because it is evidence of an approval and needs to be findable years later by someone who was not there. Not in a slide deck, and not only in meeting minutes. The working deliverables stay wherever they normally live; the gate record points at them by version.
+
+---
+
+## Related documents
+
+- [`software-requirements-specification.md`](software-requirements-specification.md). What the requirements gate baselines before design may start
+- [`software-design-description.md`](software-design-description.md). What the design gate baselines before implementation is authorised
+- [`requirements-traceability-matrix.md`](requirements-traceability-matrix.md). Source of the coverage numbers a gate reviews as evidence, not as a claim
+- [`change-request.md`](change-request.md). What change control protects once this gate fixes a baseline

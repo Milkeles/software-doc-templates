@@ -81,3 +81,12 @@
 **Automate as much as you can, and mark what you did not.** Every manual check depends on someone remembering under time pressure, which is exactly when checks get skipped. The automated column tells you honestly how much of this is real.
 
 **Where this lives:** in the repository. Most of the criteria are enforced by CI, and when the pipeline changes, this document is wrong. Co-location is what makes that visible in review.
+
+---
+
+## Related documents
+
+- [`product-backlog-item.md`](product-backlog-item.md). Acceptance criteria answer whether one item is right; this document answers whether any item is releasable
+- [`sprint-review-notes.md`](sprint-review-notes.md). An item that fails this cannot be shown at the review, which shapes what those notes can contain
+- [`../foundations/test-strategy.md`](../foundations/test-strategy.md). Where the checks behind each verifiable criterion, especially the automated ones, get designed
+- [`../foundations/changelog.md`](../foundations/changelog.md). One of the example criteria requires a changelog entry, so the two are enforced together

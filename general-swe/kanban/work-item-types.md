@@ -70,3 +70,11 @@
 **Watch for class inflation.** Every expedite lane eventually fills up. The countermeasures are a hard limit, a named approver, and a monthly count that everyone sees. Without those three, expedite becomes the default class within a year and you are back to negotiation.
 
 **Where this lives:** on the board. Types as card types or colours; classes as lanes or tags with their policy written where the card sits. Both must be legible at the moment someone decides what to pull.
+
+---
+
+## Related documents
+
+- [`definition-of-workflow.md`](definition-of-workflow.md). Element 1 asks for the work item unit to be defined, and links back to the types listed here
+- [`kanban-system-design.md`](kanban-system-design.md). Where classes of service are derived from measured demand rather than adopted by default
+- [`flow-review.md`](flow-review.md). Reports metrics per type, so a problem in one type is not hidden inside an average of unlike work

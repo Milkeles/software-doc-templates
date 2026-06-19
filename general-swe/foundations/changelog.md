@@ -99,3 +99,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 **Semantic Versioning has a precondition most teams skip.** It requires a declared public API. Without one, "backward incompatible" has no agreed meaning and your major version is decoration. Say in your README what your public surface is, or say that you do not follow SemVer. Either is honest; claiming it without an API is not.
 
 **Where this lives:** `CHANGELOG.md` at the repository root. Consumers expect it there, and so do the tools.
+
+---
+
+## Related documents
+
+- [`deprecation-plan.md`](deprecation-plan.md). Where a `Deprecated` or `Removed` entry gets its full detail
+- [`release-notes.md`](release-notes.md). The same release, written for someone who does not read this file
+- [`deployment-plan.md`](deployment-plan.md). The release this changelog entry belongs to
+- [`branching-strategy.md`](branching-strategy.md). What each release branch produces

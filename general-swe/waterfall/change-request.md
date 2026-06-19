@@ -124,3 +124,13 @@
 **Count what comes through.** The change log is data about your process, not just about the changes. High volume in one category points at the phase that produced it, and that is a fixable problem rather than a permanent cost.
 
 **Where this lives:** an ITSM or eQMS workflow tool where approvals are immutable and linked to the problem report, per IEC 62304 §8.2.4. An issue tracker is sufficient where nothing is regulated, provided the approval is recorded as a state transition and not as a comment.
+
+---
+
+## Related documents
+
+- [`software-requirements-specification.md`](software-requirements-specification.md). One of the baselines a change request amends once it is approved
+- [`software-design-description.md`](software-design-description.md). The other baseline a change request amends; the impact assessment names which design elements move
+- [`requirements-traceability-matrix.md`](requirements-traceability-matrix.md). Updated on closure so the chain reflects what actually changed
+- [`phase-gate-review.md`](phase-gate-review.md). Fixes the baseline that change control then protects
+- [`../foundations/bug-report.md`](../foundations/bug-report.md). The problem report IEC 62304 §8.2.4 expects a change request to link back to

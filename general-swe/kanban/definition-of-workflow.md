@@ -139,3 +139,13 @@
 **Sections 2 and 6 are the ones teams skip.** Without an agreed start point, cycle time is uncomputable. Without an SLE, you have numbers and no expectation to compare them against, so nothing ever counts as a problem and nothing gets fixed.
 
 **Where this lives:** on the board. WIP limits configured as limits, pull criteria in column descriptions, this document on the board's front page.
+
+---
+
+## Related documents
+
+- [`work-item-types.md`](work-item-types.md). Defines the types and classes that element 1 asks this document to list and link
+- [`blocker-log.md`](blocker-log.md). Where element 5's blocked-work policy gets applied, item by item
+- [`kanban-system-design.md`](kanban-system-design.md). The design session that produces the board this document then describes
+- [`flow-review.md`](flow-review.md). Where changes to this document are agreed and recorded, since a moved start point breaks comparability with past data
+- [`../agile-scrum/definition-of-done.md`](../agile-scrum/definition-of-done.md). The Scrum equivalent, which Kanban splits into per-transition exit criteria and one definition of finished instead of a single checklist

@@ -111,3 +111,12 @@
 **Check it on every onboarding.** The setup steps are the part that breaks silently, and a new joiner is the only person who will notice. Make fixing the README the first pull request they merge.
 
 **Where this lives:** the repository root, as `README.md`. There is no defensible alternative.
+
+---
+
+## Related documents
+
+- [`architecture-overview.md`](architecture-overview.md). Depth on the system shape this file only summarises in five to ten lines
+- [`runbook.md`](runbook.md). What "operate it" links to when an alert actually fires
+- [`code-review-guidelines.md`](code-review-guidelines.md). What "contributing" points to instead of restating the review bar
+- [`onboarding-guide.md`](onboarding-guide.md). Where a new joiner is sent to run this file's setup steps for the first time

@@ -121,3 +121,13 @@
 **Review it when the team changes.** One person joining or leaving changes the norms whether or not the document changes. A new joiner reading it and asking "is this true?" is the best audit available.
 
 **Where this lives:** the wiki, linked from the team's page and from onboarding. It is a social contract that changes without a pull request, and putting it behind code review adds friction exactly where you want none.
+
+---
+
+## Related documents
+
+- [`../foundations/code-review-guidelines.md`](../foundations/code-review-guidelines.md). The pull request conventions this agreement points to rather than restates
+- [`../foundations/architecture-decision-record.md`](../foundations/architecture-decision-record.md). Where a technical decision the team cannot reach by consensus gets recorded
+- [`definition-of-done.md`](definition-of-done.md). Sets the per-item release bar; this agreement covers team practices that sit outside it
+- [`sprint-backlog.md`](sprint-backlog.md). The Sprint Goal this agreement's interrupt rules are weighed against
+- [`sprint-retrospective.md`](sprint-retrospective.md). Where changes to this agreement get proposed and agreed

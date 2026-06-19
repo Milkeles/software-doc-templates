@@ -127,3 +127,13 @@
 **Skip the document entirely** when the approach is unambiguous, when the change is reversible in a day, or when writing it would take longer than building the thing. The test is whether there is a real trade-off to discuss. If not, you are writing an implementation manual.
 
 **Where this lives:** a wiki or collaborative document tool during review, because the value is in the comment threads and the readers may not use pull requests. Link it from the repository. Move the outcomes into the repo when it ships.
+
+---
+
+## Related documents
+
+- [`threat-model.md`](threat-model.md). Where security and privacy get a real analysis, once "cross-cutting concerns" needs more than a line
+- [`architecture-decision-record.md`](architecture-decision-record.md). Where the durable decisions get extracted once the design is implemented
+- [`architecture-overview.md`](architecture-overview.md). What gets updated instead of maintaining this document after ship
+- [`rfc.md`](rfc.md). The other route to the same decision, when named approvers and a deadline matter more than expert review
+- [`../../ai-assisted-development/specification/agent-task-specification.md`](../../ai-assisted-development/specification/agent-task-specification.md). The document to write instead, when the work is a bounded task for an agent to execute in one session rather than a judgment call about approach

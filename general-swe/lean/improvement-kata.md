@@ -109,3 +109,11 @@ The second question comes with four follow-ups that are the best-specified exper
 **PDCA or PDSA.** Rother's material says PDCA throughout, so this template does too. Deming objected to the term, on the grounds that "check" means "to hold back" and that the acronym was not his. That history is in the [group README](README.md) rather than here, because it is a naming argument and this is a working document.
 
 **Where this lives:** version control or a wiki. Sections 3 and 5 hold expectations recorded before the outcome was known, and their only value is that someone can go back and compare. A physical board next to the team works well for the daily cycles, provided the completed cycles get transcribed somewhere they survive.
+
+---
+
+## Related documents
+
+- [`a3.md`](a3.md). Write one A3 first; the kata is what you reach for once that sequence needs to keep running rather than close after one fix
+- [`value-stream-map.md`](value-stream-map.md). Walking the flow to grasp the current condition (section 2) is the same discipline a value stream map applies once, and its future state can supply the kata's first target condition
+- [`experiment-record.md`](experiment-record.md). Section 5's cycle blocks are a compressed version of this document; reach for the standalone record when a prediction needs to outlive the daily cycle log

@@ -184,3 +184,13 @@
 **Residual risk is the deliverable.** A test report saying everything passed tells the release decision nothing it did not assume. A report saying what was not covered, and what could therefore be wrong, is the only part of testing that informs a decision someone is accountable for.
 
 **Where this lives:** a test management tool, linked to the requirements. 29119-3 requires identifier, approval authority, change history and status on every test document, which tools supply natively and a wiki page does not. Test code belongs in the repository with the code it tests.
+
+---
+
+## Related documents
+
+- [`software-requirements-specification.md`](software-requirements-specification.md). The baseline this plan tests against
+- [`requirements-traceability-matrix.md`](requirements-traceability-matrix.md). Where test coverage against the baseline is reported
+- [`user-acceptance-test-plan.md`](user-acceptance-test-plan.md). The acceptance level named in the test levels table, planned separately because business testers run it
+- [`change-request.md`](change-request.md). Where a defect routes when the problem is in the requirement, not the code
+- [`../foundations/test-strategy.md`](../foundations/test-strategy.md). The standing, organisation-wide policy this project plan should reference rather than restate

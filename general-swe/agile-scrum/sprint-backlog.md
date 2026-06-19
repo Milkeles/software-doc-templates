@@ -86,3 +86,12 @@
 **A Sprint with no coherent Goal is a signal, not a formatting problem.** If the work genuinely has no single objective, either the backlog is not ordered against the [Product Goal](product-goal.md), or the team is absorbing unrelated demand and should say so. Inventing a Goal to fill the field hides both.
 
 **Where this lives:** the tracker.
+
+---
+
+## Related documents
+
+- [`product-goal.md`](product-goal.md). What the Sprint Goal should be a step toward, never a summary of
+- [`product-backlog-item.md`](product-backlog-item.md). The items pulled in and marked essential or flexible against the Goal
+- [`sprint-review-notes.md`](sprint-review-notes.md). Copies this Sprint's Goal at the top, so the two stay aligned
+- [`sprint-retrospective.md`](sprint-retrospective.md). Reads the changes log here as data on whether Sprint Goals are holding

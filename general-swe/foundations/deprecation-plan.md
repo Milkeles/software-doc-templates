@@ -128,3 +128,12 @@
 **Say what is lost.** Every migration guide that claims full parity meets a consumer who depended on the one behaviour that changed. Naming it costs you nothing and buys the goodwill you will need when the date arrives.
 
 **Where this lives:** in the repository as the durable record, announced through whatever your consumers already read. Mark it in the [changelog](changelog.md) under `Deprecated` at announcement and under `Removed` at removal, so anyone scanning versions sees both ends.
+
+---
+
+## Related documents
+
+- [`changelog.md`](changelog.md). Where the deprecation is marked at announcement and again at removal
+- [`release-notes.md`](release-notes.md). How the same removal is explained to a non-technical user
+- [`interface-control-document.md`](interface-control-document.md). The agreement this plan is retiring a version of
+- [`data-model.md`](data-model.md). The entity shape this plan may be retiring, if consumers depend on it

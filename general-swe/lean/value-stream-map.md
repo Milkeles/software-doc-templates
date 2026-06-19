@@ -108,3 +108,11 @@
 **Map once, act, then map again.** A map maintained continuously is a document. A map drawn twice with a change in between is a measurement.
 
 **Where this lives:** the drawing stays on paper and gets photographed into the wiki when the work is done. This file holds sections 1 to 6, which are the findings and the plan. Do not redraw the map in a diagramming tool. By the authors' own argument, a polished map has already lost the understanding it was a by-product of.
+
+---
+
+## Related documents
+
+- [`a3.md`](a3.md). A dated, numbered finding from section 5 is the raw material for an A3's issue and background; one map often produces several A3s
+- [`experiment-record.md`](experiment-record.md). The future-state changes in section 6 are predictions; once one is tested against a real split rather than a second walk of the flow, record it as an experiment
+- [`improvement-kata.md`](improvement-kata.md). A single value stream map is a one-time deep look, but walking the flow is the same discipline as grasping the current condition in section 2 of the kata, and the future state can seed the kata's first target condition

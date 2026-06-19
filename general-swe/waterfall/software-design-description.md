@@ -162,3 +162,13 @@
 **IEEE 1016-2009 is aging.** It has no successor we can find, so it remains the current reference, but its viewpoint list predates most cloud and distributed system practice. Add a deployment or resource view where the standard's list falls short; conformance is about addressing the concerns, not about the twelve names.
 
 **Where this lives:** docs-as-code, versioned with the code it describes. This is the document that drifts fastest when separated from the implementation, because every refactor invalidates a little of it. Where a signed approval of record is required, keep the signed release in the eQMS and the working document in the repository, and make the signed version reference a commit.
+
+---
+
+## Related documents
+
+- [`software-requirements-specification.md`](software-requirements-specification.md). What this design must satisfy before the design authority signs it
+- [`requirements-traceability-matrix.md`](requirements-traceability-matrix.md). Checks automatically that every requirement has an element and every element a requirement
+- [`../foundations/architecture-overview.md`](../foundations/architecture-overview.md). The document to write instead if the goal is helping a reader understand the system, not securing a design approval
+- [`../foundations/architecture-decision-record.md`](../foundations/architecture-decision-record.md). Where to record a decision whose consequences reach beyond this design
+- [`phase-gate-review.md`](phase-gate-review.md). The gate that consumes this document's verification approach and authorises implementation

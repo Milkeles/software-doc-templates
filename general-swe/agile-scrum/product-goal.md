@@ -88,3 +88,11 @@
 **One page maximum.** A Product Goal that needs more than a page has become a plan, and a plan is not a target to steer by.
 
 **Where this lives:** the goal itself in the tracker, at the top of the backlog. This document, holding the measures and the assumptions, in the wiki beside the rest of the product context.
+
+---
+
+## Related documents
+
+- [`product-backlog-item.md`](product-backlog-item.md). Names which goal it serves, so an item serving none is a question worth asking
+- [`sprint-backlog.md`](sprint-backlog.md). Holds the Sprint Goal, which should be a step toward this goal, not a restatement of the selected items
+- [`sprint-review-notes.md`](sprint-review-notes.md). Records progress toward this goal as part of the context given to stakeholders

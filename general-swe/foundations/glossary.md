@@ -83,3 +83,12 @@
 **Make it the language of the code.** A definition nobody implements is a preference. When this document and the model disagree, treat it as a defect in one of them and fix it, rather than maintaining a translation layer in everyone's head.
 
 **Where this lives:** in the repository, beside the [architecture overview](architecture-overview.md). It is reference material about the model and must move with it. arc42 makes the glossary chapter 12 for the same reason.
+
+---
+
+## Related documents
+
+- [`architecture-overview.md`](architecture-overview.md). Lives beside this document and shares its terms
+- [`data-model.md`](data-model.md). The model this vocabulary describes
+- [`onboarding-guide.md`](onboarding-guide.md). Where a newcomer meets these terms for the first time
+- [`coding-standards.md`](coding-standards.md). Naming rules are worth little if the domain words behind them are still ambiguous

@@ -64,3 +64,11 @@
 **Post the cool-down dates now.** People plan around cool-down, and publishing the dates at kick-off is what stops the next cycle quietly starting early.
 
 **Where this lives:** wherever the team already talks. It is an announcement with a short life. It needs to be read on the day, not found in two years.
+
+---
+
+## Related documents
+
+- [`pitch.md`](pitch.md). Linked, not restated, in each bet: the pitch is the source the kick-off message points to
+- [`scope-map.md`](scope-map.md). What the team fills in once the cycle it was kicked off into reaches the end of week one
+- [`cool-down-guide.md`](cool-down-guide.md). The cool-down dates this message publishes are set by that agreement

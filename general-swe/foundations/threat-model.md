@@ -111,3 +111,11 @@
 **Sixty minutes with the right people beats a week of writing.** The Manifesto values dialogue over documents. This file records a conversation; it does not substitute for one.
 
 **Where this lives:** in the repository, beside the design it covers, so a design change and its threat model move in one commit. Restrict the path if the content is sensitive. Keep the accepted-risk rows findable, because an auditor will ask who accepted what and when.
+
+---
+
+## Related documents
+
+- [`technical-design-document.md`](technical-design-document.md). Where this model should attach, while the design can still change cheaply
+- [`configuration-management-plan.md`](configuration-management-plan.md). Why supply chain and access control matter there, answered here
+- [`interface-control-document.md`](interface-control-document.md). Where a trust boundary named here usually runs

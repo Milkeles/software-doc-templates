@@ -152,3 +152,13 @@ The maintainable version is typed links in the tools where the artefacts already
 **One matrix per baseline.** Traceability against "the latest requirements" is not traceability, because it cannot be reproduced. Freeze it with the baseline it belongs to.
 
 **Where this lives:** generated from your requirements and test management tools, published as a report at each [phase gate](phase-gate-review.md). If you have no tooling, the honest answer is to buy some or to reduce the number of trace levels until manual maintenance is genuinely feasible. Do not pretend a spreadsheet updated quarterly is a control.
+
+---
+
+## Related documents
+
+- [`software-requirements-specification.md`](software-requirements-specification.md). The baseline every row in this matrix traces from
+- [`software-design-description.md`](software-design-description.md). Source of the design elements this matrix checks against every requirement
+- [`master-test-plan.md`](master-test-plan.md). Where the test cases this matrix links to are produced, and how coverage is reported
+- [`change-request.md`](change-request.md). Records the approved decision behind every deferral or waiver in this matrix
+- [`phase-gate-review.md`](phase-gate-review.md). Consumes this matrix as the coverage evidence for a pass decision

@@ -169,3 +169,12 @@
 **Give it an owner and a review date, or it will rot.** This is the document in the group most likely to be quietly wrong, because nothing fails when it drifts. The review cadence in the header is the only thing standing between it and fiction. If a review passes with no change, update the date anyway: "reviewed and still correct" is information.
 
 **Where this lives:** in the repository, rendered to HTML in CI so non-engineers can read it without cloning.
+
+---
+
+## Related documents
+
+- [`architecture-decision-record.md`](architecture-decision-record.md). The reasoning behind this structure; this document only shows the result
+- [`service-readme.md`](service-readme.md). One level down, for a single deployable component
+- [`glossary.md`](glossary.md). Domain terms used above, kept beside this document so both move together
+- [`data-model.md`](data-model.md). Which service owns which entity, in more detail than section 7 carries
