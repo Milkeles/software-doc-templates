@@ -1,5 +1,7 @@
 # RFC-NNNN: {Title}
 
+*Also called: Request for Comments (RFC).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

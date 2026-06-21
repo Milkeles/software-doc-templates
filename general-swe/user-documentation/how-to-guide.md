@@ -2,6 +2,8 @@
 
 > A recipe. The reader already knows how to cook.
 >
+> **Also called:** task topic (the DITA standard's term), procedure, or how-to article.
+>
 > **What it is for.** Getting a competent user to a result. Procida: "A how-to guide directs the user's work" and "serves the work of the already-competent user, whom you can assume to know what they want to do, and to be able to follow your instructions correctly."
 >
 > **The difference from a tutorial, in one line.** A tutorial is written for someone at study; a how-to guide for someone at work. The tutorial controls the environment and takes responsibility for the outcome. The how-to guide meets the reader in the real world, where "the user has responsibility for getting themselves in and out of trouble".

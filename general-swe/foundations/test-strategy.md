@@ -1,5 +1,7 @@
 # Test strategy: {Team or system}
 
+*Also called: test approach document.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

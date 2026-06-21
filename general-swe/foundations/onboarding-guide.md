@@ -1,5 +1,7 @@
 # Onboarding: {Team or system}
 
+*Also called: new-hire guide, getting-started guide.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

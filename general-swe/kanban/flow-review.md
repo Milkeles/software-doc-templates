@@ -1,5 +1,7 @@
 # Flow review: {period}
 
+*Also called: Service Delivery Review (SDR), from the Kanban Method.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

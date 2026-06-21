@@ -1,5 +1,7 @@
 # Blocker log
 
+*Also called: impediment log, the equivalent Scrum term.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

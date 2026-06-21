@@ -1,5 +1,7 @@
 # Changelog
 
+*Also called: CHANGES, HISTORY.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Keep the two lines below in the file. They tell a reader what conventions you follow, which is what makes the rest scannable.*

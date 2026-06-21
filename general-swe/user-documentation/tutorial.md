@@ -2,6 +2,8 @@
 
 > A lesson. The reader learns by doing something that works.
 >
+> **Also called:** Getting Started Guide, Walkthrough, or Quickstart.
+>
 > **What it is for.** Building basic competence in someone who does not have it yet. Not helping them get a job done. Daniele Procida draws the line sharply: a tutorial's purpose is "to help the pupil acquire basic competence", while a how-to guide's is "to help the already-competent user perform a particular task correctly".
 >
 > **The rule that makes tutorials hard.** Responsibility for success sits with you. Procida: "In a tutorial, responsibility lies with the teacher. If the learner gets into trouble, that's the teacher's problem." A tutorial that breaks at step 9 has failed completely. The reader cannot diagnose it, and will not trust the rest of your documentation.

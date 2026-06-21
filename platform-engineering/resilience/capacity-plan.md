@@ -1,5 +1,7 @@
 # Capacity plan: {System or service}
 
+*Also called: a capacity forecast, or a demand forecast.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

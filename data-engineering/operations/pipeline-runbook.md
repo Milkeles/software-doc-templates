@@ -1,5 +1,7 @@
 # Pipeline runbook: {Alert or pipeline name}
 
+*Also called: playbook, on-call runbook.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

@@ -1,5 +1,7 @@
 # Art bible: {Game name}
 
+*Also called: style guide, art style guide.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

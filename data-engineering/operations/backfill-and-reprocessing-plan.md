@@ -1,5 +1,7 @@
 # Backfill and reprocessing plan: {What and when}
 
+*Also called: a replay plan, the term event-streaming teams use for the same reprocessing.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

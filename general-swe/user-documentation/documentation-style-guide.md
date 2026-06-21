@@ -2,6 +2,8 @@
 
 > The decisions that would otherwise be re-argued in every review.
 >
+> **Also called:** Style Guide, Writing Style Guide, or Content Style Guide.
+>
 > **Do not write this from scratch.** Every serious style guide layers on top of an existing one. Google's developer documentation style guide defers to Merriam-Webster for spelling, *The Chicago Manual of Style* for nontechnical style, and the Microsoft Writing Style Guide for technical style. Red Hat's supplementary guide states that the IBM Style Guide is "the primary source of style guidance" and supplements it. GitLab layers on Microsoft and Google. Your guide should be the thin layer of things your base guide does not settle.
 >
 > **What that thin layer is for.** Terminology specific to your product, the decisions where the major guides genuinely disagree, and structural rules for your document types. Twenty pages restating Chicago is twenty pages nobody reads.

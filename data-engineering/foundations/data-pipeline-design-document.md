@@ -1,5 +1,7 @@
 # Data pipeline design document: {Pipeline name}
 
+*Also called: ETL design document, pipeline design doc.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

@@ -1,5 +1,7 @@
 # Deprecation: {What is being removed}
 
+*Also called: sunset plan, EOL (end-of-life) plan.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

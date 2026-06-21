@@ -1,5 +1,7 @@
 # Privacy ledger: {Game or product}
 
+*Also called: Record of Processing Activities, ROPA, Article 30 record.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

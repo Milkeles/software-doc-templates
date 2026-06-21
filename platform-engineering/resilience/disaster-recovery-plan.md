@@ -1,5 +1,7 @@
 # Disaster recovery plan: {System or service}
 
+*Also called: DR plan, contingency plan (NIST terminology).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

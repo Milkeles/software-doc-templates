@@ -1,5 +1,7 @@
 # Deployment plan: {Release}, live game
 
+*Also called: release plan, rollout plan.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Read the general [deployment plan](../../general-swe/foundations/deployment-plan.md) first. Everything there, go/no-go, sequence, canary evaluation, rollback, applies here. This document adds what a certified platform and a live player base change about it. Use both, or fold this section into the general template rather than maintaining two full copies if your release only touches server-side systems.*

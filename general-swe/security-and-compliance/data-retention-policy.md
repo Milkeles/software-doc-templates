@@ -2,6 +2,8 @@
 
 > How long you keep each thing, and why that number and not another.
 >
+> **Also called:** Data Retention Schedule, Records Retention Policy, or Retention and Disposal Policy.
+>
 > **The GDPR contains no retention periods.** Not one. Article 5(1)(e) says data must be "kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed". Any template that ships with default periods has invented them. The numbers in your policy come from your purposes and from sector law, and you have to derive them.
 >
 > **The wording gives you a second option.** The obligation is on keeping data *in a form which permits identification*. Anonymise the record and the clock stops without deleting the row. That is the escape hatch for analytics, and it is worth designing for.

@@ -1,5 +1,7 @@
 # User acceptance test plan: {System or release}
 
+*Also called: UAT Plan, Acceptance Test Plan.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

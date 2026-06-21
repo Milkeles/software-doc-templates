@@ -1,5 +1,7 @@
 # Game design document: {Game name}
 
+*Also called: GDD, design bible, game bible.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

@@ -1,5 +1,7 @@
 # Deployment plan: {Release}
 
+*Also called: release plan, rollout plan.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

@@ -1,5 +1,7 @@
 # {System} architecture overview
 
+*Also called: architecture document, solution architecture document (SAD).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

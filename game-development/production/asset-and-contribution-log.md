@@ -1,5 +1,7 @@
 # Asset and contribution log: {Project}
 
+*Also called: an asset chain-of-custody log, or an asset provenance log.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *A game's configuration items are not only code. A character model, a music track, a sound effect, and a piece of concept art are all configuration items in the same sense the [configuration management plan](../../general-swe/foundations/configuration-management-plan.md) means the term: work products designated for control, with an owner and a known state. Code has Git to answer "who wrote this and under what licence." Art and audio, especially once a contractor, a vendor, or a stock library is involved, usually have nothing playing that role. This document is that role.*

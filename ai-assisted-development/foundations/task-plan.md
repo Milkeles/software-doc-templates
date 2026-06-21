@@ -1,5 +1,7 @@
 # Task plan: {Repository, package, or workstream}
 
+*Also called: PLAN.md or TODO.md, the filenames several coding agents look for by convention.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *The [agent instructions file](agent-instructions-file.md) says how the project works. This says what to actually work on. Keep the two separate: standing conventions belong in one, the current queue belongs in the other, and mixing them makes both harder to keep short.*

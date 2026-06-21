@@ -2,6 +2,8 @@
 
 > The list of things that could go wrong, each with an owner and something to watch for.
 >
+> **Also called:** Risk Log.
+>
 > **Read this before you build a 5×5 matrix.** The peer-reviewed evidence against ordinal risk matrices is strong, mathematical, and has never been refuted. Cox's 2008 analysis in *Risk Analysis* found they "can correctly and unambiguously compare only a small fraction (e.g., less than 10%) of randomly selected pairs of hazards", can "mistakenly assign higher qualitative ratings to quantitatively smaller risks", and for risks with negatively correlated frequency and severity can be "worse than useless, leading to worse-than-random decisions". Thirteen years later, Sutherland and colleagues still opened their randomised study by noting "there has been little empirical work on their effectiveness in supporting understanding and decision making".
 >
 > **So the score is not the document.** Make **owner**, **trigger** and **response** the load-bearing fields. If you score, use real numbers, not 1 to 5. Section 4 explains why that alone avoids most of the problem.

@@ -2,6 +2,8 @@
 
 > Which browsers you support, what "support" means, and how a browser leaves the list.
 >
+> **Also called:** browser support matrix, or browser compatibility matrix.
+>
 > **The cheapest document in this repository.** One page, and it ends an argument that otherwise recurs every few months in design review, in QA triage, and in every bug report that begins "on Safari 14".
 >
 > **Where it lives.** Docs-as-code, next to the `browserslist` configuration. The prose and the machine-readable version must not disagree, and the only reliable way to keep them together is to keep them together.

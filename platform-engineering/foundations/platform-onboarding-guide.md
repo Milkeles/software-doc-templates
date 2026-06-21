@@ -1,5 +1,7 @@
 # Platform onboarding guide: {Capability name}
 
+*Also called: golden path guide, paved road guide.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

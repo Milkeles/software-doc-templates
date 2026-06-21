@@ -1,5 +1,7 @@
 # Definition of Workflow: {Team or service}
 
+*Also called: workflow policies, Kanban board policies.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

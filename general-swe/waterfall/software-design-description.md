@@ -1,5 +1,7 @@
 # Software design description: {System}
 
+*Also called: SDD, Software Design Document.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

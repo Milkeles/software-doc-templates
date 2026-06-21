@@ -2,6 +2,8 @@
 
 > What happens in the first hour, decided before the first hour.
 >
+> **Also called:** IRP, Incident Response Playbook, or Cyber Incident Response Plan (CIRP).
+>
 > **The reference model changed in 2025.** NIST SP 800-61 Revision 3, *Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile* (April 2025), supersedes Revision 2 and replaces the familiar four-phase lifecycle with the six CSF 2.0 Functions. Almost every article online still describes the four-phase model. It is no longer NIST's.
 >
 > **Rev 3 is not a playbook.** It deliberately removed Rev 2's operational detail to become a risk-management profile. For concrete handling steps, use Rev 2 as the historical source or ISO/IEC 27035-3, and write your own procedures here.

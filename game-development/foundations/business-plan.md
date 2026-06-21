@@ -1,5 +1,7 @@
 # Business plan: {Game or studio}
 
+*Also called: a pitch deck, or a greenlight document when prepared for a publisher.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

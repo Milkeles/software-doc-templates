@@ -1,5 +1,7 @@
 # Sprint {N} retrospective
 
+*Also called: retro, sprint retro.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

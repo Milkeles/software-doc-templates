@@ -2,6 +2,8 @@
 
 > One goal, one actor, and every way the interaction can go.
 >
+> **Also called:** use case document, or use case description.
+>
 > **What it is good at.** Alternate paths. A user story says what someone wants; a use case says what happens when the card is declined, the session expires, the address fails validation, and the third attempt locks the account. Those branches are where the work actually lives, and they are the reason this form still earns its place.
 >
 > **The structure follows Alistair Cockburn**, *Writing Effective Use Cases* (Addison-Wesley, 2000). The field names below are his, and using his names rather than approximations matters, because a reader who knows the form will otherwise mis-read yours.

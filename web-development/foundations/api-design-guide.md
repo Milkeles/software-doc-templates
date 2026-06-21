@@ -2,6 +2,8 @@
 
 > The rules your API follows, written once, so that every endpoint does not become an argument.
 >
+> **Also called:** API style guide, or API design standards.
+>
 > **This is not your API reference.** OpenAPI generates the reference. This document contains the decisions OpenAPI cannot express: what your status codes mean, whether a retry is safe, how you version, what happens when you deprecate. A consumer can read your OpenAPI file and still not know whether it is safe to retry a failed `POST`.
 >
 > **Where it lives.** Docs-as-code, reviewed alongside the API it governs. A guide the API can drift from is not a guide.

@@ -1,5 +1,7 @@
 # Postmortem: {What broke, in the words a user would use}
 
+*Also called: post-incident review (PIR), incident report.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Title by user-visible effect, not by cause. "Checkout unavailable for 43 minutes" beats "Redis connection pool exhaustion". People search by what they saw.*

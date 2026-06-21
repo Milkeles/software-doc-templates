@@ -2,6 +2,8 @@
 
 > Which branches exist, how long they live, and how a change reaches production.
 >
+> **Also called:** branching model, Git workflow.
+>
 > **This is a coordination decision, not a technical one.** The named strategies are reasoned positions published by vendors and practitioners, not findings from studies. They disagree with each other, and two of the four most-cited ones have been quietly changed or withdrawn by their own publishers. Section 6 covers what is actually measured.
 >
 > **Write it down because the cost of ambiguity is merge conflicts and failed releases**, both of which are expensive and both of which a half-page document prevents.

@@ -1,5 +1,7 @@
 # Test summary: {Release or test cycle}
 
+*Also called: test completion report.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

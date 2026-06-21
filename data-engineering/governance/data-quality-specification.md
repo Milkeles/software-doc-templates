@@ -1,5 +1,7 @@
 # Data quality specification: {Dataset or domain}
 
+*Also called: DQ spec, data quality rules.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

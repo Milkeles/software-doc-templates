@@ -1,5 +1,7 @@
 # Bug: {What a user would say went wrong}
 
+*Also called: defect report, issue.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Title by observable effect, not by suspected cause. "Refund button does nothing on orders over 1000 EUR" beats "Race condition in the refund handler". You do not know the cause yet, and the title is what people search.*

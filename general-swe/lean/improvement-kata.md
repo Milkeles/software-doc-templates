@@ -1,5 +1,7 @@
 # Improvement kata: {Process being improved}
 
+*Also called: Toyota Kata.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

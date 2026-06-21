@@ -1,5 +1,7 @@
 # Phase gate review: {Gate name}
 
+*Also called: Gate review, Stage-Gate review.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

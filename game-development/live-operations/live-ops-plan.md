@@ -1,5 +1,7 @@
 # Live-ops plan: {Game}
 
+*Also called: live-ops calendar, content calendar.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

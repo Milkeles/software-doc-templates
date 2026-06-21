@@ -1,5 +1,7 @@
 # Design: {What you are building}
 
+*Also called: design doc.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

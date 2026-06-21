@@ -2,6 +2,8 @@
 
 > A named security step in review, with a short list attached.
 >
+> **Also called:** Secure Code Review Checklist.
+>
 > **Read this before you trust the checklist.** Braz, Aeberhard, Çalikli and Bacchelli ran a randomised experiment with 150 participants, 62% of them professionals, for ICSE 2022. Reviewers told to focus on security were **eight times more likely** to find the planted vulnerability than reviewers given no instruction. Reviewers given a checklist did no better than reviewers given the instruction alone: "a security checklist does not significantly improve the outcome", including the checklist tailored to the vulnerability.
 >
 > **So what is this document for?** The instruction, not the list. The measured effect comes from asking someone to look at security as a distinct task. Keep the list because it distributes knowledge and settles arguments, but do not believe the ticking is what works. A long list is worse than a short one, because it converts an attention task into a clerical one.

@@ -1,5 +1,7 @@
 # Dataset catalog entry: {Dataset name}
 
+*Also called: data catalog listing, metadata record.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

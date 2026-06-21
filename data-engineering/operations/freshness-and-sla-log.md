@@ -1,5 +1,7 @@
 # Freshness and SLA log: {Dataset name}
 
+*Also called: timeliness SLA log, or data SLA log.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *A [data contract](../foundations/data-contract.md) states a target. This log states whether reality matched it. Keep both, the same way the game-development [balance log](../../game-development/live-operations/balance-log.md) keeps a designer's intended value next to what a change actually measured: a promise nobody checks against reality quietly becomes fiction.*

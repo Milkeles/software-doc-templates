@@ -1,5 +1,7 @@
 # Definition of Done
 
+*Also called: DoD.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

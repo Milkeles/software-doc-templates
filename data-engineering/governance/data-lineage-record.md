@@ -1,5 +1,7 @@
 # Data lineage record: {Dataset name}
 
+*Also called: lineage map, lineage graph.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

@@ -2,6 +2,8 @@
 
 > Organised by what went wrong, not by what the reader was trying to do.
 >
+> **Also called:** troubleshooting topic, the DITA standard's term for the same type.
+>
 > **Why it needs its own template.** Diátaxis has no clean home for it. A how-to guide starts from a goal the reader already knows; a troubleshooting reader knows only a symptom. Reference describes the working system, not the broken one. The Good Docs Project ships `troubleshooting` as a separate template, which is a practical acknowledgement of the same gap.
 >
 > **The organising principle.** Entries are indexed by **what the reader sees**, in the exact words they see it. Not by subsystem, not by cause, not by severity. A reader with an error message will paste that message into a search box, and the document either matches it or does not exist.

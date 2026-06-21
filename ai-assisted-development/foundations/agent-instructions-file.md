@@ -1,5 +1,7 @@
 # Agent instructions file: {Repository or package name}
 
+*Also called: AGENTS.md, CLAUDE.md, GEMINI.md, .cursorrules, or copilot-instructions.md, depending on the tool.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *This is loaded at the start of every agent session, in full, whether or not it's relevant to the task at hand. That changes how it should be written: not as thoroughly as possible, but as short as it can be while still preventing mistakes. For every line, ask "would removing this cause the agent to get something wrong?" If the answer is no, cut it.*

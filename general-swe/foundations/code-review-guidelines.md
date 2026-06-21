@@ -1,5 +1,7 @@
 # Code review guidelines
 
+*Also called: pull request (PR) review guidelines, code review checklist.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

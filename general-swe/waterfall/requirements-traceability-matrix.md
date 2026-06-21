@@ -1,5 +1,7 @@
 # Requirements traceability matrix: {System}
 
+*Also called: RTM, Traceability Matrix.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

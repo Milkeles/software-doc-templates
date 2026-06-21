@@ -1,5 +1,7 @@
 # {service-name}
 
+*Also called: README.md.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *One sentence: what this service does and for whom. Written so someone who has never heard of it understands within seconds.*

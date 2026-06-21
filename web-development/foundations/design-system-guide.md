@@ -2,6 +2,8 @@
 
 > How to use the component library, how to contribute to it, and what happens when it changes.
 >
+> **Also called:** a pattern library, the older term for much of the same ground.
+>
 > **Not the same as your component reference.** Storybook or a docs site shows each component's props and renders it. This document covers what a props table cannot: which component to reach for, when to build your own instead, how a change gets in, and what a version bump means for the twelve teams importing it.
 >
 > **Not the same as your [brand and visual guidelines](brand-and-visual-guidelines.md).** Those carry direction: logo, palette, type, imagery. This carries implementation: components, tokens, contribution, versioning. Different readers. A marketing designer needs the first and will never open this. GDS, IBM, Salesforce, Mozilla and Shopify all keep the two apart; the GOV.UK Design System contains no logo guidance at all.

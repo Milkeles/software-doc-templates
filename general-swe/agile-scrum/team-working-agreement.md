@@ -1,5 +1,7 @@
 # {Team} working agreement
 
+*Also called: team charter, team norms.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

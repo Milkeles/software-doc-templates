@@ -1,5 +1,7 @@
 # Experiment: {What we think is true}
 
+*Also called: experiment card, hypothesis log.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

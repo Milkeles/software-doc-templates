@@ -1,5 +1,7 @@
 # Agent task specification: {Task name}
 
+*Also called: a task spec, or a task brief.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Written to be handed to an agent in a single session, with no back-and-forth needed to fill gaps. If you find yourself wanting to add a caveat while the agent is already working, that caveat belongs here instead, written in before the session starts.*

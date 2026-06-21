@@ -1,5 +1,7 @@
 # Eval run log: {Feature or agent behavior}
 
+*Also called: eval log.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

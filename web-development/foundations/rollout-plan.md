@@ -2,6 +2,8 @@
 
 > One page, written before a risky change reaches users, saying how it gets there, how you will know it is going wrong, and how you turn it off.
 >
+> **Also called:** a launch plan, or a release plan.
+>
 > **Short-lived by design.** A rollout plan is finished when the flag is removed. It is not a document you maintain. If you find yourself updating one that is six months old, the rollout stalled and that is the real problem.
 >
 > **When to write one.** Not for every change. Write one when the change is hard to reverse, touches money or data, changes something users have learned, or you genuinely do not know how it will behave under real traffic. Most deployments need none of this.

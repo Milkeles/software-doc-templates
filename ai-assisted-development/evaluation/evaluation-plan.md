@@ -1,5 +1,7 @@
 # Evaluation plan: {Feature or agent behavior}
 
+*Also called: eval plan.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

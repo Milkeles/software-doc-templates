@@ -1,5 +1,7 @@
 # Service catalog entry: {Capability name}
 
+*Also called: software catalog entry, catalog entity (Backstage terminology).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

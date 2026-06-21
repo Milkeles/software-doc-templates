@@ -1,5 +1,7 @@
 # Patch notes: {Version or date}
 
+*Also called: release notes, changelog.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Read the general [release notes](../../general-swe/foundations/release-notes.md) template first: the discipline of writing for the reader, not for yourself, leading with the benefit, holds entirely. This adds two things a typical software release rarely has: a balance section that has to explain a tuning decision to a player who feels it, and a platform-parity note when certification means not everyone gets this patch on the same day.*

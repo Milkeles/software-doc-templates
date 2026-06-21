@@ -2,6 +2,8 @@
 
 > The document that authorises the project and names who may spend on it.
 >
+> **Also called:** Project Initiation Document (PID) in PRINCE2 environments.
+>
 > **One job, and it is not description.** PMI's definition, unchanged across five editions of the PMBOK Guide: "A document issued by the project initiator or sponsor that formally authorizes the existence of a project and provides the project manager with the authority to apply organizational resources to project activities." Two things in one sentence. It makes the project exist, and it gives someone authority. Everything else in the charter is supporting material.
 >
 > **If it does not authorise anything, it is a [project brief](project-brief.md).** That is the cleanest distinction available from a primary source: PMBOK's charter definition contains "formally authorizes" and "authority"; its brief definition contains neither.

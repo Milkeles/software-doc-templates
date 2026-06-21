@@ -2,6 +2,8 @@
 
 > The rules about how code in this repository is written, and which tool enforces each one.
 >
+> **Also called:** style guide, coding conventions.
+>
 > **Most of this document should not exist.** Anything a formatter can fix belongs in the formatter's config, and anything a linter can detect belongs in the linter's config. What is left is the small set of decisions a tool cannot check, and that set is what you write down.
 >
 > **Justify rules as coordination decisions, not as findings.** Google says its own conventions are "sometimes arbitrary", and that is the honest framing. Section 5 lists the very few style claims with measured support behind them, and the larger number that are folklore.

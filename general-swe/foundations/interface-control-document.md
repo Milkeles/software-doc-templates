@@ -1,5 +1,7 @@
 # Interface: {Provider} to {Consumer}
 
+*Also called: ICD (interface control document).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

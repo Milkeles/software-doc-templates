@@ -1,5 +1,7 @@
 # Data model: {System or domain}
 
+*Also called: logical data model, entity-relationship model.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

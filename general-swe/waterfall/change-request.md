@@ -1,5 +1,7 @@
 # Change request: {CR-ID}
 
+*Also called: Request for Change (RFC), Change Order.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

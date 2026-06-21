@@ -1,5 +1,7 @@
 # Test cases: {Feature or area}
 
+*Also called: test case document, test scripts.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

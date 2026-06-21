@@ -2,6 +2,8 @@
 
 > Who can affect this project or be affected by it, what each one actually wants, and who owns the relationship.
 >
+> **Also called:** stakeholder analysis, though section 1 explains why register and analysis are not quite the same thing.
+>
 > **Why "register" and not "map".** The map is the grid you draw from the register. The register is the data, and it is the part that survives contact with the project. PMBOK 7's definition is one sentence but it sets two obligations: the register "records information about project stakeholders, which includes an **assessment** and **classification**". A list of names satisfies neither.
 >
 > **The famous grid has no evidence behind it, and it is miscredited.** The power/interest grid is routinely attributed to Mendelow (1981). That paper plots **power against environmental dynamism**, for the purpose of allocating environmental scanning effort, and the word "interest" does not appear in it once. Section 4 covers what to use instead and what the grid is still good for.

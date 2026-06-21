@@ -2,6 +2,8 @@
 
 > An ACR is a completed VPAT. The VPAT is a blank template published by the Information Technology Industry Council (ITI); once you fill it in with findings about your product, the result is an Accessibility Conformance Report.
 >
+> **Also called:** a VPAT, or VPAT report.
+>
 > **Who reads this.** Procurement officers and accessibility reviewers at organisations deciding whether to buy your product. Not your engineers. Write it for someone who has your competitor's ACR open in the next tab.
 >
 > **Which edition.** VPAT 2.5Rev (April 2025) ships four editions: WCAG, Section 508 (US federal), EU (EN 301 549), and INT (all three combined). Pick the smallest one that covers the markets you sell into. INT is longer to fill in and longer to read.

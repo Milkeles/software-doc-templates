@@ -2,6 +2,8 @@
 
 > Why this project exists, what success looks like, and what it will not do.
 >
+> **Also called:** Vision and Scope Document (VSD).
+>
 > **Written before requirements, not alongside them.** Every later argument about whether a feature belongs is settled here or nowhere. A team that skips this document does not avoid the decisions; it makes them one feature at a time, inconsistently, in review meetings.
 >
 > **The structure below follows Karl Wiegers.** *Software Requirements*, 3rd edition (Wiegers and Beatty, Microsoft Press, 2013), and its published Vision and Scope template. It is the most widely used structure for this document and the section order is his. The guidance under each heading is not.

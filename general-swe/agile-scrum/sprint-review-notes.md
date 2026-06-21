@@ -1,5 +1,7 @@
 # Sprint {N} review
 
+*Also called: sprint demo.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

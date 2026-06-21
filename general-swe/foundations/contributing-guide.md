@@ -2,6 +2,8 @@
 
 > How someone who does not work here gets a change accepted.
 >
+> **Also called:** CONTRIBUTING.md, contribution guidelines.
+>
 > **It is a router, not a manual.** All five of kubernetes, rust, node, django and Homebrew keep this file between 1 and 4 KB and use it to point at the real documentation. The instinct to make it complete is the instinct that makes it unread.
 >
 > **The filename and location are load-bearing.** GitHub only renders the "Contributing" link on the new-issue and pull-request pages when the file is named `CONTRIBUTING.md` and sits in one of three specific places. Section 1 has them.

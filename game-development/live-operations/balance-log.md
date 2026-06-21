@@ -1,5 +1,7 @@
 # Balance log: {System, e.g. weapons, economy, matchmaking}
 
+*Also called: tuning log.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *A published academic definition of a game metric: "a quantitative measure of one or more attributes of one or more objects that operate in the context of games" (Drachen, Seif El-Nasr and Canossa, in* Game Analytics: Maximizing the Value of Player Data*, Springer, 2013). The same source stresses that a metric is meaningless without stating what it is a function of, usually time or build version. This log exists so "why is this value 0.85" has a written answer that names the metric, the build it was measured against, and the reasoning, instead of living only in one designer's memory.*

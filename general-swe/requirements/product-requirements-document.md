@@ -2,6 +2,8 @@
 
 > What to build and why, for the team building it.
 >
+> **Also called:** PRD, or product spec.
+>
 > **Read this before you use it.** The PRD is the least standardised document in this repository. There is no ISO standard, no IEEE standard, no PMI or IIBA definition. Every published PRD template is somebody's house style, including this one. Anyone who tells you there is a correct PRD structure is describing their previous employer.
 >
 > **A respected objection exists and you should hear it.** Marty Cagan has argued against the document form for twenty years. In "Revisiting the Product Spec" (2006) he wrote that "most specs take too long to write, they are seldom read, they don't provide the necessary detail", and that "it is all too easy for the mere existence of the spec to serve as a false indicator to management and the product team". His alternative is direct: "there's only one form of spec that can deliver on these requirements, and that is the high-fidelity prototype." In "The End of Requirements" (2013) he went further: "Most requirements are not actually requirements, and the rest are better thought of as constraints."

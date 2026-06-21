@@ -1,5 +1,7 @@
 # ADR-NNNN: {Short title stating the decision}
 
+*Also called: Architecture Decision Record (ADR), decision record.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Title the decision, not the topic. "Use Postgres for the ledger" beats "Database choice". A reader scanning a list of forty ADRs should learn the outcome from the title alone. Number files sequentially and never renumber: `0007-use-postgres-for-the-ledger.md`.*

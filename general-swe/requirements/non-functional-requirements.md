@@ -2,6 +2,8 @@
 
 > How well the system must work, stated so that someone can test it.
 >
+> **Also called:** NFRs, quality attributes, or quality requirements.
+>
 > **The problem this solves.** Functional requirements get written because someone asks for them. Quality attributes do not, so they arrive as adjectives in a meeting, get agreed by everyone, and mean something different to each person. "The system must be fast" has never failed a review and has never been testable.
 >
 > **Two sources do the work here.** ISO/IEC 25010:2023 tells you which qualities exist, so you check yourself against a list instead of remembering. The six-part quality attribute scenario from Bass, Clements and Kazman, *Software Architecture in Practice* (4th edition, Addison-Wesley, 2021), tells you how to state one so it can be verified.

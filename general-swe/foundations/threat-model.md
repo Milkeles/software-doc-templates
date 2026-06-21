@@ -1,5 +1,7 @@
 # Threat model: {Feature or system}
 
+*Also called: STRIDE analysis, security threat model.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

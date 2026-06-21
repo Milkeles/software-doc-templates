@@ -1,5 +1,7 @@
 # SLO document: {Service name}
 
+*Also called: SLO spec, SLO definition document.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

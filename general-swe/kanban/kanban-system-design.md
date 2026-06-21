@@ -1,5 +1,7 @@
 # Kanban system design: {Service}
 
+*Also called: STATIK, the Systems Thinking Approach to Introducing Kanban.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

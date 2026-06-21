@@ -1,5 +1,7 @@
 # Master test plan: {System or project}
 
+*Also called: Master Test Plan (MTP).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

@@ -2,6 +2,8 @@
 
 > The assessment you must finish before the processing starts, not after.
 >
+> **Also called:** DPIA, or Privacy Impact Assessment (PIA) outside the EU.
+>
 > **Why this name.** "DPIA" is the legal term in GDPR Article 35. "PIA" is the generic term used outside the EU and in most of the academic literature. Use the legal name in a document that has legal effect.
 >
 > **The timing is the obligation.** Article 35(1): where processing is "likely to result in a high risk to the rights and freedoms of natural persons", the controller shall, **"prior to the processing"**, carry out an assessment. A DPIA written after launch is not a late DPIA. It is a missed one.

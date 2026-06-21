@@ -1,5 +1,7 @@
 # Configuration management plan: {System or programme}
 
+*Also called: CM plan, SCMP (software configuration management plan).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

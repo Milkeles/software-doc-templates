@@ -1,5 +1,7 @@
 # {Product} {version or date}
 
+*Also called: what's new, release announcement.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 *Audience: people who use the product and do not read your repository. Customers, support staff, sales, internal users of a platform.*

@@ -1,5 +1,7 @@
 # Value stream map: {Product family}
 
+*Also called: VSM.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

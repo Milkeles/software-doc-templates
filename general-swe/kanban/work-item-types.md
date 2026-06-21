@@ -1,5 +1,7 @@
 # Work item types and classes of service
 
+*Also called: issue types, ticket types.*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

@@ -1,5 +1,7 @@
 # Sprint {N} backlog
 
+*Also called: iteration backlog, in frameworks that use "iteration" instead of "sprint" (e.g., SAFe).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

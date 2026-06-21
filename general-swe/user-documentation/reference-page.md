@@ -2,6 +2,8 @@
 
 > The information on the back of the packet. Complete, accurate, and boring on purpose.
 >
+> **Also called:** reference topic (the DITA standard's term), or reference documentation.
+>
 > **What it is for.** Describing the machinery. Procida's summary of the type: it exists "to describe the machinery", it answers "What is…?", and its form is "dry description". A reader arrives knowing what they want and needing one fact.
 >
 > **The one quality that matters.** Correctness. Uddin and Robillard surveyed 323 software professionals for *IEEE Software* (2015) and found the three severest documentation problems were "ambiguity, incompleteness, and incorrectness of content", concluding that "the most pressing problems were related to content, as opposed to presentation". Six of the ten problems they catalogued were rated blockers that pushed developers to a different API.

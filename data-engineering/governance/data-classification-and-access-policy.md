@@ -1,5 +1,7 @@
 # Data classification and access policy: {Dataset, domain, or warehouse}
 
+*Also called: information classification and handling policy (the ISO 27001 term).*
+
 *Italic text is guidance. Delete it as you fill each section in.*
 
 | | |

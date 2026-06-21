@@ -2,6 +2,8 @@
 
 > What the brand looks like and how to use it correctly, for designers, marketers, agencies and partners.
 >
+> **Also called:** brand guidelines, visual identity guidelines, or a brand book.
+>
 > **On the name.** This document goes by several: brand guidelines, visual identity guidelines, brand book, or (IBM) a design language. There is no standard name. Avoid calling it a "style guide" alone: in a web team that usually means the *editorial* style guide, the A-to-Z of word choice and grammar. GOV.UK, for example, uses "style guide" exclusively for editorial guidance and calls this document "brand guidelines". Mozilla's `/styleguide/` URL now redirects to `brand.mozilla.com`.
 >
 > **Not the same as your [design system guide](design-system-guide.md).** That one is implementation: components, tokens, contribution, versioning, read by developers importing components. This one is direction, and much of its audience never opens a code editor.
