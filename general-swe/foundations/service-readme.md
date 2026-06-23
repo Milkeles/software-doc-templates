@@ -4,6 +4,8 @@
 
 *Italic text is guidance. Delete it as you fill each section in.*
 
+*This template is for a service your team owns and can be paged for: something with an on-call rotation behind it. Publishing an open-source library or tool for outside users instead? This shape does not fit. Skip the owner/on-call/tier table below. Lead with install steps, a usage example, and a license, because the reader you are writing for is not on your team and is not getting paged.*
+
 *One sentence: what this service does and for whom. Written so someone who has never heard of it understands within seconds.*
 
 > **Example.** Authorises card payments for the retail checkout and records them in the ledger.

@@ -257,6 +257,8 @@ Note that the naming is not settled in the industry. Several well-known engineer
 
 **Where.** Repository root. Nowhere else is defensible.
 
+**Note.** This template assumes a team-owned service with on-call behind it. A public library or tool needs a different shape: install steps, a usage example, and a license, not an owner-and-tier table. See the note at the top of the template.
+
 ### Runbook
 
 **When.** An alert can fire and a human must decide something. If every alert has a documented response, on-call becomes a job that can be handed over. If it does not, on-call is a job only the author can do.
