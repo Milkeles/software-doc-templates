@@ -120,7 +120,7 @@
 
 **If it is a deterministic list of commands, automate it and delete the runbook.** Anything a person executes without deciding is a script waiting to be written. The steps that survive are the ones needing judgement.
 
-**Runbook, playbook, checklist.** AWS distinguishes a runbook (a known procedure for a known outcome) from a playbook (an investigation procedure for a situation you do not yet understand). Google SRE uses the words in roughly the opposite sense. Pick one meaning inside your organisation and write it down; do not assume a new joiner shares yours. This template covers both, with diagnosis before remediation.
+**Runbook, playbook, checklist.** AWS distinguishes a runbook (a known procedure for a known outcome) from a playbook (an investigation procedure for a situation you do not yet understand). Google's SRE materials do not keep that split at all: their "playbook" alone covers both diagnosis and remediation. Pick one meaning inside your organisation and write it down; do not assume a new joiner shares yours. This template covers both, with diagnosis before remediation.
 
 **The known and the unknown.** Charity Majors argues that in distributed systems you rarely see the same failure twice, so investment belongs in observability rather than pre-written procedure. She is right about novel failures. Runbooks earn their place on the recurring and the procedural, and as the way on-call knowledge survives people leaving. Write them for those; do not pretend they cover the rest.
 
