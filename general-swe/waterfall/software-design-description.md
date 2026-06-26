@@ -174,3 +174,4 @@
 - [`../foundations/architecture-overview.md`](../foundations/architecture-overview.md). The document to write instead if the goal is helping a reader understand the system, not securing a design approval
 - [`../foundations/architecture-decision-record.md`](../foundations/architecture-decision-record.md). Where to record a decision whose consequences reach beyond this design
 - [`phase-gate-review.md`](phase-gate-review.md). The gate that consumes this document's verification approach and authorises implementation
+- [`../foundations/technical-design-document.md`](../foundations/technical-design-document.md). The same job, done at ordinary weight: pick this one instead when there is no phase gate, regulator, or auditor requiring a signed baseline before code starts

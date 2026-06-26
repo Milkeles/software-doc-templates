@@ -139,3 +139,4 @@
 - [`architecture-overview.md`](architecture-overview.md). What gets updated instead of maintaining this document after ship
 - [`rfc.md`](rfc.md). The other route to the same decision, when named approvers and a deadline matter more than expert review
 - [`../../ai-assisted-development/specification/agent-task-specification.md`](../../ai-assisted-development/specification/agent-task-specification.md). The document to write instead, when the work is a bounded task for an agent to execute in one session rather than a judgment call about approach
+- [`../waterfall/software-design-description.md`](../waterfall/software-design-description.md). The same job, done at gate weight: pick this one instead when a phase gate, regulator, or auditor has to sign off on the design before code starts
