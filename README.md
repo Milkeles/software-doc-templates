@@ -74,15 +74,7 @@ Documentation supports development. When a document stops helping the team build
 
 Contributions are welcome. The bar is high on purpose: a resource about writing well has to be written well.
 
-**Raise an issue first.** Explain the problem or the addition and the reasoning behind it — what teams do today, why it falls short, and what the new or changed document would fix.
-
-**Follow the research discipline.** Templates here are researched, not remembered. Find what experienced teams actually use, pull from multiple independent sources, cross-check them against each other, and drop anything a source can't support. A single unsourced claim is a reason to keep researching, not to ship. Cite sources in the pull request description.
-
-**Follow the writing principles.** Write for understanding, not to impress. Put the important information first. Use plain language. Short sentences, short paragraphs, active voice. Be specific. Say what the reader gains, not just what a thing is. Cut every word that doesn't change the meaning.
-
-**Keep pull requests focused.** One change per pull request. A new template is one pull request; rewriting a README is another.
-
-**Explain your commits.** Say *why* the change is being made, not just what changed. "Add threat model template" tells a reader nothing they can't see in the diff. "Add threat model template so teams have a security document short enough to actually finish" tells them the reasoning.
+Raise an issue before opening a pull request, research before you write, and keep each pull request to one change. [`CONTRIBUTING.md`](CONTRIBUTING.md) has the full detail — the research discipline, what a template and a group README must contain, and the writing principles every committed word follows.
 
 ---
 
