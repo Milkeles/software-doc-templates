@@ -66,17 +66,16 @@ Combinations give the categories:
 
 **"Dangerous" is why this model is worth the extra column.** Power and urgency without legitimacy names the stakeholder who can block you, wants it immediately, and has no proper claim. No power/interest grid has an equivalent cell, and every experienced team recognises the person.
 
-**What the evidence supports.** Agle, Mitchell and Sonnenfeld tested the model against data from CEOs of 80 large US firms in 1999. All three attributes significantly predicted salience, and **urgency was the strongest predictor**. Later studies validated it across manufacturing firms in Spain, sporting event committees and environmental accidents.
+**What the model is good for.** It predicts who actually gets attention, and it has held up when tested in settings well outside software. Of the three attributes, urgency does the most work — the stakeholder who wants it *now* gets seen, ahead of the one with more power who is content to wait. That is worth knowing, because it is also how your project gets captured by whoever shouts.
 
-**What it does not support**, and this is usually omitted: the same study found **no link between stakeholder salience and financial performance**. The model predicts who managers pay attention to. It does not show that paying attention makes money.
+**What it will not do for you**, and this is usually left out: classifying stakeholders carefully has never been shown to improve any outcome that matters. The model describes where attention goes. It does not promise that directing attention well makes the project succeed. Use it to notice who you are ignoring, not as evidence that the exercise paid for itself.
 
-**Known criticisms**, all worth carrying:
+**Known limits**, all worth carrying:
 
-- It measures *perceived* salience, not actual salience. Currie, Seaton and Wesley proposed involving less biased third parties in identification for this reason.
-- It ignores **fringe stakeholders** who currently hold none of the three attributes but will (Hart and Sharma).
-- It is not normative enough to guide prioritisation in a crisis (Pajunen).
-- It says nothing about *what strategies to use* once you have classified someone (Jawahar and McLaughlin).
-- Salience is **gamed, not observed**. Aaltonen and colleagues catalogued eight strategies stakeholders use to raise their own salience. Urgency in particular is manufacturable.
+- It records who *you think* matters, not who does. If the register is filled in by one person it records one person's blind spots. Have someone outside the project read it.
+- It ignores the stakeholder who holds none of the three attributes today and will hold all of them next quarter. Regulators and journalists arrive this way.
+- It will not tell you who to call first in a crisis, and it says nothing about *how* to handle anyone once you have classified them. That is what the engagement plan is for.
+- Salience is **gamed, not observed**. Stakeholders have plenty of ways to make themselves look more urgent than they are, and urgency is the easiest of the three to manufacture. A sudden escalation is a claim, not a measurement.
 
 Note also that the strongest published review of the model is by its own authors, twenty years on. Treat the existence of the validating studies as reliable and the framing as partisan.
 
@@ -86,16 +85,11 @@ Note also that the strongest published review of the model is by its own authors
 
 Use it if it helps a conversation. Do not present it as evidence-based, and do not credit it to Mendelow.
 
-Mendelow's 1981 ICIS paper builds a matrix of **power against dynamism**, and its output is how much environmental scanning effort to spend on each quadrant, not "manage closely" and "keep informed". His own words: "a grid may be constructed using Power and Dynamism as the two axes… The task facing us now is the determination of the most suitable scanning process for each quadrant." The figure is captioned "The Power Dynamism Matrix for Environmental Scanning".
+The grid Mendelow actually drew plots power against **dynamism** — how volatile a stakeholder's power base is — and its output is how closely to watch each quadrant, not "manage closely" and "keep informed". Swapping interest in for dynamism changed what the tool measures: dynamism is a property of the stakeholder's situation, interest is an attitude they hold. The power/interest version everyone uses came later, from the strategy textbooks.
 
-The substitution of interest for dynamism is a real conceptual change, not a synonym. Dynamism is the volatility of the stakeholder's power base, an external property. Interest is an attitude. The power/interest form is most reliably traced to Johnson and Scholes' *Exploring Corporate Strategy*.
+This matters for one practical reason. A stakeholder who is uninterested today but whose power is volatile is exactly who the original grid was built to catch, and the popular version has no cell for them. If you use the power/interest form, add that question back by hand: whose position could change quickly?
 
-Two further corrections worth making once, because they appear in textbooks and consultancy decks:
-
-- The citation "Mendelow, A. (1991), Stakeholder Mapping, Proceedings of the 2nd International Conference on Information Systems" is garbled. The second ICIS was in **1981**, and that is not the paper's title.
-- **PMBOK 7 contains no power/interest grid at all.** PMI kept the peer-reviewed model and dropped the popular one.
-
-No study tests whether the grid improves stakeholder outcomes. It is a heuristic, and a genuinely useful one for getting a room to agree on something. Label it as such.
+Nothing tests whether the grid improves any outcome. It is a heuristic, and a good one for getting a room to agree on something in twenty minutes. Present it that way and nobody will misuse it.
 
 ---
 
@@ -122,7 +116,7 @@ This document contains written judgements about named colleagues, including whet
 - **One row per person regardless of topic.** Power is per decision, not global.
 - **The grid credited to Mendelow.** He plotted power against dynamism.
 - **The grid presented as evidence-based.** Nothing tests it.
-- **Salience claimed to improve performance.** The 1999 study found no such link.
+- **Salience claimed to improve performance.** It predicts attention, nothing more.
 - **Written once at kickoff.** Power moves when dependencies move.
 - **Engagement actions merged in.** They belong in a separate plan.
 - **Written as though nobody named will ever read it.** Someone will.

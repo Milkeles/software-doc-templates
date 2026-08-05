@@ -166,9 +166,9 @@ State the criteria for closure explicitly. Incidents that end because everyone g
 
 Link the [postmortem](../foundations/incident-postmortem.md). Do not duplicate its structure here.
 
-**A caution about the confidence of this section.** Patterson, Nurse and Franqueira systematically reviewed 30 studies on organisational learning from cyber security incidents for *Computers and Security* (2023) and found: "None of the studies reported that the organisations were exploring how to learn better or had any measures in place to assess their ability to learn and the effectiveness of the improvements made following incidents." The authors add, and it is fair to repeat, "However, it is unclear whether the researchers had sought data on evaluation practices directly."
+**A caution about the confidence of this section.** Almost nobody checks whether their incident learning works. Organisations run reviews, write actions, and never measure whether any of it made the next incident go better. Assume you are in that position too, and put one measure in place — even something as crude as counting how many actions from the last five reviews were actually completed.
 
-There is also **no peer-reviewed evidence that blameless postmortems reduce incidents.** The practice rests on experience reports and on psychological-safety research that is about something adjacent. Run them anyway; the argument is that people report accurately when they are not being blamed, which is a claim about candour rather than about outcomes. Do not present it as evidence-backed.
+**Nothing shows that blameless postmortems reduce incidents.** The case for them is narrower and still worth making: people tell you what really happened when they are not going to be punished for it, and you cannot fix what you were not told. That is a claim about honesty, not about outcomes. Run them, and argue for them on those terms rather than presenting them as proven.
 
 ---
 

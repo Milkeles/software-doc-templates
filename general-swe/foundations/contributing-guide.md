@@ -128,21 +128,15 @@
 
 ---
 
-## Evidence behind contributing guides
+## Notes on using this template
 
-*Background for whoever maintains this file. Not part of the guide — delete it before publishing.*
+*Delete this section too.*
 
-*Nobody has measured whether this file converts contributors. No study tests the causal effect of adding a `CONTRIBUTING.md` on first-time contribution. Do not claim one.*
+**Write it to answer "what happens next and who do I ask", not "how does this system work".** That is the narrow thing this file is good at. It lowers the barriers around orientation and process — where do I start, what will happen to my pull request, who will read it. It does nothing at all for the technical difficulty of your codebase, and a contributing guide that tries to explain the architecture fails at both jobs.
 
-*What has been measured is that newcomer barriers are mostly not documentation barriers. Steinmacher and colleagues catalogued 58 barriers facing open-source newcomers for CSCW 2015, drawn from 69 practitioners across 19 projects and 21 prior studies. Documentation problems are one contributor to one of six categories, not the headline.*
+**Do not claim it increases contribution.** Nobody has shown that adding this file converts a single first-time contributor. Write it because a newcomer who cannot find the process leaves, which you can watch happen, and because clear process documentation matters most to the people least sure they belong.
 
-*The follow-up is the useful part. Their FLOSScoach portal, tested with 65 students for ICSE 2016, "played an important role in guiding newcomers and in lowering barriers related to the orientation and contribution process, whereas it was not effective in lowering technical barriers". Self-efficacy dropped significantly in the control group and held steady in the portal group.*
-
-*So the honest claim is narrow and worth making: a contributing guide helps with orientation and process, and does nothing for the technical difficulty of the codebase. Write it to answer "what happens next and who do I ask", not "how does this system work".*
-
-*Two more findings worth carrying. The 2017 GitHub Open Source Survey, 5,500 respondents sampled from more than 3,800 repositories, found "incomplete or outdated documentation is a pervasive problem, observed by 93% of respondents", and that "60% of contributors say they rarely or never contribute to documentation". That 93 percent is the share who encountered the problem, not the share of documentation that is bad; it is quoted wrongly often. The same survey found that "documentation that clearly explains a project's processes, such as contributing guides and codes of conduct, is valued more by groups that are underrepresented in open source".*
-
-*And Turzo, Sultana and Bosu tested 15 commonly recommended onboarding practices across 5 Gerrit projects and 1,155 GitHub projects for IEEE TSE in 2025. Four had a positive association, four were context-dependent, and four were significantly negative. Popular onboarding advice is not uniformly good advice, which is an argument for keeping this file short and for measuring what happens to your own first-time contributors.*
+**Be sceptical of onboarding advice, including this page.** Of the practices commonly recommended for welcoming newcomers, roughly as many turn out to be neutral or actively unhelpful as helpful, and which is which depends on the project. That is an argument for keeping this file short and for watching what actually happens to your own first-time contributors rather than adopting a checklist wholesale.
 
 ---
 

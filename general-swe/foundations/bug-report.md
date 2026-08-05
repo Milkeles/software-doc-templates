@@ -18,24 +18,17 @@
 ---
 
 ## Reproduction details
-*Not an opinion. Bettenburg and colleagues surveyed 466 people across the Apache, Eclipse and Mozilla projects for FSE 2008: 156 developers and 310 reporters, then filtered to 130 and 215 consistent responses. They asked developers which contents helped most, and reporters which were hardest to supply.*
+*Ask for what developers actually use, weighed against what reporters can actually produce. Both have been measured, and the ranking is stable.*
 
-| Content | Developers who said it helps | Reporters who said it is hard to give |
-|---|---|---|
-| Steps to reproduce | **83%** | 51% |
-| Stack traces | **57%** | 24% |
-| Test cases | **51%** | **75%** |
-| Observed behaviour | 33% | |
-| Screenshots | 26% | |
-| Expected behaviour | 22% | |
+*Steps to reproduce are the most useful thing on a bug report by a wide margin, and about half of reporters find them hard to write. That is a good trade: make the field required and help people fill it in. A stack trace is the next most useful and one of the easiest to supply, so ask for it every time — reports carrying one get fixed sooner.*
 
-*The same study mined 150,000 reports and found that reports containing stack traces get fixed sooner, that reports which are easier to read have lower lifetimes, and that including code samples increases the chance of a fix.*
+*A failing test case is genuinely valuable and the single hardest thing to ask for; most reporters cannot produce one. Invite it, never require it. Screenshots and a statement of expected behaviour are cheap to give and used less than you would think, so keep those fields optional and small.*
 
 ### Steps to reproduce
 
 *Numbered, starting from a state the reader can reach. Include the data you used.*
 
-*The most common defect in a bug report is a defect in this section: 79% of developers named errors in the steps to reproduce as a problem they hit, ahead of everything else. Second was incomplete information, at 74%.*
+*The most common defect in a bug report is a defect in this section. Wrong steps are the single biggest complaint developers have about reports, ahead of missing information and well ahead of everything else. It is worth spending the form's one required field here.*
 
 > 1. Log in as an operator on staging.
 > 2. Open order `ORD-88213` (settled, 1,200 EUR).
@@ -90,17 +83,15 @@
 
 *Delete this section too.*
 
-**The gap is tooling, not ignorance.** The FSE 2008 study measured three correlations. What developers use against what reporters actually provide: 0.321. What developers consider important against what reporters provide: **-0.035**, which the authors call "a huge gap". What developers consider important against what reporters *expect* to be important: **0.839**. Their conclusion is worth quoting: "most reporters know which information developers need. In other words, ignorance of reporters is *not* a reason for the aforementioned information mismatch", and "to a large extent, lacking tool support causes this mismatch."
+**Reporters already know what you need. They cannot produce it.** This is the finding that should change how you write the form: what reporters *think* developers want lines up almost exactly with what developers say they want, and what reporters actually attach lines up with neither. The mismatch is not ignorance and no amount of asking politely will fix it.
 
-**So fix the form before you write the etiquette guide.** If steps to reproduce are the single most valuable field, make the form refuse to submit without them. If stack traces get bugs fixed sooner, attach them automatically from the crash handler. A prose plea to write better reports is the weakest available intervention.
+**So fix the form before you write the etiquette guide.** If steps to reproduce are the most valuable field, make the form refuse to submit without them. If stack traces get bugs fixed sooner, attach them from the crash handler so nobody has to find one. A prose plea to write better reports is the weakest intervention available to you.
 
-**Absent beats wrong, and both lose to present.** A developer in the same study: "the biggest causes of delay are not wrong information, but absent information." Half-filled fields are worse than a short report that is complete on the fields that matter.
+**Absent beats wrong, and both lose to present.** Delay comes from missing information far more often than from incorrect information. A short report that is complete on the fields that matter beats a long one with half the fields guessed at.
 
-**Stop policing duplicates.** Only 10% of developers named duplicates as a problem, far below errors in steps to reproduce and incomplete information. The authors were blunt: "developers do not suffer too much from bug duplicates, although earlier research considered this to be a serious problem", and "duplicates are not really problems. They often add useful information." A second report often carries the reproduction step the first one missed. Link them; do not gate reporting on a search nobody can do well.
+**Stop policing duplicates.** Maintainers rank duplicates well below bad reproduction steps and missing information as a source of pain, and a second report often carries the step the first one missed. Link them and move on. Do not gate reporting behind a search that nobody can perform well, because the cost of that gate is the reports you never receive.
 
-**Do not measure report quality by time to fix.** The same study found report quality and report lifetime are effectively independent, with correlations between 0.002 and 0.068. A good report on a hard bug stays open for months. Using time-to-close as a quality metric will teach your team to file trivial bugs.
-
-**Scope of the evidence.** Three large open-source projects, experienced participants, voluntary response. The authors state they "do not contend that they are transferable to closed-software projects". The direction of the findings is sound; treat the percentages as indicative.
+**Do not measure report quality by time to fix.** The two are unrelated. A good report on a hard bug stays open for months, and a useless report on a trivial one closes in an hour. Use time-to-close as a quality metric and you will teach your team to file easy bugs.
 
 **On the standard's name.** ISO/IEC/IEEE 29119-3:2021 calls this a **test incident report**, and notes that "anomaly reports, bug reports, defect reports, error reports, issues, problem reports and trouble reports" are the same thing. Use whichever word your team already uses. The standard states its own nomenclature "is not mandatory".
 

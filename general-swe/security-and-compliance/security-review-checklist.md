@@ -4,9 +4,9 @@
 >
 > **Also called:** Secure Code Review Checklist.
 >
-> **Read this before you trust the checklist.** Braz, Aeberhard, Çalikli and Bacchelli ran a randomised experiment with 150 participants, 62% of them professionals, for ICSE 2022. Reviewers told to focus on security were **eight times more likely** to find the planted vulnerability than reviewers given no instruction. Reviewers given a checklist did no better than reviewers given the instruction alone: "a security checklist does not significantly improve the outcome", including the checklist tailored to the vulnerability.
+> **Read this before you trust the checklist.** What finds vulnerabilities is asking someone to look for vulnerabilities. Reviewers told to spend a pass on security find several times more than reviewers left to notice problems while reading for everything else. Handing them a list on top of that instruction adds nothing measurable — not even a list written for the exact bug that was hidden in the code.
 >
-> **So what is this document for?** The instruction, not the list. The measured effect comes from asking someone to look at security as a distinct task. Keep the list because it distributes knowledge and settles arguments, but do not believe the ticking is what works. A long list is worse than a short one, because it converts an attention task into a clerical one.
+> **So what is this document for?** It moves knowledge between people and settles arguments about what is acceptable. Both are worth having. Finding the bug is not on that list; the separate security pass does that. So keep this short, and spend your effort on making sure someone is actually assigned to look.
 >
 > **The ceiling is real.** Edmundson and colleagues had 30 developers review code containing seven known vulnerabilities: "none of the subjects found all confirmed vulnerabilities", none found more than five, and more experience did not mean more accuracy. Review is one control among several, not the control.
 >
@@ -149,8 +149,8 @@ The best outcome for any line is that it stops being a line and becomes a test, 
 
 ## Common failures in this document
 
-- **Treated as the control.** No reviewer in the Edmundson study found more than five of seven vulnerabilities.
-- **Believing the list is what works.** The randomised evidence attributes the effect to the instruction.
+- **Treated as the control.** Nobody finds everything. Reviewers miss vulnerabilities they were explicitly looking for.
+- **Believing the list is what works.** It is the instruction to look that works.
 - **Too long.** Turns attention into clerical work and gets skimmed.
 - **Top 10 used as a verification checklist.** OWASP says it is awareness.
 - **ASVS levels read as risk tiers.** In 5.0 they are priority-based.

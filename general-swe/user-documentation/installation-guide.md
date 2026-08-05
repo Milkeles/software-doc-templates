@@ -4,7 +4,7 @@
 >
 > **Also called:** Setup Guide, or Install Guide.
 >
-> **Why this one first.** Of every documentation gap, this is the one practitioners rank highest. Aghajani and colleagues surveyed 146 practitioners for *ICSE 2020* and found "the lack of installation, deployment, & release instructions, user documentation (e.g., user manual), and developer guidelines were considered important by a majority (respectively 68%, 65% and 60%), and are frequently encountered issues". Installation topped the list. (The authors flag a 9.5% response rate, self-selection bias, and that 125 of the 146 came from one company. The ranking is a perceived-importance finding, not a measured outcome.)
+> **Why this one first.** Ask practitioners which documentation gap hurts most and missing installation instructions comes out top, ahead of the user manual and ahead of developer guides. It is also the gap with the shortest path to a lost user: someone who cannot install the thing never reaches anything else you wrote. If you are going to maintain one document properly, maintain this one.
 >
 > **The stake is higher than the content suggests.** This is the first thing anyone reads. A reader who cannot install does not go on to read anything else, and does not tell you why they left.
 >

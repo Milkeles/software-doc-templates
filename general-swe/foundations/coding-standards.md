@@ -140,31 +140,19 @@
 
 ---
 
-## Evidence behind style rules
+## Notes on using this template
 
-*Background for whoever maintains this document. Not part of the standard — delete it, or move it to the team wiki.*
+*Delete this section too.*
 
-*Almost no style rule has evidence behind it, and saying so protects the few that do.*
+**Say that the reason is coordination, not defect prevention.** A codebase where everyone formats differently costs attention every day, and that is worth fixing. It is also the whole of the benefit. A standard that claims it prevents bugs will lose the argument with the first person who asks for the proof, and the rest of the document loses credibility with it.
 
-| Common claim | Status |
-|---|---|
-| Optimise for the reader, since code is read more than written | **Reasoned position.** Stated by PEP 8 and Google, not measured, but a good organising principle |
-| Consistency inside a codebase lowers the cost of working in it | **Reasoned position**, universally held, no controlled evidence. Google's automation argument gives it a mechanism |
-| Full descriptive words beat abbreviations and single letters | **Best-supported rule in the area.** 72 professional developers on a defect-finding task, roughly 19% faster with words |
-| camelCase versus under_score matters | **Small and traded off.** camelCase was more accurate but slower to read with more visual effort, across 150 participants and eye tracking. For experts the effect is close to nil |
-| Restyling old code improves readability | **Contradicted.** "Refactoring legacy code to reflect newer identifier styles is most likely unwarranted in the context of readability" |
-| 2 to 4 space indentation aids comprehension | **Folklore.** One 1983 Pascal study found it; a 2019 eye-tracking replication found no effect at all |
-| Comments improve comprehension | **Context-dependent, sometimes negative.** A 2026 eye-tracking study found effects ranging from a 30% decrease to a 34% increase across snippets |
-| Developers can tell which style helps them | **Contradicted twice.** Stated preference and measured eye effort diverge in both of the recent studies |
-| Style rules reduce defects | **No supporting evidence found** |
+**Spend your naming rules on descriptiveness, not on casing.** Whether a reader gains anything from `camelCase` over `under_score` is marginal, and it disappears entirely for people who have worked in the codebase for a while. Whether they can tell what `elapsed_since_last_retry` holds without opening another file is not marginal. Argue about the first and you have spent a meeting on nothing.
 
-*Two things follow directly. Spend your naming rules on descriptiveness, not on casing, because that is where the measured effect is. And do not restyle a working file to match a new convention, because the one study that looked at it says you gain nothing and every edit carries a chance of a defect.*
+**Do not restyle a working file to match a new convention.** You gain no readability anyone can detect, and every edit carries a chance of introducing a defect. Apply new rules to new code and to files you are already changing.
 
-*The most uncomfortable finding is worth stating once to your team. Boogerd and Moonen measured violations of MISRA C:2004, a standard designed specifically to prevent faults, against real faults in an industrial system for ICSM 2008, and reported that most individual rules showed no significant relationship with faults. We could not obtain the full text, so treat the specific conclusion as unverified. What is safe to say without it: if a safety-oriented rule set shows weak per-rule correlation with faults, a formatting guide has no basis at all for claiming it prevents them.*
+**Do not trust a preference, including your own.** People are consistently wrong about which style is easier for them to read. This is the argument for settling style with a formatter and moving on, rather than with a discussion in which the loudest preference wins.
 
-*None of this makes style guides worthless. Coordination is genuinely valuable, and a codebase where everyone formats differently costs real attention every day. It does mean the justification is coordination, and a guide that claims science will lose the argument with the first person who checks.*
-
-*The Linux kernel takes a third position worth knowing: "coding style is very personal, and I won't force my views on anybody", followed immediately by a very forceful document. Its 8-character indent rule is defended not as a readability claim but as a design constraint, because "if you need more than 3 levels of indentation, you're screwed anyway". A formatting rule used deliberately to make bad structure painful is the most defensible kind of style rule there is.*
+**A rule that makes bad structure painful is the most defensible kind.** The Linux kernel's 8-character indent is not a readability claim: it exists because "if you need more than 3 levels of indentation, you're screwed anyway". If a formatting rule pushes people towards better structure, say that out loud — it is a stronger justification than consistency.
 
 ---
 

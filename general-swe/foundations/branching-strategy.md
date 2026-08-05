@@ -91,19 +91,17 @@
 
 ---
 
-## Evidence behind branching strategies
+## Notes on using this template
 
-*Background for whoever maintains this document. Not part of the strategy — delete it before publishing. Worth knowing before anyone argues from authority.*
+*Delete this section too.*
 
-*The named strategies are positions, not results. Vincent Driessen, who published git-flow in 2010, added a note of reflection on 5 March 2020 saying it "has been widely adopted" but that "people have started treating it like a standard of sorts, but unfortunately also as a dogma or panacea". His actual advice: "If your team is doing continuous delivery of software, I would suggest to adopt a much simpler workflow (like GitHub flow)", but "if, however, you are building software that is explicitly versioned, or if you need to support multiple versions of your software in the wild, then git-flow may still be as good of a fit". That is not a retraction, and anyone telling you git-flow was deprecated by its author is overstating a note that ends "consider your own context".*
+**Match branches to teams before you pick a named strategy.** A long-lived branch that two teams both work in is the shape that reliably goes wrong, whatever the workflow is called. Getting that right matters more than the choice between git-flow, GitHub Flow and trunk-based development, and it is the decision most teams never consciously make.
 
-*Two more publisher facts worth having: GitHub's current documentation has dropped the two deployment rules that defined GitHub Flow when Scott Chacon described it in 2011 ("anything in the master branch is deployable" and deploy before merging); the final step in GitHub's version today is "delete your branch". And GitLab has removed its GitLab Flow documentation entirely, with the redirect deleted in November 2025. If you are quoting either, know which year's text you are quoting.*
+**Treat the named strategies as positions, not verdicts.** They are proposals published by practitioners and vendors, and each was written with a particular release model in mind. Git-flow's own author has said as much: teams doing continuous delivery want something simpler, and teams supporting several shipped versions at once may still want git-flow. Nobody deprecated it. Pick by your release model, and expect somebody to argue from authority — the authority does not exist.
 
-*The correlational evidence. DORA's 2017 State of DevOps report found high performers had branch lifetimes and integration times "typically lasting hours" against "days" for low performers, and reported the differences as statistically significant. Take the strength of that carefully. The research uses non-probability snowball sampling, self-reported Likert measures for both the predictor and the outcome, and correlation-based structural equation modelling. Jez Humble, a co-author, put the limit precisely: "we can use words like 'drives', 'predicts', and 'impacts', but not 'causes' since we're not performing a randomized, controlled experiment."*
+**Quote the current text, or none of it.** These workflows are documented on vendor pages that change without notice. The two deployment rules that originally defined GitHub Flow are no longer in GitHub's version of it, and GitLab has withdrawn its GitLab Flow documentation entirely. If your strategy cites an external workflow, link it and date the link, or restate the rules in your own words here where you control them.
 
-*The one repository-mining result, and it is about a different variable. Shihab, Bird and Zimmermann mined post-release failure data from Windows Vista and Windows 7 for ESEM 2012 and found that "misalignment of branching structure and organizational structure is associated with higher post-release failure rates", with increases up to 59 percent on Vista and 70 percent on Windows 7. Their conclusion is that "branching structures should not only align according to architectural structure, but also according to its organizational structure."*
-
-*The practical reading: the strongest available evidence is not about which named strategy you pick, it is about whether your branches match your teams. A branch two teams both work in is the shape the data flags, whatever you call your workflow.*
+**Short-lived branches are the one thing worth pushing for.** Teams that integrate in hours rather than days do better on every measure anyone has collected. The relationship is a correlation, so do not promise that shortening branch lifetime causes anything — but it is cheap to try, and the mechanism is not mysterious. Long branches diverge, and divergence is paid for at merge time.
 
 ---
 

@@ -11,7 +11,7 @@
 | **Last reviewed** | YYYY-MM-DD |
 | **Platforms** | |
 
-*This is not a requirements specification with extra steps. A 2018 review of requirements engineering in the games industry found that game studios invent requirements internally rather than eliciting them from a known customer, because market-driven development usually has no known customer at the start, and that verbal communication carries most of the load a written spec would carry elsewhere. This document exists to replace some of that verbal communication for a team too large or too dispersed to rely on it. Write it so a new artist, a new engineer, and a publisher's producer can all read the same page and understand the same game.*
+*This is not a requirements specification with extra steps. Nobody hands a studio the requirements for a game — there is no customer to ask at the start, so the team invents them and settles them by talking. This document exists to carry some of that talking for a team too large or too spread out to rely on it. Write it so a new artist, a new engineer, and a publisher's producer can read the same page and picture the same game.*
 
 ---
 
@@ -100,9 +100,9 @@
 
 **Write pillars before you write mechanics.** A mechanic proposed without a pillar to check it against gets argued about on taste. A mechanic checked against "tense but fair" gets argued about whether it is actually tense and fair, which is a shorter, more finishable argument.
 
-**The diversity of your team is the reason this document exists.** A published survey of game postmortems found that the range of job roles on a game team, story writers next to engineers next to composers, produces communication splits severe enough to break projects. If everyone on your team already shares a working vocabulary and sits in the same room, you need less of this document than a distributed or larger team does. Write to the team you have.
+**The mix of your team is the reason this document exists.** A composer, a combat designer and a graphics engineer do not share a vocabulary, and the communication splits that opens are a recurring cause of games going wrong. If everyone already shares a working vocabulary and sits in the same room, you need less of this document than a bigger or more spread-out team does. Write to the team you have.
 
-**Do not let this become the only source of truth for scope.** Feature creep driven by an ever-expanding design document was identified as a leading cause of trouble in the same postmortem survey. A pillar that a proposed feature fails is a reason to cut it, not a reason to rewrite the pillar.
+**Do not let this become the only source of truth for scope.** A design document that grows every time someone has an idea is one of the reliable ways a game gets into trouble. A pillar that a proposed feature fails is a reason to cut the feature, not a reason to rewrite the pillar.
 
 **Where this lives:** the wiki, kept as one current page rather than a chain of dated copies. It is discussed constantly during pre-production, and Git's comment and notification model serves that badly.
 

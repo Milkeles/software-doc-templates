@@ -42,7 +42,7 @@
 
 *A limit, with a reason, and what to do when a change exceeds it.*
 
-*Review quality falls off with size, and past a point reviewers stop finding defects and start approving. Google's guidance is that around 100 lines is comfortable and 1,000 is usually too large. SmartBear's frequently cited figures from a Cisco study of 2,500 reviews suggest 200 to 400 lines per sitting, under 60 minutes, with 70 to 90 percent of defects found in that range. Treat those numbers as directional rather than settled: the study was vendor-funded, is not peer-reviewed, and is twenty years old. The two sources agree on the direction, which is the part you can rely on.*
+*Review quality falls off with size. Past a point reviewers stop finding defects and start approving, and the change that gets waved through is the large one. The commonly used range is a few hundred lines in a sitting of under an hour; treat that as a rough shape rather than a threshold, because the exact numbers in circulation are old and not well established. What is reliable is the direction: a reviewer who is tired or facing a wall of diff is not reviewing.*
 
 - *Target: under N lines of substantive change*
 - *Split by: refactor first, behaviour second; mechanical rename in its own change*

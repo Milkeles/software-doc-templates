@@ -66,19 +66,11 @@ Naming the decision and the date is what converts a document into a gate. Withou
 
 ---
 
-## Evidence behind project briefs
-
-*Background for whoever maintains this template. Not part of the brief — delete it before publishing.*
-
-**You cannot assess your own brief.** The BetterBriefs Project (1,700+ marketers and agency staff, 2021) found that 80% of the people writing briefs rated their own as good, and 10% of the people receiving them agreed. So do not treat "the author is happy with it" as the finishing condition — name a reader and have them sign it off. That is the whole reason section 5 asks for a decision and a date.
-
-The same study's widely quoted "33% of budget wasted on poor briefs" figure is a self-reported estimate, not a measurement. Do not repeat it.
-
----
-
 ## Notes on using this template
 
 *Delete this section too.*
+
+**You are not the judge of whether this brief is any good.** Authors rate their own briefs far higher than the people who receive them do, and the gap is not small. So "I am happy with it" is not the finishing condition. Name a reader, give them the decision and the date from section 5, and let them tell you whether they can act on it.
 
 **If the brief comes from the client rather than the team**, the direction of travel reverses and the sections change: the client states outcomes, constraints, mandatories and success measures, and the team responds. Getting this backwards is the most common template error, because "project brief" is used for both directions in different industries.
 
@@ -95,7 +87,7 @@ RIBA also does something almost nobody else does and everybody needs: it defines
 - **A full business case.** Defeats the purpose of a cheap first gate.
 - **No named decision and no date.** Circulates instead of resolving.
 - **Out of scope missing.** Every reader assumes their own pet problem is included.
-- **Self-assessed as good.** 80% of authors think so; 10% of readers agree.
+- **Signed off by its own author.** The reader is the only one who can tell you it works.
 - **No mechanism for being wrong.** RIBA's derogations record is the model.
 
 ---

@@ -210,18 +210,13 @@ Every guideline document generates exception requests. Without a stated route, t
 
 ---
 
-## Evidence behind brand guidelines
+## Notes on using this template
 
-Weak, and worth saying plainly.
+*Delete this section too.*
 
-**There is no peer-reviewed research on brand guideline effectiveness**, and none on design system adoption in an established venue. This area rests entirely on practitioner literature and on published exemplars from organisations that maintain these documents in public. The strongest available evidence is that large, design-mature organisations, including GDS, IBM, Salesforce and Mozilla, all maintain one and maintain it separately from their design system. That is convergent practice, not measurement.
+**Justify it by the mechanism, not by a statistic.** A rule written once and shown with an example is cheaper to apply and easier to review than the same judgement made repeatedly by different people. That argument holds on its own. Nobody has measured whether brand guidelines work, so any number offered to you — token adoption rates, consistency uplift, revenue impact — comes from a vendor survey or a consultancy with no published method. Quoting one invites the reader to check it, and it will not survive.
 
-Two claims to avoid:
-
-- **Design token adoption percentages.** The widely repeated "56% to 84% in a year" comes from a vendor industry survey of roughly 300 self-selected professionals. Not a finding.
-- **Consistency or revenue uplift figures.** Attributed to consultancies, with no published method.
-
-The honest argument is the mechanism: a rule written once and shown with examples is cheaper to apply and easier to review than a judgement made repeatedly by different people. That is enough. It does not need a statistic.
+**Keep it separate from the design system.** Every organisation that maintains both in public keeps them apart, because they answer different questions and are read by different people. This document says what the brand is and what may not be done to it. The design system says which component to use. Merging them produces a document designers skim and everyone else abandons.
 
 ---
 

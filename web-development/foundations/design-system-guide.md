@@ -149,7 +149,7 @@ Track and publish: which products are on which version, and what fraction of UI 
 
 **Publish the number even when it is bad.** A system claiming success while three teams have quietly forked it is a system whose maintainers are the last to know.
 
-**On the evidence.** Claims about design system return on investment come almost entirely from vendor and consultancy publications with no stated method. There is no substantial peer-reviewed literature on design system effectiveness. The mechanism is easy to argue: solving a problem once instead of per team, and fixing accessibility once instead of per page. Argue that, and measure your own adoption. Do not cite a percentage you cannot trace.
+**Do not quote a return-on-investment figure.** Every number in circulation traces back to a vendor or a consultancy with no published method, and the first person who checks will find that out. You do not need one. The argument is the mechanism: a problem solved once instead of once per team, and accessibility fixed once instead of once per page. Make that case, then measure your own adoption and quote that instead.
 
 ---
 
