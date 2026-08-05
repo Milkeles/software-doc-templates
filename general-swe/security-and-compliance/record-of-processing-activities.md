@@ -88,8 +88,7 @@ Article 30(4): you make it available to the supervisory authority on request. Pr
 
 ---
 
-## 5. The exemption that does not apply to you
-
+## 5. The small-organisation exemption
 Article 30(5) exempts organisations with fewer than 250 employees, **unless** any of the following is true. The conditions are joined by "or":
 
 - the processing is likely to result in a risk to the rights and freedoms of data subjects; **or**
@@ -102,8 +101,7 @@ Do not tell anyone the record is optional because the headcount is under 250.
 
 ---
 
-## 6. Keeping it true
-
+## 6. Keeping the record current
 A record that describes last year's architecture is worse than none, because it produces confident wrong answers during an incident.
 
 - **Attach an owner to every row.** The person who would know if it changed.

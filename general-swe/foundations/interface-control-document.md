@@ -15,8 +15,7 @@
 
 ---
 
-## Write the schema first, then write this for what the schema cannot say
-
+## Scope
 *An OpenAPI document, a Protobuf definition or a JSON Schema expresses shape: paths, fields, types, required-ness. It is machine-readable, testable, and generated into clients. Nothing in this document should duplicate it.*
 
 *What no schema expresses, and what breaks integrations in practice:*
@@ -30,18 +29,6 @@
 - *what happens to the data afterwards*
 
 **Those seven are this document.** *If you find yourself listing fields, stop and link the schema instead.*
-
----
-
-## When this document is worth writing
-
-*An interface between two services owned by the same team does not need one. The schema plus a shared on-call rota covers it.*
-
-**Write one when the interface crosses a boundary you cannot unilaterally change.** *A different team with its own roadmap, a different company, a contract, a regulator, or a consumer you cannot enumerate.*
-
-*IEEE Std 828-2012 puts the reason precisely: "Interfaces represent 'agreements' between different development efforts. Each party is constrained by the requirements of the interface. Thus, each interface represents at least three CIs: the interface specification itself, and components on either side of the interface."*
-
-**That third item is the point.** *The specification is a versioned thing in its own right, owned jointly, not a description belonging to whichever side wrote it. Treating it as the provider's documentation is how consumers discover breaking changes in production.*
 
 ---
 
@@ -178,6 +165,10 @@
 ## Notes on using this template
 
 *Delete this section too.*
+
+**Write one only when the interface crosses a boundary you cannot unilaterally change.** A different team with its own roadmap, a different company, a contract, a regulator, or a consumer you cannot enumerate. An interface between two services owned by the same team does not need one; the schema plus a shared on-call rota covers it.
+
+IEEE Std 828-2012 puts the reason precisely: "Interfaces represent 'agreements' between different development efforts. Each party is constrained by the requirements of the interface. Thus, each interface represents at least three CIs: the interface specification itself, and components on either side of the interface." That third item is the point. The specification is a versioned thing in its own right, owned jointly, not a description belonging to whichever side wrote it. Treating it as the provider's documentation is how consumers discover breaking changes in production.
 
 **One document per interface, not one per system.** A system with four consumers on different terms has four agreements. Merging them produces a document where no consumer can find their own commitments.
 

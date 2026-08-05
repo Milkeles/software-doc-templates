@@ -66,17 +66,9 @@ Naming the decision and the date is what converts a document into a gate. Withou
 
 ---
 
-## 6. Adapting this template
+## Evidence behind project briefs
 
-**If the brief comes from the client rather than the team**, the direction of travel reverses and the sections change: the client states outcomes, constraints, mandatories and success measures, and the team responds. Getting this backwards is the most common template error, because "project brief" is used for both directions in different industries.
-
-**If you are briefing design work**, RIBA's four elements are the best-specified version available and transfer well: project outcomes, sustainability outcomes, quality aspirations and spatial requirements. Two pieces of RIBA guidance are worth stealing verbatim. On quality: aspirations "can be conveyed by written statements but are better expressed using images from similar exemplar projects". On outcomes: the challenge is "how success can be measured. This requires objective data, but any information-gathering exercise is likely to yield highly subjective responses."
-
-RIBA also does something almost nobody else does and everybody needs: it defines **Project Brief Derogations**, a record used "to identify and agree where aspects of the design do not need to comply with the Project Brief". A named, agreed mechanism for the brief turning out to be wrong beats silent divergence. Add one.
-
----
-
-## 7. Why the brief is worth getting right
+*Background for whoever maintains this template. Not part of the brief — delete it before publishing.*
 
 RIBA states the case more plainly than any software source: "It is foolhardy to believe that where the outcomes from one stage are poor, they can be recovered in the next stage. For example: a poor Project Brief is likely to lead to poor design outcomes."
 
@@ -85,6 +77,18 @@ There is also a measured reason to distrust your own judgement of your brief. Th
 The practical conclusion is not that briefs are bad. It is that **the author cannot assess their own brief**, which is the argument for a template with explicit acceptance criteria and a named reader who signs it off.
 
 The same study's widely quoted claim that 33% of marketing budget is wasted through poor briefs is a **self-reported estimate by survey respondents**, not a measurement, and the "$200bn" headlines derived from it are a further extrapolation that is not in the research. The perception gap is the defensible finding. Use that.
+
+---
+
+## Notes on using this template
+
+*Delete this section too.*
+
+**If the brief comes from the client rather than the team**, the direction of travel reverses and the sections change: the client states outcomes, constraints, mandatories and success measures, and the team responds. Getting this backwards is the most common template error, because "project brief" is used for both directions in different industries.
+
+**If you are briefing design work**, RIBA's four elements are the best-specified version available and transfer well: project outcomes, sustainability outcomes, quality aspirations and spatial requirements. Two pieces of RIBA guidance are worth stealing verbatim. On quality: aspirations "can be conveyed by written statements but are better expressed using images from similar exemplar projects". On outcomes: the challenge is "how success can be measured. This requires objective data, but any information-gathering exercise is likely to yield highly subjective responses."
+
+RIBA also does something almost nobody else does and everybody needs: it defines **Project Brief Derogations**, a record used "to identify and agree where aspects of the design do not need to comply with the Project Brief". A named, agreed mechanism for the brief turning out to be wrong beats silent divergence. Add one.
 
 ---
 

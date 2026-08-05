@@ -33,8 +33,7 @@
 
 ---
 
-## 3. Where this comes from and where it goes
-
+## 3. Lineage
 | | |
 |---|---|
 | **Upstream sources** | *What this is built from* |

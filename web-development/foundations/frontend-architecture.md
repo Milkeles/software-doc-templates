@@ -8,15 +8,9 @@
 >
 > **How long.** Under 2000 words. Beyond that it stops being read, and an unread architecture document is worse than none because people cite it without checking.
 >
+> **There is no standard section set for this document.** No frontend-specific architecture documentation standard exists. ISO/IEC/IEEE 42010:2022 covers architecture description generally and is paywalled. arc42 offers a twelve-section practitioner template. The C4 model gives a way to draw systems at four zoom levels. All three are general-purpose; applying them to a front end is convention, not compliance. The headings below borrow from arc42 and C4 where they help and drop what does not apply. If your organisation already uses arc42, use arc42 — consistency across your documents beats matching this file.
+>
 > **Delete this block before publishing.**
-
----
-
-## A note on standards, since there are none
-
-**No frontend-specific architecture documentation standard exists.** ISO/IEC/IEEE 42010:2022 covers architecture description generally and is paywalled. arc42 offers a twelve-section practitioner template. The C4 model gives a way to draw systems at four zoom levels. All three are general-purpose; applying them to a front end is convention, not compliance.
-
-The structure below borrows from arc42 and C4 where they help and drops what does not apply. If your organisation already uses arc42, use arc42. Consistency across your documents beats matching this file.
 
 ---
 

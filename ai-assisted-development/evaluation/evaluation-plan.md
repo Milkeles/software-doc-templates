@@ -14,8 +14,7 @@
 
 ---
 
-## 1. Why this needs an evaluation, not just tests
-
+## 1. Why evaluation, not just tests
 *State plainly what about this feature depends on a model's judgment rather than deterministic logic, and therefore can't be fully covered by the test templates elsewhere in this repository. If a simpler, non-agentic approach would work as well, say so: adding evaluation overhead for a model call that a plain function would have handled is a cost with no matching benefit.*
 
 ---

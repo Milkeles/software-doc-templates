@@ -26,8 +26,7 @@
 
 *Lead with the benefit. "Export up to 500,000 rows without the request timing out" lands; "asynchronous export job queue" does not, and it is the same feature.*
 
-### {Feature name, as the user would say it}
-
+### {Feature name}
 *What it does and why it helps. Then how to reach it: the menu, the setting, the endpoint. Screenshot or short clip where it is visual.*
 
 *Link to the documentation for depth. Release notes announce; they do not teach.*

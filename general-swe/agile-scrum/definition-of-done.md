@@ -61,8 +61,7 @@
 
 ---
 
-## Changing it
-
+## Amendment process
 *When and how this changes, decided in advance so it does not change under pressure.*
 
 *The Sprint Retrospective is the natural place. Strengthening it is normal and expected as capability grows. Weakening it to make a Sprint succeed is the point at which the whole mechanism stops working, so require it to be a deliberate, recorded decision rather than something that happens on a Thursday afternoon.*

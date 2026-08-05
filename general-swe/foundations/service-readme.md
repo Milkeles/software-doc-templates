@@ -21,8 +21,7 @@
 
 ---
 
-## Run it locally
-
+## Local setup
 *The shortest path from a fresh clone to something working. Commands, in order, copy-pasteable.*
 
 *Test this yourself on a clean machine at least once. Every service README contains a setup step that only works because of something already installed on the author's laptop.*
@@ -36,8 +35,7 @@
 
 ---
 
-## Test it
-
+## Tests
 *How to run the tests, and how to run only the fast ones. If the full suite takes twenty minutes, say so here rather than letting a new joiner discover it.*
 
 ```bash
@@ -69,16 +67,14 @@
 
 ---
 
-## Deploy it
-
+## Deployment and rollback
 *How code reaches production: the pipeline, what gates it, how long it takes, who can trigger it.*
 
 *Then how to roll back, with the command. This is the single most looked-up line in any README, and it is looked up under pressure. Put it here in full, not behind a link.*
 
 ---
 
-## Operate it
-
+## Operations
 *Links, not content. The content belongs in the documents linked.*
 
 - **Dashboards:** *link*

@@ -29,7 +29,7 @@ The title is the whole search interface. A reader typing "rotate key" into a sea
 
 ---
 
-## 2. When to use this
+## 2. Overview
 
 One or two sentences on the situation this addresses, and if there is a near neighbour, which one the reader wants.
 
@@ -78,8 +78,7 @@ How the reader confirms it worked. A command, an expected response, a place in t
 
 ---
 
-## 6. If it does not work
-
+## 6. Troubleshooting
 Two or three of the likeliest failures, each with a cause and a fix. Not an exhaustive list; link the [troubleshooting guide](troubleshooting-guide.md) for that.
 
 The test for what belongs here: it is a failure caused by *this procedure*, not a general symptom of the system.

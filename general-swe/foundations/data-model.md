@@ -15,8 +15,7 @@
 
 ---
 
-## Work at the right level, and say which one you are on
-
+## Model level
 *Chen's 1976 paper, which introduced the entity-relationship model, opens by separating four levels of logical views of data:*
 
 > *"(1) Information concerning entities and relationships which exist in our minds. (2) Information structure, organization of information in which entities and relationships are represented by data. (3) Access-path-independent data structure, the data structures which are not involved with search schemes, indexing schemes, etc. (4) Access-path-dependent data structure."*

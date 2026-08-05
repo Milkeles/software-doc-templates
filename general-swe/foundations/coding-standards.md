@@ -6,17 +6,23 @@
 >
 > **Most of this document should not exist.** Anything a formatter can fix belongs in the formatter's config, and anything a linter can detect belongs in the linter's config. What is left is the small set of decisions a tool cannot check, and that set is what you write down.
 >
-> **Justify rules as coordination decisions, not as findings.** Google says its own conventions are "sometimes arbitrary", and that is the honest framing. Section 5 lists the very few style claims with measured support behind them, and the larger number that are folklore.
+> **Justify rules as coordination decisions, not as findings.** Google says its own conventions are "sometimes arbitrary", and that is the honest framing. "Evidence behind style rules" at the end lists the very few style claims with measured support, and the larger number that are folklore.
+>
+> **There is no standard section set for this document.** PEP 8, the Google C++ Style Guide and the Linux kernel guide share no common outline. The headings below are a proposal that covers what teams usually need. Rename or drop them freely.
 >
 > **Where it lives.** The repository, beside the config files it describes. A style guide that is not in the same commit as the lint rules will drift from them.
 >
 > **Delete this block before publishing.**
 
+*Italic text is guidance. Delete it as you fill each section in.*
+
 ---
 
-## 1. Split the rules into three layers
+## 1. Scope
 
-Rust's ecosystem separates these cleanly and it is the model worth copying.
+*Which languages and which repositories this document governs, and which layer of rules it covers.*
+
+*Separate the mandatory layers from the advisory one, and say which layer each rule sits in. Rust's ecosystem does this cleanly and is the model worth copying: a Style Guide for formatting, clippy for correctness, and API Guidelines for design — of which it says they "should not in any way be considered a mandate". Keeping the mandatory and advisory layers apart stops the advisory ones being argued as rules.*
 
 | Layer | Question | Enforced by | Negotiable |
 |---|---|---|---|
@@ -24,19 +30,11 @@ Rust's ecosystem separates these cleanly and it is the model worth copying.
 | **Correctness and safety** | Is this construct a bug waiting to happen | A linter, failing the build | Per rule, with a reason |
 | **Design and naming** | Is this the right shape | Review, guided by this document | Yes. That is what review is for |
 
-Rust ships a Style Guide for the first, clippy for the second, and API Guidelines for the third, and states of the third that it "should not in any way be considered a mandate". Keeping the mandatory and advisory layers in separate documents stops the advisory ones being argued as rules.
-
-**Everything in layer one is a solved problem.** Adopt gofmt, rustfmt, Black, Prettier, clang-format or the equivalent, take its defaults, and stop. Black's README states the deal plainly: "by using it, you agree to cede control over minutiae of hand-formatting... Style configuration options are deliberately limited and rarely added." Prettier's stated goal is the same: "we want to free mental threads and end discussions around style."
-
-Be precise about what a formatter buys, because two of the four usual claims are unsupported. It ends style arguments, which is true by construction. It shrinks diffs, which is mechanically verifiable. It makes reviewers focus on logic, which is plausible and unmeasured. It makes code faster to comprehend or less buggy, for which no study exists. Claim the first two.
-
-Rob Pike's line is the best argument in the area and it concedes the point: "gofmt's style is no one's favorite, yet gofmt is everyone's favorite."
-
 ---
 
-## 2. Adopt an existing guide, then record only your deviations
+## 2. Base guide and deviations
 
-Writing a style guide from scratch is weeks of argument for a result nobody will read. Name the guide you adopt and write down only where you differ.
+*Name the guide you adopt, then record only where you differ. Writing a style guide from scratch is weeks of argument for a result nobody reads.*
 
 | Field | Example |
 |---|---|
@@ -46,43 +44,99 @@ Writing a style guide from scratch is weeks of argument for a result nobody will
 | Linter and config | Ruff, config in `pyproject.toml` |
 | Deviations | Line length 100, not 88. Reason: two of our services have long ORM expressions and the wrapping hurt more than the width |
 
-The deviations column is the document. Every entry needs a reason, because a deviation with no reason is indistinguishable from an accident and will be reverted by the next person who reads the base guide.
+*The deviations row is the document. Every entry needs a reason — a deviation with no reason is indistinguishable from an accident, and the next person who reads the base guide will revert it.*
 
-Note that PEP 8's own scope is narrower than its reputation. It opens: "this document gives coding conventions for the Python code comprising the standard library in the main Python distribution", and says explicitly that "project-specific guides take precedence for that project".
-
----
-
-## 3. Write down only what a tool cannot check
-
-The rules worth the space are the ones with no automated equivalent.
-
-- **Naming, beyond casing.** What a good name looks like here, with one compliant and one non-compliant example. This is where the evidence actually supports you (section 5).
-- **Error handling.** Which errors are raised, which are returned, which are logged and swallowed, and what goes in a message.
-- **Comments.** "Comment why, not what" survives the evidence; "comment everything" does not.
-- **Structure.** Module boundaries, where a new file goes, what belongs in a shared package.
-- **Testing conventions.** Naming, fixture placement, what a test's name has to communicate. Cross-reference the test strategy for what to test where.
-
-One compliant and one non-compliant example beats a paragraph of description, every time.
+*Do not overstate what the base guide claims for itself. PEP 8 opens by saying it "gives coding conventions for the Python code comprising the standard library in the main Python distribution", and states that "project-specific guides take precedence for that project".*
 
 ---
 
-## 4. Decide whose consistency wins, because the two big guides disagree
+## 3. Formatting
 
-This is the sharpest genuine disagreement in the area and you have to resolve it for your own repository.
+*Name the formatter, its version and its config file. Then stop writing.*
 
-**PEP 8 says local consistency wins.** From "A Foolish Consistency is the Hobgoblin of Little Minds": "Consistency with this style guide is important. Consistency within a project is more important. Consistency within one module or function is the most important." It then lists reasons to ignore a guideline, including when applying it "would make the code less readable, even for someone who is used to reading code that follows this PEP".
+*Everything in this section is a solved problem. Adopt gofmt, rustfmt, Black, Prettier, clang-format or the equivalent, take its defaults, and move on. Black's README states the deal plainly: "by using it, you agree to cede control over minutiae of hand-formatting... Style configuration options are deliberately limited and rarely added." Prettier's stated goal is the same: "we want to free mental threads and end discussions around style."*
 
-**Google says global consistency wins**, and gives a mechanism rather than a preference. Its C++ guide asks you to "be mindful of our scale", with more than 100 million lines in one repository, and to "be consistent with existing code... just pick one and stop worrying about it". At that scale uniformity is what makes automated refactoring across the whole codebase possible, which is a concrete return that a small repository does not get.
+*Be precise about what a formatter buys, because two of the four usual claims are unsupported. It ends style arguments, which is true by construction. It shrinks diffs, which is mechanically verifiable. It makes reviewers focus on logic, which is plausible and unmeasured. It makes code faster to comprehend or less buggy, for which no study exists. Claim the first two.*
 
-Neither cites evidence. Both are reasoned. **The deciding question is whether you run automated changes across many repositories.** If you do, buy the global consistency. If you do not, PEP 8's position costs you less.
-
-The Linux kernel takes a third position worth knowing: "coding style is very personal, and I won't **force** my views on anybody", followed immediately by a very forceful document. Its 8-character indent rule is defended not as a readability claim but as a design constraint, because "if you need more than 3 levels of indentation, you're screwed anyway". A formatting rule used deliberately to make bad structure painful is the most defensible kind of style rule there is.
+> **Example.** rustfmt 1.8, default profile, `rustfmt.toml` in the repository root. Runs on save and fails CI.
 
 ---
 
-## 5. Know which of your rules have evidence behind them
+## 4. Naming
 
-Almost none of them do, and saying so protects the ones that do.
+*What a good name looks like here. Give one compliant and one non-compliant example per rule — it beats a paragraph of description every time.*
+
+*Spend the rules on descriptiveness, not on casing. Full descriptive words beating abbreviations is the best-supported rule in this whole area; camelCase versus under_score is a small effect that is close to nil for experienced readers.*
+
+> **Example.** `elapsed_since_last_retry`, not `t2`. Domain nouns match the [glossary](glossary.md): a "charge" is never called a "payment" in code.
+
+---
+
+## 5. Comments
+
+*What must be commented, and what must not.*
+
+*"Comment why, not what" survives the evidence. "Comment everything" does not — see the evidence notes at the end of this document before you mandate comment volume.*
+
+---
+
+## 6. Error handling
+
+*Which errors are raised, which are returned, which are logged and swallowed, and what goes in a message.*
+
+---
+
+## 7. Structure and file layout
+
+*Module boundaries, where a new file goes, what belongs in a shared package.*
+
+---
+
+## 8. Testing conventions
+
+*Naming, fixture placement, and what a test's name has to communicate.*
+
+*Conventions only. What to test, and at which level, belongs in the [test strategy](test-strategy.md) — do not duplicate it here.*
+
+---
+
+## 9. Consistency: local or global
+
+*State which consistency wins when they conflict, because the two most-cited guides disagree and you have to resolve it for your own repository.*
+
+*PEP 8 says local consistency wins. From "A Foolish Consistency is the Hobgoblin of Little Minds": "Consistency with this style guide is important. Consistency within a project is more important. Consistency within one module or function is the most important." It then lists reasons to ignore a guideline, including when applying it "would make the code less readable, even for someone who is used to reading code that follows this PEP".*
+
+*Google says global consistency wins, and gives a mechanism rather than a preference. Its C++ guide asks you to "be mindful of our scale", with more than 100 million lines in one repository, and to "be consistent with existing code... just pick one and stop worrying about it". At that scale uniformity is what makes automated refactoring across the whole codebase possible, which is a concrete return a small repository does not get.*
+
+*Neither cites evidence. Both are reasoned. The deciding question is whether you run automated changes across many repositories. If you do, buy the global consistency. If you do not, PEP 8's position costs you less.*
+
+---
+
+## 10. Waivers
+
+*Who grants a waiver, whether it is per-line or per-file, and whether a suppression comment must carry a reason.*
+
+*A guide with no exception process gets ignored wholesale the first time it is wrong. Google's model sets the bar by what the rule protects: rules whose violation risks correctness get a high bar, stylistic ones are cheaper to waive. Suppressions without reasons accumulate until the linter is decorative.*
+
+*Say also that "the absence of a prohibition is not the same as a license to proceed", in Google's phrasing, so the document is not read as an exhaustive list of the only forbidden things.*
+
+> **Example.** `# noqa: E501 — generated SQL, reformatting breaks the parser`. Any suppression without a reason after the dash fails review.
+
+---
+
+## 11. Enforcement
+
+*Which check runs where: on save, on commit, in CI. Which ones block a merge and which only warn.*
+
+*Link the [branching strategy](branching-strategy.md) rather than restating the required-checks list, so there is one place to change it.*
+
+---
+
+## Evidence behind style rules
+
+*Background for whoever maintains this document. Not part of the standard — delete it, or move it to the team wiki.*
+
+*Almost no style rule has evidence behind it, and saying so protects the few that do.*
 
 | Common claim | Status |
 |---|---|
@@ -96,21 +150,13 @@ Almost none of them do, and saying so protects the ones that do.
 | Developers can tell which style helps them | **Contradicted twice.** Stated preference and measured eye effort diverge in both of the recent studies |
 | Style rules reduce defects | **No supporting evidence found** |
 
-Two things follow directly. **Spend your naming rules on descriptiveness, not on casing**, because that is where the measured effect is. And **do not restyle a working file to match a new convention**, because the one study that looked at it says you gain nothing and every edit carries a chance of a defect.
+*Two things follow directly. Spend your naming rules on descriptiveness, not on casing, because that is where the measured effect is. And do not restyle a working file to match a new convention, because the one study that looked at it says you gain nothing and every edit carries a chance of a defect.*
 
-The most uncomfortable finding is worth stating once to your team. Boogerd and Moonen measured violations of MISRA C:2004, a standard designed specifically to prevent faults, against real faults in an industrial system for ICSM 2008, and reported that most individual rules showed no significant relationship with faults. We could not obtain the full text, so treat the specific conclusion as unverified. What is safe to say without it: if a safety-oriented rule set shows weak per-rule correlation with faults, a formatting guide has no basis at all for claiming it prevents them.
+*The most uncomfortable finding is worth stating once to your team. Boogerd and Moonen measured violations of MISRA C:2004, a standard designed specifically to prevent faults, against real faults in an industrial system for ICSM 2008, and reported that most individual rules showed no significant relationship with faults. We could not obtain the full text, so treat the specific conclusion as unverified. What is safe to say without it: if a safety-oriented rule set shows weak per-rule correlation with faults, a formatting guide has no basis at all for claiming it prevents them.*
 
-**None of this makes style guides worthless.** Coordination is genuinely valuable and a codebase where everyone formats differently costs real attention every day. It does mean the justification is coordination, and a guide that claims science will lose the argument with the first person who checks.
+*None of this makes style guides worthless. Coordination is genuinely valuable, and a codebase where everyone formats differently costs real attention every day. It does mean the justification is coordination, and a guide that claims science will lose the argument with the first person who checks.*
 
----
-
-## 6. Say how a rule gets waived
-
-A guide with no exception process gets ignored wholesale the first time it is wrong.
-
-Google's model: waivers exist, and the bar is set by what the rule protects. Rules whose violation risks correctness get a high bar; stylistic ones are cheaper to waive. Its guides also note that "the absence of a prohibition is not the same as a license to proceed", which stops the document being read as an exhaustive list of the only things that are forbidden.
-
-State who grants a waiver, whether it is per-line or per-file, and whether a suppression comment must carry a reason. Suppressions without reasons accumulate until the linter is decorative.
+*The Linux kernel takes a third position worth knowing: "coding style is very personal, and I won't force my views on anybody", followed immediately by a very forceful document. Its 8-character indent rule is defended not as a readability claim but as a design constraint, because "if you need more than 3 levels of indentation, you're screwed anyway". A formatting rule used deliberately to make bad structure painful is the most defensible kind of style rule there is.*
 
 ---
 

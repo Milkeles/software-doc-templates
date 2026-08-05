@@ -15,8 +15,7 @@
 
 ---
 
-## Write this by reference
-
+## Scope
 *The controlling standard says so itself. IEEE Std 828-2012, Annex D, opens: "The CMP shall include the following either by reference to another document that is a CI or within itself."*
 
 *That sentence is the whole strategy. Every section below may be a pointer, provided the thing pointed at is itself version-controlled. "See `.github/workflows/release.yml`" satisfies the requirement and stays true; a prose description of the pipeline does not stay true past the next change to it.*

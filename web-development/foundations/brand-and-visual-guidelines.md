@@ -14,7 +14,7 @@
 
 ---
 
-## Where the boundary with the design system falls
+## Relationship to the design system
 
 Published organisations that maintain both keep them separate, and the split is consistent enough to copy.
 
@@ -202,7 +202,7 @@ If you have an ecosystem and no such section, you have no basis to object when s
 
 ---
 
-## Where to send someone who wants an exception
+## 11. Exceptions
 
 Name a person or team, and give a turnaround time.
 
@@ -210,7 +210,7 @@ Every guideline document generates exception requests. Without a stated route, t
 
 ---
 
-## How good is the evidence for any of this
+## Evidence behind brand guidelines
 
 Weak, and worth saying plainly.
 
