@@ -84,8 +84,7 @@
 
 *Delete this section too.*
 
-**Do not claim a PR template speeds up review.** It is the most common justification and the evidence points the other way: after a project adopts templates, incoming volume drops, discussion drops, and issue resolution takes *longer*. Templates measurably change how a project behaves, and the direction is not uniformly good.
-
+**Do not promise it speeds up review.** A template does not make a reviewer faster. It changes what arrives — fewer submissions, better formed, and the easy ones filtered out before anyone looks. Sell it on that, or the first month of unchanged turnaround gets read as the template having failed.
 **The description is the part with evidence behind it.** Reviewers demonstrably need context and change understanding, which supports one field: why the change exists. Checklists, type selectors and breaking-change flags are conventions — useful, often mechanical, but not evidence-backed.
 
 **Keep the whole thing small.** Real templates are short and static: most organise their content into two or fewer categories and never restructure after the first version. VS Code ships 344 bytes; Kubernetes ships 3,195. If you are choosing, choose small.
