@@ -2,7 +2,7 @@
 
 Documents every software team needs, whatever it builds and however it plans work.
 
-These twenty-five templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
+These thirty templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
 
 Start here before adopting anything from a methodology group.
 
@@ -49,14 +49,19 @@ A document missing these will rot regardless of how well it was written. Pick th
 | [Test strategy](test-strategy.md) | The team disagrees about what to test where | One person writes all the tests | Repo |
 | [Test cases](test-case-specification.md) | A person executes the check, or someone outside the team must see what was checked | The test is automated. The code is the specification | Repo, or a test management tool |
 | [Bug report](bug-report.md) | Always, as a form the tracker enforces | Never | Issue tracker, template in `.github/` |
+| [Feature request](feature-request.md) | You accept requests as issues and need the problem, not the requester's fix | You route requests to a forum or a design process instead | Issue tracker, form in `.github/ISSUE_TEMPLATE/` |
 | [Test summary report](test-summary-report.md) | Someone must decide whether to ship, and it is not the person who ran the tests | The pipeline is the decision | Wiki or the release ticket |
 | [Code review guidelines](code-review-guidelines.md) | Reviews are inconsistent or slow, or the team is growing | Two people who already agree | Repo |
+| [Pull request template](pull-request-template.md) | Reviewers keep asking authors why a change exists | Every reviewer was already in the conversation | Repo, `.github/pull_request_template.md` |
 | [Branching strategy](branching-strategy.md) | More than one person merges, or you support more than one released version | One person, one branch | Repo, beside the CI config |
 | [Coding standards](coding-standards.md) | A tool cannot enforce the rule and the argument keeps recurring | The formatter already settled it | Repo, beside the lint config |
 | [Contributing guide](contributing-guide.md) | People outside the team send changes | Nobody outside the team can push | Repo, as `CONTRIBUTING.md` |
+| [Governance](governance.md) | The project holds money, or one person currently decides everything | Three people who talk daily | Repo root, as `GOVERNANCE.md` |
+| [Support policy](support.md) | Support questions reach the issue tracker often enough to hurt | You have no staffed channel to redirect them to | Repo, as `SUPPORT.md` |
 | [Onboarding guide](onboarding-guide.md) | You will hire again | You will not | Split: setup in repo, org context in wiki |
 | [Changelog](changelog.md) | Anyone consumes your releases, including other teams | Nothing outside the repo depends on you | Repo root |
 | [Release notes](release-notes.md) | Non-technical users need to know what changed | Your only users read the changelog | Product site or in-app |
+| [Security policy](security.md) | A stranger can find a flaw in something you ship | Nothing you ship is reachable from outside the team | Repo, as `SECURITY.md` |
 | [Threat model](threat-model.md) | You handle credentials, money, personal data, or untrusted input | A prototype with no real data | Repo, beside the design |
 | [Glossary](glossary.md) | The same word means different things to different teams | Everyone shares vocabulary already | Repo |
 | [Deprecation plan](deprecation-plan.md) | Someone depends on something you intend to remove | Nobody outside the team calls it | Repo, announced widely |
@@ -69,7 +74,7 @@ A document missing these will rot regardless of how well it was written. Pick th
 
 ## How these documents feed each other
 
-Twenty-five documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
+Thirty documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
 
 **A decision, from proposal to current state.**
 
@@ -121,7 +126,7 @@ The arrows out of the postmortem are the part teams skip, and skipping them is w
 
 The changelog is a fact record for people integrating with you. Release notes are written for someone who does not know your internals. Same event, two audiences, two documents, and merging them produces one that serves neither.
 
-**How a change gets in.** Four documents describe one path, and each answers a different question about it.
+**How a change gets in.** Five documents describe one path, and each answers a different question about it.
 
 ```
    contributing guide ---> branching strategy ---> coding standards
@@ -131,6 +136,13 @@ The changelog is a fact record for people integrating with you. Release notes ar
    what is the rule       may it live
                                  \                      /
                                   v                    v
+                            pull request template
+                                        |
+                            what the author must
+                            explain before anyone
+                            reads the diff
+                                        |
+                                        v
                             code review guidelines
                                         |
                             what a human decides,
@@ -138,6 +150,8 @@ The changelog is a fact record for people integrating with you. Release notes ar
 ```
 
 The split is by enforcement. The coding standards hold what a tool checks; the review guidelines hold what only a person can. Merging them produces a document where nobody can tell which rules block a merge. The branching strategy holds the mechanics, and the contributing guide is the front door that links to all three without repeating any of them.
+
+The pull request template sits between the author and the reviewer, and it holds exactly one thing the other four cannot: why *this* change exists. Everything else on it is convention borrowed from the documents above.
 
 **What testing produces.** Four documents, and the split is by tense.
 
@@ -157,7 +171,9 @@ The split is by enforcement. The coding standards hold what a tool checks; the r
 
 The strategy is durable and answers "what do we test". The cases are the checks themselves. The summary report is a record of one cycle and is never edited afterwards. A team that keeps only the strategy has rules nobody executed; a team that keeps only reports has a history with no reason behind it.
 
-**The bug report is the odd one.** It is the only document here that people outside the team write, often in a hurry, often once. That is why its design is a tracker form rather than a page, and why the measured way to improve reports is to change the form rather than to ask people to try harder.
+**The bug report and the feature request are the odd ones.** They are the only documents here that people outside the team write, often in a hurry, often once. That is why both are designed as tracker forms rather than pages, and why the measured way to improve a bug report is to change the form rather than to ask people to try harder. The pair splits cleanly: a bug is behaviour that is wrong, a feature request is behaviour that is missing, and both are answered by describing the problem rather than the fix.
+
+**Three documents exist for people who are not contributing at all.** The security policy tells someone holding a vulnerability where to send it. The support policy tells someone with a question where to go instead of the issue tracker. Governance tells everyone what happens when a disagreement outlives the discussion. None is produced by an event in any flow above; each exists because the absence is only felt at the worst possible moment.
 
 **How a change reaches production.** The change is in; this is what carries it out.
 
@@ -327,6 +343,20 @@ Two received ideas do not survive the same study. Duplicates were named a proble
 
 **Where.** The issue tracker, with the template file in `.github/ISSUE_TEMPLATE/` so the form versions with the code.
 
+### Feature request
+
+**When.** You accept requests as issues at all. Decide that first — React offers no route, and Rust, Vue and Next.js send requests to forums or Discussions rather than the tracker. A request filed in the wrong place costs a maintainer more than one never filed.
+
+**Why.** To get the problem instead of the requester's guess at the fix. Across 15 request forms from major projects, 13 ask for the problem and 12 make it required, the strongest agreement on any field in the genre. Svelte and Tauri independently landed on the same placeholder text, `I'm always frustrated when...`. Titles follow the same rule: "No way to run a single test file" survives being wrong about the solution in a way that "Add a `--file` flag" does not.
+
+Three fields the advice keeps recommending and nobody uses. **Willingness to implement** appears in zero of the eleven largest projects surveyed. **Acceptance criteria and user stories** appear in none of nineteen templates examined. **Priority set by the requester** appears in none either, and for a good reason — the requester is guessing at a schedule they cannot see.
+
+One field is worth rewriting rather than dropping. Ten of 15 forms ask for "alternatives considered" and only four require it, which is the signature of a field people cannot answer. TypeScript asks instead: "What workarounds are you using in the meantime?" Ordinary users can answer that, and an expensive workaround is the strongest evidence a request has.
+
+Be honest about what the form achieves. Node.js publishes the uncomfortable version in its own feature-request guidance: "Feature requests are not a valuable source of input for the project. It is usually more productive to first send the Pull Request implementing the feature, even imperfectly." It also names the harm in leaving requests open — an open request "may be detrimental as it may result in an expectation that will never be fulfilled".
+
+**Where.** The issue tracker, as a YAML issue form in `.github/ISSUE_TEMPLATE/feature_request.yml`, so the problem field can genuinely be required. Use `config.yml` `contact_links` to put the alternative destinations in front of the form.
+
 ### Test summary report
 
 **When.** A person who did not run the tests has to decide whether to ship. If the pipeline makes that decision, you do not need this document.
@@ -350,6 +380,20 @@ The second thing guidelines buy is speed, and speed is a team property. Google's
 On review size, the most cited numbers come from a Cisco study of 2,500 reviews published by SmartBear: 200 to 400 lines per sitting, no more than 60 minutes, defect discovery of 70 to 90 percent in that range. Treat those with the caveat attached. The study is vendor-funded, not peer-reviewed, and twenty years old. It is nonetheless directionally consistent with Google's independent guidance that 100 lines is reasonable and 1,000 is usually too large.
 
 **Where.** In the repo under `docs/`, linked from `CONTRIBUTING.md` rather than pasted into it. The guidelines reference the coding standards and the lint configuration, and must move with them.
+
+### Pull request template
+
+**When.** Reviewers keep having to ask why a change exists. Below that, the template adds a form to fill in and buys nothing.
+
+**Why.** One field has evidence behind it, and it is the description. Bacchelli and Bird studied code review at Microsoft for ICSE 2013 — 17 developers observed across 16 product teams, 570 review comments classified, 165 managers and 873 programmers surveyed — and concluded that "context and change understanding is the key of any review", with most of those understanding needs met by no tool at all. The description is the tool. Everything else on a PR template — type selectors, breaking-change flags, checklists — is convention.
+
+Do not claim the template speeds review up. It is the usual justification and the evidence points the other way. Li and colleagues studied issue and PR templates at scale for *IEEE Transactions on Software Engineering* in 2023 and found that after adoption, incoming volume drops, discussion drops, and **issue resolution takes longer**. A plausible reading is that templates filter out the easy and duplicate items so the remainder is harder — but the study cannot separate that from the alternative, and projects that adopt templates are usually already drowning, which confounds the comparison badly.
+
+Checklists are weaker than they look. The one controlled experiment — Gonçalves and colleagues, *Empirical Software Engineering* 2022, pre-registered, professional developers, three review tasks — "did not identify a strong relationship between the guidance provided and code review performance". Two caveats cut both ways: most participants were novice reviewers, and it measured reviewer checklists rather than the author-facing kind a PR template carries, which nobody has measured at all.
+
+Keep it small. A 2026 survey of 2,689 template files from 2,614 repositories found 68 percent organise content into two or fewer categories and 71 percent never restructure after the first version. VS Code ships 344 bytes; Kubernetes ships 3,195. Decide explicitly whether the template is a gate or a hint — Electron and Homebrew auto-close PRs that ignore it, VS Code enforces nothing, and both run at scale. What fails is enforcing informally, where contributors cannot tell which fields are real.
+
+**Where.** In the repo as `.github/pull_request_template.md`. It only takes effect once merged to the default branch, which catches people out. For several variants, use `.github/PULL_REQUEST_TEMPLATE/` and the `template` query parameter, and note that GitHub shows no picker for pull requests — the parameter has to be built into your links.
 
 ### Branching strategy
 
@@ -387,6 +431,32 @@ The filename matters more than it should. GitHub only shows the Contributing lin
 
 **Where.** The repository root by default, because that is where people look without being told.
 
+### Governance
+
+**When.** Later than you think. GitHub's Minimum Viable Governance names the trigger better than anything else available: a formal structure becomes necessary "typically when your organization begins holding money". Before that, a maintainers list and a contributing guide carry the load, and elaborate governance for a three-person project is a way of avoiding the work.
+
+**Why.** To answer one question before you need the answer: when people disagree, what happens? Every mechanism worth copying comes from a project's own normative document — PEP 13, the ASF voting rules, the Node.js governance file, Homebrew's charter. None of it is evidence-backed. No study shows that one governance model produces better outcomes, higher retention, or longer project life than another. Treat it as a menu, not as best practice, and say so if asked.
+
+The sections that matter are the ones homegrown documents skip. **Escalation**, because a decision nobody accepts needs a named route and a deadline — Homebrew's votes resolve automatically after 7 days with the leading option winning, so a deadlock cannot outlast a week. **Removal**, because that conversation should be scripted while nobody is angry; Python requires a two-thirds majority to eject a core team member and spells out the arithmetic, "a 3:2 vote is insufficient; 4:1 in favor is the minimum required". **Trademarks**, because that is the part with legal consequences and developer-written documents almost always omit it.
+
+Fill in every number. "A majority of maintainers" without saying a majority of whom, within what window, is not a governance rule. And if one person currently decides everything, this document's real job is succession. The BDFL model ran Python from inception until July 2018; replacing it took PEP 8000 through PEP 8016 and roughly six months.
+
+**Where.** The repository root as `GOVERNANCE.md`, changed only by pull request. Keep it in git rather than a wiki, because the amendment history is the point — a rule with no record of when it changed and who agreed is worth less than no rule.
+
+### Support policy
+
+**When.** Two conditions together: support questions reach your issue tracker often enough to be a burden, and you have a real staffed channel to send them to. If either is false, a "getting help" section in the README or the contributing guide is better.
+
+**Why.** To tell a confused person where to go, in one sentence, at the moment they are about to open the wrong kind of issue. That is the whole benefit, and it is worth having. It is also the only benefit you can claim.
+
+Do not claim it reduces your workload. Nobody has measured the effect of a `SUPPORT.md` on question volume, maintainer time, or anything else. The adjacent evidence is unhelpful rather than encouraging: Raza and colleagues (ICCA 2019, 100 projects) found no significant relationship between user support and documentation or troubleshooting guidelines, though their outcome measure was weekly downloads and cannot speak to maintainer time. And the one study of the forum-to-tracker relationship found just 3.5 percent of 23,169 Moodle tracker issues linked back to forum discussions, which looks like two separate populations rather than a funnel.
+
+The burden itself is real. Rasti's 2024 work on classifying questions inside issue trackers is built from 2 million GitHub issues on the premise that support questions spam large projects and maintainers want them elsewhere. Note what that implies: the questions arrive anyway. The stronger lever is `.github/ISSUE_TEMPLATE/config.yml` — `contact_links` puts named destinations inside the issue-creation flow, and `blank_issues_enabled: false` removes the blank-issue path. The file states the policy; the config enforces the routing.
+
+Only 7 of 31 major projects checked have this file, against 28 of 31 for a contributing guide, and the median is 535 bytes. ESLint's is one sentence. Write the sentence.
+
+**Where.** The repo, as `SUPPORT.md`. GitHub links it from the new-issue page, which is the moment of highest leverage, and concedes it is easy to miss — link it from the README too.
+
 ### Onboarding guide
 
 **When.** Before the next hire, not during. The best moment to fix an onboarding document is the first time someone uses it, so make "improve the doc you just followed" an explicit first-week task.
@@ -418,6 +488,22 @@ Note that Keep a Changelog describes itself as its author's considered opinion a
 There is no normative source for this split, only consistent industry practice. The defensible chain is: git log, curated into a changelog, curated again into release notes.
 
 **Where.** Product site, documentation portal, in-app, or email. Not the repo, because the audience is not in the repo and the content needs images and review by people who do not write code.
+
+### Security policy
+
+**When.** A stranger can find a flaw in something you ship. That is nearly every public repository and most internal services with users outside the owning team.
+
+**Why.** So a person holding a vulnerability knows where to send it, privately, in under thirty seconds. ISO/IEC 29147:2018 makes the priority literal: Clause 9 sorts disclosure-policy content into required, recommended and optional tiers, and the only **required** element is a preferred contact mechanism. Report contents, scope, timelines and recognition are recommended. Legal considerations and the disclosure timeline are optional.
+
+The file is doing two unrelated jobs and most projects merge them without noticing. Job A is instructions to a reporter. Job B is guidance to someone deploying the software safely — TensorFlow's file is titled "Using TensorFlow Securely" and spends nine tenths of its length on Job B with reporting last. If your threat model is non-obvious, write it in the threat model document and link to it rather than growing this file.
+
+Most major-project files are pointers, not policies. Nine of about twenty surveyed delegate the substance to a canonical page; Django's entire file is a title and one URL, 80 bytes, and Django has one of the most detailed disclosure policies in open source. The median is well under 1,500 bytes.
+
+Two things to get right. **Publish a response time only if you will meet it** — just 2 of about 20 projects publish one at all, and CERT/CC's own guidance reports 24 to 48 hours as a common acknowledgement window and 45 to 90 days as the usual public-disclosure range. **Do not call reporter obligations safe harbour.** Zero of the roughly twenty files surveyed grant safe harbour; several impose duties on the reporter, which is the mirror image, not the thing.
+
+Two claims to avoid. Adding the file does not raise your GitHub community profile score — `SECURITY.md` is absent from the API's scored list, and so is `SUPPORT.md`. And GitHub's private vulnerability reporting is not a substitute: GitHub states plainly that it "is separate from a repository's `SECURITY.md` file", because the button is a channel and carries no policy.
+
+**Where.** The repo, as `SECURITY.md`. GitHub checks `.github/` first, then the root, then `docs/`, so a `.github` copy silently wins over a root one. An organisation can publish one copy in its public `.github` repository, but inherited files do not appear in clones, packages or downloads — good for 200 internal services, bad for a distributed library. If you also run a website, publish `/.well-known/security.txt` per RFC 9116 with a `Policy:` field pointing here, and set its mandatory `Expires` field.
 
 ### Threat model
 
@@ -539,6 +625,11 @@ The claims above come from these. Where they disagree, the disagreement is state
 - [PEP 8](https://peps.python.org/pep-0008/); [Google Style Guides](https://google.github.io/styleguide/); [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html); [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html); [Developer Certificate of Origin 1.1](https://developercertificate.org/)
 - Binkley, Davis, Lawrie, Maletic, Morrell and Sharif, "The impact of identifier style on effort and comprehension", *Empirical Software Engineering* 18(2) (2013), 219-276; Miara, Musselman, Navarro and Shneiderman, "Program indentation and comprehensibility", *CACM* 26(11) (1983), 861-867; Bauer, Siegmund, Peitek, Hofmeister and Apel, "Indentation: Simply a Matter of Style or Support for Program Comprehension?", ICPC 2019
 - Bettenburg, Just, Schröter, Weiss, Premraj and Zimmermann, "What Makes a Good Bug Report?", FSE-16 (2008), 308-318
+- Bacchelli and Bird, "Expectations, Outcomes, and Challenges of Modern Code Review", ICSE 2013, 712-721; Gonçalves, Fregnan, Baum, Schneider and Bacchelli, "Do explicit review strategies improve code review performance?", *Empirical Software Engineering* 27 (2022); Li, Yu, Yin, Zhang and Wang, on the effect of issue and PR templates, *IEEE Transactions on Software Engineering* (2023)
+- [GitHub community health file documentation](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file); [issue form schema](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms); [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability); the real templates and policies of Node.js, Kubernetes, Rust, Homebrew, Electron, Django, Go, Vue, TypeScript and TensorFlow, read as raw files
+- [PEP 13](https://peps.python.org/pep-0013/); [ASF voting rules](https://www.apache.org/foundation/voting.html); [Node.js governance](https://github.com/nodejs/node/blob/main/GOVERNANCE.md); [Homebrew governance](https://docs.brew.sh/Homebrew-Governance); GitHub, [Minimum Viable Governance](https://github.com/github/MVG)
+- [ISO/IEC 29147:2018](https://www.iso.org/standard/72311.html) and [ISO/IEC 30111:2019](https://www.iso.org/standard/69725.html), read as far as the free previews allow; [RFC 9116](https://www.rfc-editor.org/rfc/rfc9116.html); [CERT Guide to Coordinated Vulnerability Disclosure](https://certcc.github.io/CERT-Guide-to-CVD/)
+- Raza, Capretz and Basri, "An Empirical Study of User Support Tools in Open Source Software", ICCA 2019; Rasti, [Labeling Questions Inside Issue Trackers](https://arxiv.org/abs/2412.04523) (2024); Yehudi, Goble and Jay, [Individual context-free online community health indicators fail to identify open source software sustainability](https://arxiv.org/abs/2309.12120)
 - Itkonen and Mäntylä, "Are Test Cases Needed? Replicated Comparison between Exploratory and Test-Case-Based Software Testing", *Empirical Software Engineering* 19(2) (2014), 303-342; Itkonen, Mäntylä and Lassenius, "Defect Detection Efficiency: Test Case Based vs. Exploratory Testing", ESEM 2007
 - Inozemtseva and Holmes, "Coverage Is Not Strongly Correlated With Test Suite Effectiveness", ICSE 2014, 435-445
 - Bach, J., "Session-Based Test Management", *STQE* 2(6) (November 2000), 32-37
