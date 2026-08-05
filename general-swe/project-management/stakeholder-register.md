@@ -99,16 +99,14 @@ No study tests whether the grid improves stakeholder outcomes. It is a heuristic
 
 ---
 
-## 5. Review it, because power moves
-
+## 5. Review cadence
 Mendelow's actual contribution is the one part of his paper that everyone skips, and it is the best argument for a dated register: "power is situation specific. Should a substitute be available, the originally powerful sole supplier loses the power base."
 
 Stakeholder position is a function of dependency. When the dependency changes, the position changes, often overnight. Re-review at every phase boundary and whenever a dependency shifts: a vendor replaced, a reorganisation, a budget moved, a person promoted.
 
 ---
 
-## 6. Handle it carefully
-
+## 6. Confidentiality
 This document contains written judgements about named colleagues, including whether they are opposed to something and how much power they have.
 
 - Restrict access, and say who has it.

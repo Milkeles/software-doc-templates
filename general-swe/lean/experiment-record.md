@@ -67,8 +67,7 @@
 
 ---
 
-## 5. What we will do about it
-
+## 5. Decision
 *Both answers, written before you know which one you get.*
 
 | | |

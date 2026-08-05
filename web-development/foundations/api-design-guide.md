@@ -14,25 +14,6 @@
 
 ---
 
-## Why this document exists when you already have OpenAPI
-
-OpenAPI 3.2.0 (published 19 September 2025) describes structure: paths, parameters, schemas, response shapes. It does not describe meaning or policy. The gap it leaves is exactly this document:
-
-| Not expressible in OpenAPI | Consequence if undocumented |
-|---|---|
-| Whether an operation is idempotent, and how retries are made safe | Consumers retry and duplicate charges |
-| Rate limit semantics: what counts, what resets when, what happens at the limit | Consumers back off wrong, or not at all |
-| Consistency guarantees, including read-after-write | Consumers write then immediately read and get stale data |
-| What each error code actually means and whether the client should retry | Every failure becomes a support ticket |
-| Pagination semantics under concurrent writes | Items skipped or duplicated across pages, silently |
-| Naming and resource-modelling conventions | Every new endpoint is designed from scratch |
-| Deprecation policy and support windows | Consumers discover removal by outage |
-| Authentication and authorisation policy, as opposed to scheme | Integrators guess at scope requirements |
-
-If your guide only restates what OpenAPI already says, delete it and keep the OpenAPI file.
-
----
-
 ## 1. Scope and audience
 
 Who this applies to and who reads it.
@@ -199,6 +180,27 @@ This guide states the policy. Each individual removal gets its own [deprecation 
 How rules get added or changed, and what happens to APIs built under the old rules.
 
 The realistic policy: new rules apply to new endpoints, existing endpoints migrate at their next major version, and the guide records when each rule was added. Without this, the guide either freezes or invalidates the API it governs.
+
+---
+
+## Notes on using this template
+
+*Delete this section before publishing.*
+
+**Fill only the rows OpenAPI cannot already express.** OpenAPI 3.2.0 (published 19 September 2025) describes structure: paths, parameters, schemas, response shapes. It does not describe meaning or policy, and the gap it leaves is exactly this document:
+
+| Not expressible in OpenAPI | Consequence if undocumented |
+|---|---|
+| Whether an operation is idempotent, and how retries are made safe | Consumers retry and duplicate charges |
+| Rate limit semantics: what counts, what resets when, what happens at the limit | Consumers back off wrong, or not at all |
+| Consistency guarantees, including read-after-write | Consumers write then immediately read and get stale data |
+| What each error code actually means and whether the client should retry | Every failure becomes a support ticket |
+| Pagination semantics under concurrent writes | Items skipped or duplicated across pages, silently |
+| Naming and resource-modelling conventions | Every new endpoint is designed from scratch |
+| Deprecation policy and support windows | Consumers discover removal by outage |
+| Authentication and authorisation policy, as opposed to scheme | Integrators guess at scope requirements |
+
+If your finished guide only restates what OpenAPI already says, delete it and keep the OpenAPI file.
 
 ---
 

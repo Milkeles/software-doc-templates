@@ -14,8 +14,7 @@
 
 ---
 
-## 1. Which dimensions matter here, and why only those
-
+## 1. Quality dimensions in scope
 *Not every dimension applies to every dataset. Name the two or three that actually decide whether this data is trustworthy, the same discipline the game-development [balance log](../../game-development/live-operations/balance-log.md) applies to metrics: more dimensions checked is not automatically better, and each one costs more to maintain than it returns.*
 
 | Dimension | Why this one matters for this dataset |

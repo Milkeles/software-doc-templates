@@ -16,7 +16,7 @@
 
 ---
 
-## 1. The two lines that make it a charter
+## 1. Authority
 
 Put these at the top, above everything else. A reader who stops here should still know what was authorised and who is now in charge.
 
@@ -52,8 +52,7 @@ The last four carry the authorising function and are the four most often dropped
 
 ---
 
-## 3. What does not go in it
-
+## 3. Out of scope
 **Not a plan.** The charter says a project exists and is worth doing. How it will be done comes later, in whatever your methodology produces.
 
 **Not a requirements document.** High-level means a paragraph, not a list of features. Link to [`../requirements/`](../requirements/).
@@ -72,8 +71,7 @@ So: write a charter when someone outside the team is committing money or people,
 
 ---
 
-## 5. The PRINCE2 alternative, and why it is often better
-
+## 5. The PRINCE2 alternative
 PRINCE2 has no project charter. It splits the authorisation into **two gates**, and for anything genuinely uncertain the split is an improvement.
 
 | | PMI | PRINCE2 |

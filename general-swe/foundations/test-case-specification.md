@@ -79,8 +79,7 @@
 
 ---
 
-## Pick the right abstraction level
-
+## Abstraction level
 *This is the failure the experiment above identified by name. In test-case-based testing, "the problems were related to correct abstraction levels of test cases".*
 
 *Too concrete and the case breaks every time a button moves, so people stop trusting it and stop running it. Too abstract and two testers execute it differently, so a pass means nothing.*

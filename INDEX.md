@@ -30,14 +30,19 @@ Documents any software team needs, whatever the domain. → [`general-swe/`](gen
 | [Data model](general-swe/foundations/data-model.md) | Document the entities, their fields, and the rules connecting them. |
 | [Deployment plan](general-swe/foundations/deployment-plan.md) | Set out the steps, checks, and rollback for a specific release. |
 | [Deprecation plan](general-swe/foundations/deprecation-plan.md) | Retire something without stranding the people using it. |
+| [Feature request](general-swe/foundations/feature-request.md) | Ask for something the software doesn't do, starting from the problem. |
 | [Glossary](general-swe/foundations/glossary.md) | Fix what the team's domain words mean, so two people don't use one word differently. |
+| [Governance](general-swe/foundations/governance.md) | Say what happens when people disagree, before they do. |
 | [Incident postmortem](general-swe/foundations/incident-postmortem.md) | Learn from an outage without assigning blame. |
 | [Interface control document](general-swe/foundations/interface-control-document.md) | Pin down the contract between two systems built by different teams. |
 | [Onboarding guide](general-swe/foundations/onboarding-guide.md) | Get a new engineer to their first useful change. |
+| [Pull request template](general-swe/foundations/pull-request-template.md) | Give a reviewer the context the diff cannot supply. |
 | [Release notes](general-swe/foundations/release-notes.md) | Announce a release to the people affected by it. |
 | [RFC](general-swe/foundations/rfc.md) | Propose a change and gather informed disagreement before building it. |
 | [Runbook](general-swe/foundations/runbook.md) | Give the on-call engineer the steps to fix this at 3am. |
+| [Security policy](general-swe/foundations/security.md) | Tell a stranger who found a flaw where to send it privately. |
 | [Service README](general-swe/foundations/service-readme.md) | Answer, in one file, what a service does and how to run it. |
+| [Support policy](general-swe/foundations/support.md) | Route questions away from the issue tracker, to a channel that answers them. |
 | [Technical design document](general-swe/foundations/technical-design-document.md) | Work out how something will be built before building it. |
 | [Test case specification](general-swe/foundations/test-case-specification.md) | Write a test someone else can run and get the same result. |
 | [Test strategy](general-swe/foundations/test-strategy.md) | Set how the team tests, at what level, and what it deliberately doesn't test. |

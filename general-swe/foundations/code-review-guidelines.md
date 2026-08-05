@@ -32,7 +32,7 @@
 
 | | |
 |---|---|
-| **First response** | *One business day maximum* |
+| **First response** | *One business day maximum* | 
 | **If you cannot** | *Say so in the request and name someone who can* |
 | **Urgent** | *Define what qualifies and how to signal it. Keep the bar high or everything becomes urgent.* |
 
@@ -69,8 +69,7 @@
 
 ---
 
-## How to write a comment
-
+## Review comments
 *The mechanics that determine whether review feels like help or like an exam.*
 
 - **Label the ones that do not block.** *Prefix optional comments so the author knows what is required. `Nit:` for trivia, `Optional:` for a suggestion, `FYI:` for information needing no action. Without labels, every comment reads as a demand, and reviews take twice as long.*

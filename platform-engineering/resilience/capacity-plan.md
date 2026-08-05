@@ -43,7 +43,7 @@
 
 ---
 
-## 4. Gap and plan to close it
+## 4. Gap and remediation
 
 | Resource | Gap (forecast demand minus current capacity) | Action | By when |
 |---|---|---|---|

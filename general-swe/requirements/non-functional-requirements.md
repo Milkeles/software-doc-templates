@@ -14,8 +14,7 @@
 
 ---
 
-## 1. How to state one
-
+## 1. Statement format
 Never as an adjective. Always as a scenario with a number in it.
 
 The six-part scenario gives you the parts to fill in:

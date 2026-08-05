@@ -90,8 +90,7 @@
 
 *Group by whatever makes the set easiest to review: by feature, by user class, by mode, by external interface. 29148 does not mandate an order and IEEE 830's annex offered eight alternatives. Pick one and stay in it.*
 
-### How to write each requirement
-
+### Requirement format
 *Each requirement is one row. Every column is mandatory. A blank verification column means the requirement is not finished.*
 
 | ID | Requirement | Rationale | Priority | Source | Verified by |

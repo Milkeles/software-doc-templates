@@ -54,15 +54,7 @@ The confirm step is the one most often skipped and the one that does most of the
 
 ---
 
-## 3. What to include
-
-**Only failures that have actually happened.** Source this document from support tickets, incident reviews, and repeated questions. An imagined failure mode wastes the reader's time and crowds out the real ones.
-
-Keep a note of frequency. The commonest three go first regardless of how interesting the others are.
-
----
-
-## 4. Getting more information
+## 3. Getting more information
 
 A short section on diagnosis in general, so a reader whose symptom is not listed is not stranded.
 
@@ -75,17 +67,18 @@ A short section on diagnosis in general, so a reader whose symptom is not listed
 
 ---
 
-## 5. Where to get help
+## 4. Where to get help
 
 The support channel, the issue tracker, and what to include in a report. Link the [bug report template](#) if you have one.
 
-Say what you need: version, platform, exact error text, steps to reproduce, and the diagnostic output from section 4. Asking here saves a round trip on every ticket.
+Say what you need: version, platform, exact error text, steps to reproduce, and the diagnostic output from section 3. Asking here saves a round trip on every ticket.
 
 ---
 
-## Keeping it alive
-
+## Maintenance
 A troubleshooting guide is the one document with a natural, cheap source of truth: your support queue.
+
+**Include only failures that have actually happened.** Source every entry from support tickets, incident reviews, and repeated questions. An imagined failure mode wastes the reader's time and crowds out the real ones. Keep a note of frequency: the commonest three go first regardless of how interesting the others are.
 
 - Add an entry the second time a problem is reported. Once is an accident.
 - When you fix the underlying bug, mark the entry with the version that fixed it rather than deleting it. Readers on older versions still need it.

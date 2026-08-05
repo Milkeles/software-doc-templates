@@ -31,8 +31,7 @@ Name what is *not* supported and why, if a reader could reasonably expect it. On
 
 ---
 
-## 2. Choose your method
-
+## 2. Installation methods
 If there is more than one way in, lead with a table so the reader picks once.
 
 | Method | Use when |

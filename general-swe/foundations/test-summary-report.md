@@ -25,8 +25,7 @@
 
 ---
 
-## What we now believe, and what we do not
-
+## Assessment
 *The section that makes this report worth writing. Testing buys confidence in specific claims. Say which claims, and say where you bought none.*
 
 | Area | Confidence | Basis |

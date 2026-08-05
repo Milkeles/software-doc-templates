@@ -14,8 +14,7 @@
 
 ---
 
-## First, decide whether you need this document
-
+## When a deployment plan is needed
 *Most deployments should not have one. If you ship several times a day through a pipeline that canaries and rolls back automatically, the pipeline is the plan, and a per-release document is theatre that slows you down without making anything safer.*
 
 **Write a plan for a specific deployment when at least one is true.**

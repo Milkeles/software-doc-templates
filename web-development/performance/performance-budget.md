@@ -58,7 +58,7 @@ Timing metrics belong here, because they are not stable enough to gate on.
 
 Field metrics are lagging indicators on a rolling 28-day window. They cannot block a pull request and should not be wired to try.
 
-### Why timing metrics do not get hard gates
+### Timing metrics
 
 The Lighthouse project documents this against itself:
 

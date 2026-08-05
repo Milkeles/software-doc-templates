@@ -62,8 +62,7 @@ See [`../../web-development/foundations/api-design-guide.md`](../../web-developm
 
 ---
 
-## 4. How to write the prose
-
+## 4. Prose style
 There is very little of it, and that is correct.
 
 **Describe, do not instruct.** "Returns the active key" belongs here. "Rotate your key every 90 days" does not; that is a how-to guide or an explanation.

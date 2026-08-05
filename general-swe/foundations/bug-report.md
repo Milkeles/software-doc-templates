@@ -17,8 +17,7 @@
 
 ---
 
-## The three fields that decide whether this gets fixed
-
+## Reproduction details
 *Not an opinion. Bettenburg and colleagues surveyed 466 people across the Apache, Eclipse and Mozilla projects for FSE 2008: 156 developers and 310 reporters, then filtered to 130 and 215 consistent responses. They asked developers which contents helped most, and reporters which were hardest to supply.*
 
 | Content | Developers who said it helps | Reporters who said it is hard to give |

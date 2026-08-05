@@ -34,6 +34,45 @@ Show, don't just tell. A one-line example beats a paragraph of description where
 
 ---
 
+## Headings
+
+This is the rule these templates most often got wrong, so it is spelled out.
+
+A template is not an article about how to write the document. It is the document, empty. The headings therefore belong to the finished document, not to the advice for filling it in.
+
+**Apply the survival test.** Imagine a team copies the template, fills every section in, deletes the guidance, and ships the result to their colleagues. Does the heading still make sense as a section of that finished document?
+
+| Fails | Passes |
+|---|---|
+| `## Deploy it` | `## Deployment and rollback` |
+| `## First, decide whether you need this document` | `## Scope` |
+| `## Why the brief is worth getting right` | *(cut — it is about the template, not the project)* |
+| `## How to write each requirement` | *(cut — move it under the requirements heading as guidance)* |
+
+Three common ways to fail it:
+
+- **The heading instructs the author.** "Put it where the host will find it" is advice. Nobody ships a document with that section in it.
+- **The heading argues a point.** "The PRINCE2 alternative, and why it is often better" is a paragraph wearing a heading's clothes.
+- **The heading refers to the document itself.** "Deploy *it*", "Keeping *it* short". The pronoun gives it away: the heading is talking about the template rather than naming a section.
+
+**Put the guidance under the heading, in italics.** Everything the failing headings were trying to say still belongs in the template — one line below the heading, where the reader deletes it after filling the section in.
+
+**Keep headings parallel within a level.** Microsoft's style guide asks for parallel sentence structure across headings at the same level, and it is the rule these templates broke most often — noun phrases and imperatives alternating down one page. Pick one shape per level and hold it. Across levels you may mix: Google's developer documentation style guide recommends a bare infinitive for task sections ("Create an instance") and a noun phrase for conceptual ones, and explicitly permits both in one document.
+
+**Grammatical form is not the test; survival is.** Some correct headings look wrong to a linter and must not be changed:
+
+- `threat-model.md` uses "What are we working on", "What can go wrong", "What are we going to do about it" and "Did we do a good enough job" — Shostack's Four Question Frame, verbatim, as published in the Threat Modeling Manifesto.
+- `incident-postmortem.md` uses "What went well", "What went wrong" and "Where we got lucky" — verbatim from the Google SRE Book's example postmortem.
+- `how-to-guide.md` and `runbook.md` use "Before you start" — verbatim from The Good Docs Project's how-to template.
+
+These pass because a real threat model, postmortem and how-to genuinely carry those headings. When a discipline has settled on a heading, use its wording and say in the pull request where it comes from.
+
+**Meta sections stay outside the document's own sequence.** "Notes on using this template" and "Related documents" are addressed to the person filling the template in, not to the document's readers. Never number them into the document's section sequence — a numbered "7. Why the brief is worth getting right" gets shipped by accident. Keep them unnumbered, at the end, and tell the reader to delete them.
+
+**Where no standard heading set exists, propose one and say so.** Many document types have no agreed structure. That is fine. Give the template a sensible set of headings anyway and state plainly, near the top, that these are a proposal rather than a convention, so a team knows it can rename them without losing anything.
+
+---
+
 ## What a group README must contain
 
 If you add a new methodology folder, its README answers three questions:

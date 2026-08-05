@@ -69,7 +69,7 @@ Chosen deliberately to cover the exploration inventory. Include:
 
 A small set chosen at random from outside the structured set, typically around 10% of the total sample. Its job is to catch what the structured sample's assumptions missed. If the random sample finds issue types the structured sample did not, your structured sample was wrong and you extend it.
 
-### Record the sample
+### Sample record
 
 List every page in the plan with its URL and the reason it is included. "Because it was on the list" is not a reason; "represents the article detail template" is.
 

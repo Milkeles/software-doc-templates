@@ -48,6 +48,7 @@ PERSONALITY.md
 Thumbs.db
 
 # Local tooling.
+tools/
 node_modules/
 .venv/
 venv/

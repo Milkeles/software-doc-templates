@@ -14,8 +14,7 @@
 
 ---
 
-## 1. What this is and who it's for
-
+## 1. Purpose and audience
 *Two or three sentences. What problem does this solve, and for which kind of team? Lead with the benefit to the reader, not with the implementation.*
 
 ---

@@ -31,8 +31,7 @@ Note that Google's guide is licensed CC BY 4.0, so you may quote and adapt it wi
 
 ---
 
-## 2. The decisions your base guide will not make for you
-
+## 2. Voice and mechanics
 These are the points where the major public guides actually diverge. Pick one and record it, because in the absence of a decision every reviewer applies their own.
 
 | Decision | The disagreement |
@@ -107,8 +106,7 @@ Prefer terms that describe rather than assume: *primary/replica*, *allowlist/blo
 
 ---
 
-## 7. Enforcing it
-
+## 7. Enforcement
 A style guide nobody can check is a style guide nobody follows.
 
 - Run a prose linter in CI. Vale is the common choice and reads rule sets in the repository.

@@ -15,8 +15,7 @@
 
 ---
 
-## Why this document does not look like a spec
-
+## Why a GDD is not a spec
 *A System Requirements Specification has no section for what the player should feel. A game design document does, because that omission is exactly what a 2012 IEEE paper proposing a game-design-document structure identified as the gap: aesthetics and experience are real requirements in a game, and they are absent from a conventional spec. The six sections below follow that structure.*
 
 *Two more things a spec assumes and a game cannot: a stable customer, and a stable scope. Neither exists here. Update this document as the design changes; do not treat a stale version as a broken process.*
@@ -83,8 +82,7 @@
 
 ---
 
-## What this document does not cover
-
+## Out of scope
 *Say what lives elsewhere, so nobody duplicates it here and lets the copy drift.*
 
 - Visual production standards: the [art bible](art-bible.md)

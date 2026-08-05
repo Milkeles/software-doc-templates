@@ -46,8 +46,7 @@
 
 ---
 
-## What you now own versus what the platform owns
-
+## Ownership boundary
 *The boundary a team needs to understand before an incident forces them to. State it as plainly as the [service catalog entry's](service-catalog-entry.md) section 3 does, in more operational detail.*
 
 | | Platform's responsibility | Your team's responsibility |

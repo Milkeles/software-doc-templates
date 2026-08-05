@@ -52,8 +52,7 @@ Compare: "Payment provider risk. High." Two people rating the second will not ag
 
 ---
 
-## 3. Review, or do not bother
-
+## 3. Review cadence
 A register written once at kickoff is decoration.
 
 - Review on a fixed cadence, short and boring. Fifteen minutes, whoever owns each open risk.
@@ -91,8 +90,7 @@ The defensible position is that **the burden of proof is on the matrix**, not on
 
 ---
 
-## 6. What not to say about project risk
-
+## 6. Language to avoid
 Almost every risk document opens with a failure statistic, and the usual one does not survive checking.
 
 The Standish CHAOS success and failure percentages are artefacts of Standish's definitions rather than measurements. Eveleens and Verhoef examined 5,457 forecasts across 1,211 real projects for *IEEE Software* in 2010 and concluded the definitions "are misleading, one-sided, pervert the estimation practice, and result in meaningless figures". Their sharpest demonstration: taking a real organisation with a 6% Standish success rate and flipping the sign of every deviation produced an identical fictitious organisation with a **94%** success rate and exactly the same forecasting quality. In their sample the organisation with the worst forecasts had the highest Standish success rate.

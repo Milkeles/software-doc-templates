@@ -30,16 +30,14 @@
 
 ## Diagnose
 
-### 1. Is this a source problem or a pipeline problem?
-
+### 1. Source problem or pipeline problem?
 ```bash
 ```
 
 - **Source late or malformed:** *go to Remediation A*
 - **Pipeline itself failed:** *go to step 2*
 
-### 2. Did this fail before or after publishing output?
-
+### 2. Failure before or after publishing?
 *The single most important branch in a data runbook. A failure before publishing is safe: consumers still see the last good data. A failure after partial publishing means wrong data may already be live.*
 
 - **Before publishing:** *go to Remediation B, rerun is safe*
