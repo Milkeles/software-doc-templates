@@ -138,7 +138,7 @@ For programme-level maturity rather than per-change verification, OWASP SAMM v2.
 
 ---
 
-## 6. Keeping the checklist short
+## 6. Length cap
 Every checklist grows. Each incident adds a line, and nobody removes one.
 
 Cap it. Twenty items, hard limit. Adding an item means removing an item or automating one.

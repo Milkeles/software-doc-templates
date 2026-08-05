@@ -63,7 +63,7 @@
 
 ---
 
-## Decide what to do
+## Changes for next cycle
 *One or two changes, each with an owner and a tracking reference. A retrospective that produces eight changes produces none, for the same reason the sprint retrospective template gives: a team stops believing in a list that never gets acted on.*
 
 | Change | Owner | Ticket | How we will know it worked |

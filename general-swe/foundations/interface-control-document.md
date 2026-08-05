@@ -15,7 +15,7 @@
 
 ---
 
-## Scope
+## Relationship to the schema
 *An OpenAPI document, a Protobuf definition or a JSON Schema expresses shape: paths, fields, types, required-ness. It is machine-readable, testable, and generated into clients. Nothing in this document should duplicate it.*
 
 *What no schema expresses, and what breaks integrations in practice:*

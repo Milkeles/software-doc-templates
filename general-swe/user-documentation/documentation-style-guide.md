@@ -31,7 +31,7 @@ Note that Google's guide is licensed CC BY 4.0, so you may quote and adapt it wi
 
 ---
 
-## 2. Decisions your base guide leaves open
+## 2. Voice and mechanics
 These are the points where the major public guides actually diverge. Pick one and record it, because in the absence of a decision every reviewer applies their own.
 
 | Decision | The disagreement |

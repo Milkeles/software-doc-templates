@@ -10,7 +10,9 @@
 >
 > **Order the sections by contributor intent, not by artefact.** Homebrew's headings are "Report a bug", "Propose a feature", "Discuss, ask questions about or disagree with changes" — which is how the reader actually arrives. The headings below follow that shape.
 >
-> **Be honest about what it buys.** No study measures whether adding this file converts more first-time contributors. "Evidence behind this document" at the end states what is actually measured.
+> **Be honest about what it buys.** No study measures whether adding this file converts more first-time contributors. "Evidence behind contributing guides" at the end states what is actually measured.
+>
+> **Where it lives.** The repository, in one of the three paths above. For an internal repository the same file still works; the audience is the next team, not the public.
 >
 > **Delete this block before publishing.**
 
@@ -18,7 +20,7 @@
 
 ---
 
-## Where to get help
+## 1. Where to get help
 
 *Name a place with humans in it, and put it first.*
 
@@ -30,7 +32,7 @@
 
 ---
 
-## What counts as a contribution
+## 2. What counts as a contribution
 
 *One sentence. It changes who thinks this file is addressed to them.*
 
@@ -38,7 +40,7 @@
 
 ---
 
-## Reporting a bug
+## 3. Reporting a bug
 
 *The preconditions before opening one, as a checklist. Link the [bug report template](bug-report.md) rather than restating its fields.*
 
@@ -48,7 +50,7 @@
 
 ---
 
-## Proposing a change
+## 4. Proposing a change
 
 *Whether an issue must exist first, and what a proposal has to contain.*
 
@@ -64,7 +66,7 @@
 
 ---
 
-## Submitting a pull request
+## 5. Submitting a pull request
 
 *Branch naming, commit message format, what CI will run, and how long review takes.*
 
@@ -74,7 +76,7 @@
 
 ---
 
-## Scope of issues and pull requests
+## 6. Scope of issues and pull requests
 
 *Channel misuse is the most common maintainer complaint, and the cheapest fix is one sentence.*
 
@@ -84,7 +86,7 @@
 
 ---
 
-## Licensing and sign-off
+## 7. Licensing and sign-off
 
 *State whether you require a Developer Certificate of Origin, a Contributor License Agreement, or neither — and automate the check. A legal requirement enforced by a human reading commits is one that will be missed.*
 
@@ -102,7 +104,7 @@
 
 ---
 
-## AI-assisted contributions
+## 8. AI-assisted contributions
 
 *Most projects have no policy yet, and maintainers absorb the cost. Homebrew's is the clearest published one and is worth adapting rather than inventing.*
 
@@ -116,7 +118,7 @@
 
 ---
 
-## Code of conduct
+## 9. Code of conduct
 
 *A link and the enforcement contact. Not the text.*
 

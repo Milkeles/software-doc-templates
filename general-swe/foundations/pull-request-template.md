@@ -18,7 +18,7 @@
 
 *Why this change exists, then what it does. Motivation first.*
 
-*This is the section reviewers actually need. Bacchelli and Bird studied code review at Microsoft for ICSE 2013 — observing 17 developers across 16 product teams, classifying 570 review comments, and surveying 165 managers and 873 programmers. Their finding: "context and change understanding is the key of any review", and most of those understanding needs are met by no tool. Your description is the tool.*
+*This is the section reviewers actually need. Bacchelli and Bird's study of code review at Microsoft found that "context and change understanding is the key of any review", and that no tool supplies it. Your description is the tool.*
 
 *React's template asks for exactly this and nothing softer: "Explain the motivation for making this change. What existing problem does the pull request solve?" Homebrew asks the two halves separately — "Have you explained what your changes do?" and "Have you explained why you'd like these changes included, not just what they do?"*
 
@@ -63,7 +63,7 @@
 
 *Whether you used an AI tool on this change, which one, and what you did to verify its output.*
 
-*This is now standard practice, not a novelty. Five of fifteen major projects surveyed require it — Rust, Django, Deno, Homebrew and Electron. The shape is consistent everywhere: disclosure is mandatory, use is not banned, and verification stays with you. Rust states the trade plainly: "LLM contributions are not banned, but are held to a higher standard of review and correctness."*
+*Rust, Django, Deno, Homebrew and Electron all require this, and the shape is the same everywhere: disclosure is mandatory, use is not banned, verification stays with you. Rust states the trade plainly: "LLM contributions are not banned, but are held to a higher standard of review and correctness."*
 
 > Used Claude to draft the cache-invalidation tests. I reviewed each assertion against the mtime semantics in the standard library docs and rewrote two that tested the mock rather than the behaviour.
 
@@ -84,19 +84,17 @@
 
 *Delete this section too.*
 
-**Do not claim a PR template speeds up review.** It is the most common justification and the evidence points the other way. Li and colleagues studied issue and PR templates at scale for *IEEE Transactions on Software Engineering* in 2023 — the only large study of this artifact. After a project adopts templates, incoming volume drops, discussion comments drop, and **issue resolution takes longer, not shorter**. A plausible reading is that templates filter out the easy and duplicate items, so what remains is harder and naturally slower — but the study cannot separate that from the alternative, and neither can anyone else. Projects that adopt templates are usually already drowning, which confounds the comparison badly. The honest position: templates measurably change how a project behaves, and the direction is not uniformly good.
+**Do not claim a PR template speeds up review.** It is the most common justification and the evidence points the other way: after a project adopts templates, incoming volume drops, discussion drops, and issue resolution takes *longer*. Templates measurably change how a project behaves, and the direction is not uniformly good.
 
-**The description is the part with evidence behind it.** Bacchelli and Bird's finding that reviewers need context and change understanding is well-sourced and directly supports one thing: a field that explains why the change exists. It does not support checklists, type selectors, or breaking-change flags. Those are conventions — useful ones, often mechanical, but not evidence-backed.
+**The description is the part with evidence behind it.** Reviewers demonstrably need context and change understanding, which supports one field: why the change exists. Checklists, type selectors and breaking-change flags are conventions — useful, often mechanical, but not evidence-backed.
 
-**Checklists are weaker than they look.** The one controlled experiment on review checklists — Gonçalves and colleagues, *Empirical Software Engineering* 2022, pre-registered, with professional developers across three review tasks — concluded that they "did not identify a strong relationship between the guidance provided and code review performance". Two caveats cut both ways: most participants were novice reviewers, and the study measured checklists for *reviewers*, not the author-facing checklist this template carries. Nobody has measured the author-facing kind at all. Keep yours short, and drop any item a contributor cannot honestly self-assess.
+**Keep the whole thing small.** Real templates are short and static: most organise their content into two or fewer categories and never restructure after the first version. VS Code ships 344 bytes; Kubernetes ships 3,195. If you are choosing, choose small.
 
-**Keep the whole thing small.** A 2026 survey of 2,689 PR template files from 2,614 repositories found that 68% organise their content into two or fewer categories, and 71% never restructure after the first version. Real templates are short and static. VS Code ships 344 bytes; Kubernetes ships 3,195. If you are choosing, the distribution says choose small.
+**Decide whether the template is a gate or a hint.** Electron enforces it — "PRs submitted that do not follow this template will be automatically closed" — as does Homebrew. VS Code and Vite enforce nothing. Both work at scale. What fails is enforcing informally, where contributors cannot tell which fields are real.
 
-**Most real templates are invisible.** The dominant style is instructions inside `<!-- HTML comments -->` that never render in the submitted PR. VS Code's and Vite's entire templates are a single comment. That trades a clean PR body for guidance nobody is forced to read. Headings the author fills in, as above, trade the reverse. Pick deliberately.
+**Decide whether guidance renders.** The dominant style is instructions inside `<!-- HTML comments -->` that never appear in the submitted PR, which buys a clean PR body at the cost of guidance nobody is forced to read. Headings the author fills in, as above, trade the reverse.
 
-**Skip GitHub's own advice about @mentions.** GitHub's documentation suggests the template include "@mentions of the person or team responsible for reviewing". None of the fifteen major projects surveyed does this. Use `CODEOWNERS` and automatic assignment instead — Rust uses an `r? <reviewer name>` command — because a hardcoded name in a template goes stale and pings the wrong person for years.
-
-**Decide whether the template is a gate or a hint.** Electron enforces it — "PRs submitted that do not follow this template will be automatically closed" — as does Homebrew: "Don't delete these checkboxes or this pull request is closed automatically." React warns that an empty testing section means "your PR will very likely be closed". VS Code and Vite enforce nothing. Both approaches run at scale. What fails is enforcing informally, where contributors cannot tell which fields are real.
+**Do not put @mentions in the template,** despite GitHub's own advice. A hardcoded name goes stale and pings the wrong person for years. Use `CODEOWNERS` and automatic assignment instead.
 
 **Where this lives:** in the repository, as `.github/pull_request_template.md`. GitHub also accepts `pull_request_template.md` in the root or in `docs/`, and either casing works — projects genuinely use both, so a 404 on one spelling does not mean a project has no template. One rule catches people out: templates only take effect once merged to the default branch.
 

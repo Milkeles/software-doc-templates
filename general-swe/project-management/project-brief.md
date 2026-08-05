@@ -10,7 +10,7 @@
 > | **RIBA Project Brief** | Client with the design team | Design team | Requirements detailed enough to start design | Superseded at the end of Stage 2 |
 > | **Creative or agency brief** | The client | The delivery team | Direct the work | Live for the whole engagement |
 >
-> **This template is the first sense**, adapted for software: written by the team that would do the work, for whoever controls the money, to earn the right to plan. Section 6 covers what to change if you meant one of the others.
+> **This template is the first sense**, adapted for software: written by the team that would do the work, for whoever controls the money, to earn the right to plan. "Notes on using this template" at the end covers what to change if you meant one of the others.
 >
 > **It authorises nothing.** That is the difference from a [charter](project-charter.md). PMBOK 7 lists brief and charter as separate strategy artifacts, and the charter's definition contains "formally authorizes" and "authority" while the brief's contains neither. If your brief is used to approve spend, you have written a charter and should call it one.
 >
@@ -70,13 +70,9 @@ Naming the decision and the date is what converts a document into a gate. Withou
 
 *Background for whoever maintains this template. Not part of the brief — delete it before publishing.*
 
-RIBA states the case more plainly than any software source: "It is foolhardy to believe that where the outcomes from one stage are poor, they can be recovered in the next stage. For example: a poor Project Brief is likely to lead to poor design outcomes."
+**You cannot assess your own brief.** The BetterBriefs Project (1,700+ marketers and agency staff, 2021) found that 80% of the people writing briefs rated their own as good, and 10% of the people receiving them agreed. So do not treat "the author is happy with it" as the finishing condition — name a reader and have them sign it off. That is the whole reason section 5 asks for a decision and a date.
 
-There is also a measured reason to distrust your own judgement of your brief. The BetterBriefs Project surveyed over 1,700 marketers and agency staff across more than 70 countries, launched at IPA EffWorks Global in October 2021. **80% of the people writing briefs said they wrote good ones. 10% of the people receiving them agreed.** On whether briefs give clear strategic direction the split was 78% against 5%; on clear, concise language, 83% against 7%. Around 70% of both groups reported frequent rebriefing.
-
-The practical conclusion is not that briefs are bad. It is that **the author cannot assess their own brief**, which is the argument for a template with explicit acceptance criteria and a named reader who signs it off.
-
-The same study's widely quoted claim that 33% of marketing budget is wasted through poor briefs is a **self-reported estimate by survey respondents**, not a measurement, and the "$200bn" headlines derived from it are a further extrapolation that is not in the research. The perception gap is the defensible finding. Use that.
+The same study's widely quoted "33% of budget wasted on poor briefs" figure is a self-reported estimate, not a measurement. Do not repeat it.
 
 ---
 

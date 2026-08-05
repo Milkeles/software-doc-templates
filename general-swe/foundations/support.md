@@ -6,7 +6,7 @@
 
 *This file has one reader: someone about to open an issue that is really a question. It should answer "where do I go instead?" before they finish typing.*
 
-*Keep it short. Of 31 major projects checked, 7 have this file, and the median is 535 bytes. ESLint's entire file is one sentence: "If you have a question about how to use ESLint, please ask it in our chatroom." That is a complete, working `SUPPORT.md`. Do not write more than your project needs.*
+*Keep it short — the median real example is about 500 bytes. ESLint's entire file is one sentence: "If you have a question about how to use ESLint, please ask it in our chatroom." That is a complete, working `SUPPORT.md`. Do not write more than your project needs.*
 
 ---
 
@@ -40,7 +40,7 @@
 
 *Which versions, platforms or configurations you will help with. Delete this if the answer is "the latest release" and nothing else.*
 
-*Node.js is the only project surveyed that connects getting help to what is supported, and it does it in one sentence: "Node.js contributors have limited availability to address general support questions. Please make sure you are using a currently-supported version of Node.js." A question about a dead version is answered before it is asked.*
+*One sentence can do it. Node.js: "Node.js contributors have limited availability to address general support questions. Please make sure you are using a currently-supported version of Node.js." A question about a dead version is answered before it is asked.*
 
 *Three shapes, depending on what you ship:*
 
@@ -54,7 +54,7 @@
 
 *How much attention a question realistically gets, and from whom. This is where you prevent the interaction that ends badly.*
 
-*Node.js states the social contract in two sentences, and it is the most quotable thing in the genre:*
+*Node.js states the social contract in two sentences worth copying:*
 
 > The open source license grants you the freedom to use Node.js. It does not guarantee commitments of other people's time. Please be respectful and manage your expectations.
 
@@ -68,7 +68,7 @@
 
 *If a company offers commercial support for your project, name it and say what it covers. curl points at wolfSSL and lists customisation, porting, feature development, bug fixing and compliance assistance.*
 
-*No project surveyed puts a commercial-support statement in this file, so treat it as a reasonable option rather than an established convention. If you do include it, state what the free project still guarantees — otherwise the paid list reads as everything you have withdrawn.*
+*If you include it, state what the free project still guarantees — otherwise the paid list reads as everything you have withdrawn.*
 
 ---
 
@@ -76,15 +76,11 @@
 
 *Delete this section too.*
 
-**Do not claim this file reduces your support load. Nobody has measured that.** No study measures the effect of a `SUPPORT.md` on question volume, maintainer time, or anything else. The adjacent evidence is uncomfortable rather than encouraging: the one study testing whether documentation improves user support in open source found no significant relationship for either documentation or troubleshooting guidelines (Raza and colleagues, ICCA 2019, 100 projects — though its outcome measure was weekly downloads, which cannot speak to maintainer time at all). And the one study of the forum-to-tracker relationship found only 3.5% of 23,169 Moodle tracker issues linked back to forum discussions, with forum and tracker populations largely distinct — which cuts against the tidy assumption that a support channel absorbs work that would otherwise reach the tracker. Write this file because it tells a confused person where to go in one sentence. That courtesy is real and you can verify it by reading the file.
-
-**The burden it responds to is real, even if the fix is unmeasured.** Rasti's 2024 work on labelling questions inside issue trackers is built on the premise, drawn from 2 million GitHub issues, that support questions spam large projects' trackers and that maintainers consistently state they want them elsewhere. Note what that paper's existence implies: the questions arrive anyway and have to be classified after the fact. Documentation alone is not doing the routing.
+**Do not claim this file reduces your support load.** Nobody has measured that — not question volume, not maintainer time. Write it because it tells a confused person where to go in one sentence. That courtesy is real and you can verify it by reading the file.
 
 **The stronger lever is `contact_links`, not this file.** `.github/ISSUE_TEMPLATE/config.yml` puts named destinations inside the issue-creation flow itself, and `blank_issues_enabled: false` removes the blank-issue path entirely. This file is a sidebar link the user may not click; the config is a fork in the road they cannot avoid. Use both — the file states the policy, the config enforces the routing.
 
-**Adding this file does not improve your GitHub community profile.** The scored `health_percentage` metric covers code of conduct, licence, README, contributing, and the issue and pull-request templates. `SUPPORT.md` is in neither the API list nor the repository's Community Standards checklist. There is no badge for this, which is part of why only 23% of major projects bother.
-
-**Split this out of your contributing guide only under two conditions:** you get support questions in the tracker often enough for it to be a burden, and you have a real non-tracker channel to send them to. If either is false, a "Getting help" section in `README.md` or the contributing guide is better. Seventy-seven percent of major projects do not split, and they are not obviously worse off — two files means two channel lists to keep alive, and a stale channel list is worse than none. All seven projects that do have this file are high-traffic with staffed alternatives.
+**Split this out of your contributing guide only under two conditions:** you get support questions in the tracker often enough for it to be a burden, and you have a real non-tracker channel to send them to. If either is false, a "Getting help" section in `README.md` or the contributing guide is better. Two files means two channel lists to keep alive, and a stale channel list is worse than none.
 
 **If you split, make the two files name each other.** Bootstrap is the clean example: its `SUPPORT.md` has a `Bug reports` section whose entire content is a pointer to the contributing guidelines, and its contributing guide says "Please **do not** use the issue tracker for personal support requests" and links Discussions. No overlap, no contradiction, no orphaned advice.
 

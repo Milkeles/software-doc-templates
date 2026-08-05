@@ -30,6 +30,10 @@
 | **Correctness and safety** | Is this construct a bug waiting to happen | A linter, failing the build | Per rule, with a reason |
 | **Design and naming** | Is this the right shape | Review, guided by this document | Yes. That is what review is for |
 
+*Do not restate a rule the formatter or linter already enforces. The config file is the authoritative copy, and a second copy here will drift from it silently.*
+
+*Do write down the conventions that decide how the code reads, even where a tool can partly check them. A linter can flag an abbreviation; it cannot tell you whether the name that replaces it communicates intent. The test is whether the rule teaches a reader something the CI failure would not have.*
+
 ---
 
 ## 2. Base guide and deviations
@@ -68,7 +72,7 @@
 
 *Spend the rules on descriptiveness, not on casing. Full descriptive words beating abbreviations is the best-supported rule in this whole area; camelCase versus under_score is a small effect that is close to nil for experienced readers.*
 
-> **Example.** `elapsed_since_last_retry`, not `t2`. Domain nouns match the [glossary](glossary.md): a "charge" is never called a "payment" in code.
+> **Example.** `calculate_invoice_total`, not `calc_inv_tot`. `elapsed_since_last_retry`, not `t2`. Domain nouns match the [glossary](glossary.md): a "charge" is never called a "payment" in code.
 
 ---
 
@@ -83,6 +87,10 @@
 ## 6. Error handling
 
 *Which errors are raised, which are returned, which are logged and swallowed, and what goes in a message.*
+
+*No linter can judge error semantics, so this section carries its full weight.*
+
+> **Example.** Errors crossing a service boundary are wrapped with the call that produced them before they are returned. A caller reading `timeout calling billing.charge: context deadline exceeded` can act; a bare `context deadline exceeded` sends them to the logs.
 
 ---
 
