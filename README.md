@@ -1,3 +1,4 @@
+<!-- GitAds-Verify: Y2HMXGVWYV9AU6BEOLKE1LQB958O9WDD -->
 # Software Documentation Templates
 
 Documentation templates for software teams, organised by what you build and how you work.
@@ -92,3 +93,4 @@ This repository grows a group at a time. A folder appears once its README and te
 - [`data-engineering/README.md`](data-engineering/README.md) — pipelines, warehouses, and models
 - [`platform-engineering/README.md`](platform-engineering/README.md) — infrastructure and operations
 - [`ai-assisted-development/README.md`](ai-assisted-development/README.md) — working with coding agents and language models
+
