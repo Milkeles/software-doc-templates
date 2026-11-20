@@ -129,6 +129,8 @@
 
 *For decisions with consequences beyond this document, write an [architecture decision record](../foundations/architecture-decision-record.md) and link it. Keep the rationale here for choices local to this design.*
 
+*Principles follow the same split. If your team keeps [architecture principles](../foundations/architecture-principles.md) for several systems, cite the ones this design follows by ID. If the principles apply only to this design, list them in a short numbered list above the table, each with its ID, statement and reason, and skip the separate document.*
+
 | Decision | Alternatives considered | Chosen because | Reversible? |
 |---|---|---|---|
 | | | | |
@@ -173,5 +175,6 @@
 - [`requirements-traceability-matrix.md`](requirements-traceability-matrix.md). Checks automatically that every requirement has an element and every element a requirement
 - [`../foundations/architecture-overview.md`](../foundations/architecture-overview.md). The document to write instead if the goal is helping a reader understand the system, not securing a design approval
 - [`../foundations/architecture-decision-record.md`](../foundations/architecture-decision-record.md). Where to record a decision whose consequences reach beyond this design
+- [`../foundations/architecture-principles.md`](../foundations/architecture-principles.md). The principles this design cites, when they apply to more than this design
 - [`phase-gate-review.md`](phase-gate-review.md). The gate that consumes this document's verification approach and authorises implementation
 - [`../foundations/technical-design-document.md`](../foundations/technical-design-document.md). The same job, done at ordinary weight: pick this one instead when there is no phase gate, regulator, or auditor requiring a signed baseline before code starts

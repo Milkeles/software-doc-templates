@@ -70,6 +70,7 @@
 - *What other approaches were considered, and why each was rejected*
 - *What the impact is of not doing this*
 - *Whether prior art or an existing tool solves it, and why that was not used*
+- *Which [architecture principles](architecture-principles.md) each option follows or breaks, by ID, if your team keeps them*
 
 ---
 
@@ -132,3 +133,4 @@
 
 - [`technical-design-document.md`](technical-design-document.md). The document to reach for instead when you want expert eyes rather than a decision with a deadline
 - [`architecture-decision-record.md`](architecture-decision-record.md). Where an accepted RFC's outcome is recorded for good, once the discussion itself stops mattering
+- [`architecture-principles.md`](architecture-principles.md). The principles the options are checked against, and the document an RFC may propose to change

@@ -74,6 +74,8 @@
 
 *Be genuinely fair. An alternatives section where every option has an obvious fatal flaw signals that you evaluated nothing, and experienced reviewers read it that way.*
 
+*If your team keeps [architecture principles](architecture-principles.md), say which ones each alternative follows or breaks, by ID.*
+
 ### {Alternative}
 
 *What it is, in one sentence. Why not, in two or three. Name the condition that would change the answer if there is one.*
@@ -137,6 +139,7 @@
 - [`threat-model.md`](threat-model.md). Where security and privacy get a real analysis, once "cross-cutting concerns" needs more than a line
 - [`architecture-decision-record.md`](architecture-decision-record.md). Where the durable decisions get extracted once the design is implemented
 - [`architecture-overview.md`](architecture-overview.md). What gets updated instead of maintaining this document after ship
+- [`architecture-principles.md`](architecture-principles.md). The principles each alternative is checked against
 - [`rfc.md`](rfc.md). The other route to the same decision, when named approvers and a deadline matter more than expert review
 - [`../../ai-assisted-development/specification/agent-task-specification.md`](../../ai-assisted-development/specification/agent-task-specification.md). The document to write instead, when the work is a bounded task for an agent to execute in one session rather than a judgment call about approach
 - [`../waterfall/software-design-description.md`](../waterfall/software-design-description.md). The same job, done at gate weight: pick this one instead when a phase gate, regulator, or auditor has to sign off on the design before code starts

@@ -2,7 +2,7 @@
 
 Documents every software team needs, whatever it builds and however it plans work.
 
-These thirty templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
+These thirty-one templates do not assume sprints, WIP limits, or stage gates. A Scrum team, a Kanban team, and a team building to a fixed contract all need to record why they chose PostgreSQL, what to do when the queue backs up, and what "reviewed" means.
 
 Start here before adopting anything from a methodology group.
 
@@ -39,7 +39,8 @@ A document missing these will rot regardless of how well it was written. Pick th
 
 | Document | Write it when | Skip it when | Home |
 |---|---|---|---|
-| [Architecture decision record](architecture-decision-record.md) | A choice constrains future work and the reasoning will not be obvious from the code | The decision is reversible in an afternoon | Repo |
+| [Architecture principles](architecture-principles.md) | Several teams or systems keep facing the same kinds of design choice, and the answers must fit together | The same kinds of decision do not recur across teams or repositories | Wiki, linked from each repository's overview |
+| [Architecture decision record](architecture-decision-record.md) | A choice constrains future work and the reasoning will not be obvious from the code, or it waives a principle marked Rule | The decision is reversible in an afternoon | Repo |
 | [Technical design document](technical-design-document.md) | A change is large enough that getting the approach wrong is expensive | The solution is unambiguous | Wiki, outcome extracted to an ADR |
 | [RFC](rfc.md) | A proposal needs named approvers and a decision deadline | Nobody outside the team is affected | Repo or wiki, by who must review |
 | [Architecture overview](architecture-overview.md) | A newcomer, an auditor, or an incident responder needs the shape of the system | The system is one service with one datastore | Repo |
@@ -74,11 +75,14 @@ A document missing these will rot regardless of how well it was written. Pick th
 
 ## How these documents feed each other
 
-Thirty documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
+Thirty-one documents is enough to duplicate badly. The defence is one rule: **every fact lives in exactly one document, and the others link to it.** The map below is where the facts live.
 
 **A decision, from proposal to current state.**
 
 ```
+              architecture principles   (optional: options are
+                         |               checked against them,
+                         v               ADRs cite them by ID)
    technical design doc  \
                           >---> ADR ------------> architecture overview
    RFC                   /       |                        |
@@ -90,6 +94,8 @@ Thirty documents is enough to duplicate badly. The defence is one rule: **every 
 ```
 
 The design doc and the RFC are working documents that stop mattering the day the decision is made. The ADR is the residue: the constraint, the alternatives, the reason. The overview describes the result. Those last two split along tense, and that split is the whole reason both exist. An ADR is a dated statement about the past and is superseded rather than rewritten. An overview is a statement about the present and is wrong the moment it is stale.
+
+Architecture principles, where a team keeps them, sit above the design doc, the RFC and the ADR. They hold the reasons that recur across many decisions, so each ADR cites them instead of arguing them again. Waivers also feed back: a principle that keeps collecting waivers in ADRs probably needs changing.
 
 **An ADR with no matching overview update leaves the overview lying.** An overview with no ADRs behind it can describe the system but cannot explain it, which is the state most teams are actually in.
 
@@ -226,6 +232,16 @@ When a section feels wrong, check whether it belongs to a different mode. Usuall
 ---
 
 ## The documents, one by one
+
+### Architecture principles
+
+**When.** Several teams or systems keep facing the same kinds of design choice, and the answers have to fit together: who may write to which database, when to buy rather than build, how far to depend on one cloud provider. The document is optional: skip it when the same questions do not recur across teams or repositories.
+
+**Why.** Without a shared set, each team settles these questions on its own, and the systems drift apart. Hohpe's case for principles is conceptual integrity: a well-defined set, applied consistently, keeps many separate decisions pointing the same way. A principle also gives a design review a written standard to argue against. Sources split on whether a principle can be a firm rule. Richards and Ford treat principles as guidelines and firm rules as architecture decisions, while TOGAF, as Greefhorst and Proper report it, calls principles "general rules and guidelines". The template marks each principle Rule or Guideline instead of picking a side.
+
+TOGAF, as Greefhorst and Proper report it, asks for few principles, typically around ten at the top level, meant to last. A principle that nothing checks gets ignored: the authors of *Building Evolutionary Architectures* note that principles written up and never enforced "were read by no one". The template asks for a verification step for each principle and a waiver route for when one does not fit.
+
+**Where.** The wiki. Principles are agreed before the design and change through their own approval, not through commits, so no code change can make one wrong. The overview is the opposite: it must stay current with the code and the ADRs, which is why it lives in the repo. Each repository's overview links to the set rather than copying it. Rozanski and Woods put principles inside the architecture description itself. This repository keeps one copy in the wiki instead, so every repository links to the same set. The one exception is a waterfall project whose principles apply only to one design: its software design description can hold them. What keeps a wiki set in use is each principle's verification step, not the page it sits on.
 
 ### Architecture decision record
 
@@ -606,6 +622,7 @@ Everything else can wait until you feel its absence. A document written before a
 
 The claims above come from these. Where they disagree, the disagreement is stated rather than resolved.
 
+- Greefhorst and Proper, *Architecture Principles: The Cornerstones of Enterprise Architecture* (Springer, 2011), chapters 2 to 5, including its account of the TOGAF principles template; Rozanski and Woods, [Architecture Description Template](https://www.viewpoints-and-perspectives.info/vpandp/wp-content/themes/secondedition/doc/registered/RozanskiAndWoods-Architecture-Description-Template.pdf) (2011), section 7.3; Richards and Ford, *Fundamentals of Software Architecture*, chapters 1 and 22; Ford, Parsons, Kua and Sadalage, *Building Evolutionary Architectures*, 2nd edition, chapters 2 and 4; Hohpe, *The Software Architect Elevator*, Part II
 - Nygard, [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) (2011); [MADR](https://adr.github.io/madr/); ThoughtWorks Technology Radar, [Lightweight ADRs](https://www.thoughtworks.com/radar/techniques/lightweight-architecture-decision-records)
 - Ubl, [Design Docs at Google](https://www.industrialempathy.com/posts/design-docs-at-google/); [Rust RFC process](https://github.com/rust-lang/rfcs); [Oxide RFD 1](https://rfd.shared.oxide.computer/rfd/0001)
 - [arc42](https://arc42.org/overview); Brown, [C4 model](https://c4model.com/); Procida, [Diátaxis](https://diataxis.fr/)

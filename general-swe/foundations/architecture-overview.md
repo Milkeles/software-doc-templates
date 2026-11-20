@@ -138,6 +138,8 @@
 
 *This section is what keeps the rest of the document short. Anywhere a reader is likely to ask "why like that", link the ADR instead of answering inline.*
 
+*If the system follows a set of [architecture principles](architecture-principles.md), link it above the ADRs. Do not copy principles in. They change through their own approval, not with the code, so a copy here goes stale.*
+
 - [ADR-0007: Use Postgres for the ledger](decisions/0007-use-postgres-for-the-ledger.md)
 
 ---
@@ -177,6 +179,7 @@
 ## Related documents
 
 - [`architecture-decision-record.md`](architecture-decision-record.md). The reasoning behind this structure; this document only shows the result
+- [`architecture-principles.md`](architecture-principles.md). The principles the decisions above were checked against
 - [`service-readme.md`](service-readme.md). One level down, for a single deployable component
 - [`glossary.md`](glossary.md). Domain terms used above, kept beside this document so both move together
 - [`data-model.md`](data-model.md). Which service owns which entity, in more detail than section 7 carries
