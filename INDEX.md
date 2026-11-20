@@ -20,6 +20,7 @@ Documents any software team needs, whatever the domain. → [`general-swe/`](gen
 |---|---|
 | [Architecture decision record](general-swe/foundations/architecture-decision-record.md) | Record one significant decision, the options weighed, and why this one won. |
 | [Architecture overview](general-swe/foundations/architecture-overview.md) | Explain how the system fits together to someone who has never seen it. |
+| [Architecture principles](general-swe/foundations/architecture-principles.md) | Write down how your teams handle recurring design choices, so separate decisions still fit together. |
 | [Branching strategy](general-swe/foundations/branching-strategy.md) | State how code moves from a developer's machine to production. |
 | [Bug report](general-swe/foundations/bug-report.md) | Describe a defect so someone else can reproduce and fix it. |
 | [Changelog](general-swe/foundations/changelog.md) | Tell users what changed in each release, in their terms. |

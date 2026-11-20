@@ -36,6 +36,8 @@
 
 *Order them. Unordered criteria decide nothing.*
 
+*If your team keeps [architecture principles](architecture-principles.md), list each one this decision touches by its ID (`AP-01`) and link it by its full wiki URL, instead of restating it. If the decision breaks a principle marked Rule, say so in the context and list whoever granted the waiver among the deciders. This ADR is then the waiver record.*
+
 - *Driver 1 (for example: no new operational surface the team cannot run)*
 - *Driver 2*
 - *Driver 3*
@@ -110,6 +112,8 @@
 
 *Decisions with no confirmation quietly stop being true. This section is what separates a record from an intention.*
 
+*If a check written for an architecture principle already covers this decision, link it instead of writing a second one.*
+
 > **Example.** CI fails if any module under `orders/` imports the MySQL client.
 
 ---
@@ -118,7 +122,7 @@
 
 *Links: the design doc, the spike, the benchmark, the incident that triggered this, the ADRs this one relates to. Anything a reader would otherwise have to hunt for.*
 
-*Also record the expiry condition if one exists: "revisit if write volume exceeds 5k/s" tells a future team when to reopen this rather than leaving them to guess.*
+*Also record the expiry condition if one exists: "revisit if write volume exceeds 5k/s" tells a future team when to reopen this rather than leaving them to guess. For an ADR that waives an architecture principle, record here the role responsible for follow-up and the end date or review trigger.*
 
 ---
 
@@ -130,7 +134,7 @@
 
 **Write it when the decision is made, not after the code ships.** An ADR written retroactively records what you did, which the code already shows. Written at decision time it records what you rejected, which nothing else does.
 
-**Sections you may cut:** decision drivers, options in detail, confirmation. Sections you may not: context, decision, consequences. Those three are Nygard's minimum and every later format keeps them.
+**Sections you may cut:** decision drivers, options in detail, confirmation. Keep decision drivers when the decision touches an architecture principle. Sections you may not: context, decision, consequences. Those three are Nygard's minimum and every later format keeps them.
 
 **Where this lives:** `docs/decisions/` in the repository that the decision constrains. Decisions spanning several repositories go in a central log, linked from each.
 
@@ -141,4 +145,5 @@
 - [`technical-design-document.md`](technical-design-document.md). Where the deliberation happens before the durable decision is extracted here
 - [`rfc.md`](rfc.md). The other kind of proposal an accepted ADR can follow
 - [`architecture-overview.md`](architecture-overview.md). What the system looks like now, as opposed to why it got that way
+- [`architecture-principles.md`](architecture-principles.md). The reasons an ADR can cite by ID instead of arguing them again
 - [`incident-postmortem.md`](incident-postmortem.md). Sometimes the fix from an incident overturns a decision recorded here
